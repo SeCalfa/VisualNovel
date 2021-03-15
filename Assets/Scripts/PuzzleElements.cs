@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class PuzzleElements : MonoBehaviour
 {
-
-    [SerializeField]
-    internal int PlacedElementNumber;
-
     public enum ElementType
     {
         Photo,
@@ -17,26 +13,19 @@ public class PuzzleElements : MonoBehaviour
     [SerializeField]
     private ElementType Type;
 
-    public Vector2 finalPlacePosition { get; private set; }
-
-    private PuzzleManager puzzleManager;
-    List<bool> allEndPoints = new List<bool>() { false, false, false, false, false };
-    private Vector2 endPoint;
-    private GameObject targetPlace;
-    private float startDistance = 150f;
-    private Vector2 startDrugPos;
-    private Vector2 currentDrugPos;
-    private Vector2 endDrugPos;
     private bool isPlanted = false;
+    private Vector2 posOnAwake;
+    private Vector2 startDragPos;
+    private Vector2 currentDragPos;
+    private Vector2 endPos;
+    private GameObject targetPlace = null;
+    internal int number;
 
-    private void Awake()
+    #region UnityCallbacks
+
+    private void Start()
     {
-        puzzleManager = FindObjectOfType<PuzzleManager>();
-
-        if(Type == ElementType.Place)
-        {
-            finalPlacePosition = transform.localPosition;
-        }
+        posOnAwake = transform.localPosition;
     }
 
     private void Update()
@@ -46,7 +35,7 @@ public class PuzzleElements : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if(Type == ElementType.Photo && !isPlanted)
+        if (Type == ElementType.Photo && !isPlanted)
         {
             GetComponent<Canvas>().sortingOrder += 10;
             GetComponent<Animator>().SetTrigger("Hovered");
@@ -64,108 +53,104 @@ public class PuzzleElements : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!isPlanted)
+        if (Type == ElementType.Photo && !isPlanted)
         {
-            startDrugPos = transform.localPosition;
-        }
-    }
-
-    private void OnMouseUp()
-    {
-        if (!isPlanted)
-        {
-            endDrugPos = transform.localPosition;
-
-            if (startDrugPos == endDrugPos) // Click event
-            {
-
-            }
-            else // Drug and drop event
-            {
-                if (CalculatingEndPoint())
-                {
-                    StartCoroutine(ReturnPosition(endPoint, true));
-                    GetComponent<Animator>().SetTrigger("UnHovered");
-                    isPlanted = true;
-
-                    puzzleManager.PlantedList[targetPlace.GetComponent<PuzzleElements>().PlacedElementNumber] = true;
-                    GetComponent<Canvas>().sortingOrder -= 10;
-                }
-                else
-                {
-                    StartCoroutine(ReturnPosition(startDrugPos, false));
-                }
-            }
+            PuzzleManager.self.takenPhoto = gameObject;
+            startDragPos = transform.localPosition;
         }
     }
 
     private void OnMouseDrag()
     {
-        if (!isPlanted)
+        if (Type == ElementType.Photo && !isPlanted)
         {
-            Vector2 mousePos = Input.mousePosition;
-            currentDrugPos = Camera.main.ScreenToWorldPoint(mousePos);
+            if (!PuzzleManager.self.isHovered)
+            {
+                Vector2 mousePos = Input.mousePosition;
+                currentDragPos = Camera.main.ScreenToWorldPoint(mousePos);
 
-            transform.position = currentDrugPos;
+                transform.position = currentDragPos;
+            }
         }
     }
 
-    private bool CalculatingEndPoint()
+    private void OnMouseUp()
     {
-        int pointsT = 0;
-
-        for (int i = 0; i < puzzleManager.Places.Length; i++)
+        if (Type == ElementType.Photo)
         {
-            if(Vector2.Distance(endDrugPos, puzzleManager.Places[i].transform.localPosition) <= 150)
+            PuzzleManager.self.takenPhoto = null;
+            endPos = transform.localPosition;
+
+            if (!isPlanted)
             {
-                allEndPoints[i] = true;
-            }
-        }
-
-        foreach (var point in allEndPoints)
-        {
-            if (point == true)
-                pointsT += 1;
-        }
-
-        if (pointsT == 0)
-            return false;
-        else
-        {
-            for (int i = 0; i < allEndPoints.Count; i++)
-            {
-                if (allEndPoints[i] == true && Vector2.Distance(endDrugPos, puzzleManager.Places[i].transform.localPosition) < startDistance && !puzzleManager.PlantedList[i])
+                if (PuzzleManager.self.number != -1) // target = photo
                 {
-                    startDistance = Vector2.Distance(endDrugPos, puzzleManager.Places[i].transform.localPosition);
-                    endPoint = puzzleManager.Places[i].transform.localPosition;
-                    targetPlace = puzzleManager.Places[i].gameObject;
+                    //StartCoroutine(PhotoTargeted(endPos, targetPlace.gameObject));
+                    PuzzleManager.self.PlantedList[PuzzleManager.self.number] = true;
+                    isPlanted = true;
+                    GetComponent<Animator>().SetTrigger("UnHovered");
+                    PuzzleManager.self.TestButtonAppearence(1);
                 }
-                else if (allEndPoints[i] == true && Vector2.Distance(endDrugPos, puzzleManager.Places[i].transform.localPosition) < startDistance && puzzleManager.PlantedList[i])
+                else // target = start pos
                 {
-                    return false;
+                    StartCoroutine(ReturnPos(endPos, startDragPos));
                 }
             }
-            return true;
+            else
+            {
+                PuzzleManager.self.PlantedList[number] = false;
+                StartCoroutine(ReturnPos(endPos, posOnAwake));
+                PuzzleManager.self.TestButtonAppearence(-1);
+            }
         }
     }
 
+    #endregion
 
-    
-    private IEnumerator ReturnPosition(Vector2 targetPos, bool isChangeRotation)
+
+    #region Custom Callbacks
+
+    internal void PhotoTargetVoid(Vector2 endDragPos, GameObject targetObj)
+    {
+        StopAllCoroutines();
+        StartCoroutine(PhotoTargeted(endDragPos, targetObj));
+    }
+
+    private IEnumerator PhotoTargeted(Vector2 endDragPos, GameObject targetObj)
     {
         float alpha = 0;
         Quaternion currentRot = Quaternion.identity;
-        Vector2 currentScale = transform.localScale;
     Reset:
         yield return new WaitForSeconds(0.01f);
         alpha += 0.04f;
-        transform.localPosition = Vector2.Lerp(endDrugPos, targetPos, alpha);
 
-        if (isChangeRotation)
-            transform.localRotation = Quaternion.Lerp(currentRot, targetPlace.transform.localRotation, alpha);
+        transform.localPosition = Vector3.Lerp(endDragPos, new Vector3(targetObj.transform.localPosition.x, targetObj.transform.localPosition.y, -10), alpha);
+        transform.localRotation = Quaternion.Lerp(currentRot, targetObj.transform.localRotation, alpha);
 
         if (alpha < 1)
             goto Reset;
     }
+
+    // --------------
+
+    private IEnumerator ReturnPos(Vector2 endDragPos, Vector2 targetObj)
+    {
+        float alpha = 0;
+        Quaternion currentRot = Quaternion.identity;
+    Reset:
+        yield return new WaitForSeconds(0.01f);
+        alpha += 0.04f;
+
+        transform.localPosition = Vector3.Lerp(endDragPos, new Vector3(targetObj.x, targetObj.y, -10), alpha);
+
+        if (alpha < 1)
+            goto Reset;
+
+        isPlanted = false;
+    }
+
+    // --------------
+
+    #endregion
 
 }

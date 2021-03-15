@@ -137,9 +137,8 @@ GameObject:
   - component: {fileID: 5169143}
   - component: {fileID: 5169146}
   - component: {fileID: 5169147}
-  - component: {fileID: 5169149}
   - component: {fileID: 5169148}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: StartPlace3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +153,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5169141}
   m_LocalRotation: {x: 0, y: 0, z: -0.14780933, w: 0.9890159}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 0.92, y: 0.92, z: 1}
   m_Children: []
   m_Father: {fileID: 1649216572}
@@ -236,7 +235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5e9b7949782fc4997dbd4815e12978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlacedElementNumber: 0
   Type: 0
 --- !u!95 &5169147
 Animator:
@@ -286,23 +284,6 @@ PolygonCollider2D:
       - {x: -142, y: 165}
       - {x: -124, y: -170}
       - {x: 138, y: -157}
---- !u!114 &5169149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5169141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &143036376
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +296,9 @@ GameObject:
   - component: {fileID: 143036379}
   - component: {fileID: 143036378}
   - component: {fileID: 143036380}
-  m_Layer: 5
+  - component: {fileID: 143036381}
+  - component: {fileID: 143036382}
+  m_Layer: 10
   m_Name: FinalPlace3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +313,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143036376}
   m_LocalRotation: {x: 0, y: 0, z: -0.034899585, w: 0.99939084}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1649216572}
@@ -391,8 +374,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5e9b7949782fc4997dbd4815e12978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlacedElementNumber: 2
   Type: 1
+--- !u!60 &143036381
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143036376}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 120, y: 178}
+      - {x: -142, y: 165}
+      - {x: -124, y: -170}
+      - {x: 138, y: -157}
+--- !u!114 &143036382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143036376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649216575}
+          m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+          m_MethodName: QuessionHovered
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649216575}
+          m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+          m_MethodName: QuessionUnHovered
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &369585398
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,9 +538,8 @@ GameObject:
   - component: {fileID: 564875699}
   - component: {fileID: 564875702}
   - component: {fileID: 564875703}
-  - component: {fileID: 564875705}
   - component: {fileID: 564875704}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: StartPlace5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +554,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564875697}
   m_LocalRotation: {x: 0, y: 0, z: 0.043619405, w: 0.9990483}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 0.92, y: 0.92, z: 1}
   m_Children: []
   m_Father: {fileID: 1649216572}
@@ -581,7 +636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5e9b7949782fc4997dbd4815e12978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlacedElementNumber: 0
   Type: 0
 --- !u!95 &564875703
 Animator:
@@ -631,23 +685,6 @@ PolygonCollider2D:
       - {x: -142, y: 165}
       - {x: -124, y: -170}
       - {x: 138, y: -157}
---- !u!114 &564875705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564875697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &720580353
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,9 +782,8 @@ GameObject:
   - component: {fileID: 951989123}
   - component: {fileID: 951989126}
   - component: {fileID: 951989127}
-  - component: {fileID: 951989129}
   - component: {fileID: 951989128}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: StartPlace4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +798,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951989121}
   m_LocalRotation: {x: 0, y: 0, z: -0.12186928, w: 0.9925462}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 0.92, y: 0.92, z: 1}
   m_Children: []
   m_Father: {fileID: 1649216572}
@@ -844,7 +880,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5e9b7949782fc4997dbd4815e12978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlacedElementNumber: 0
   Type: 0
 --- !u!95 &951989127
 Animator:
@@ -894,23 +929,6 @@ PolygonCollider2D:
       - {x: -142, y: 165}
       - {x: -124, y: -170}
       - {x: 138, y: -157}
---- !u!114 &951989129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951989121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &1211585936
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,7 +941,9 @@ GameObject:
   - component: {fileID: 1211585939}
   - component: {fileID: 1211585938}
   - component: {fileID: 1211585940}
-  m_Layer: 5
+  - component: {fileID: 1211585941}
+  - component: {fileID: 1211585942}
+  m_Layer: 10
   m_Name: FinalPlace2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -938,7 +958,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211585936}
   m_LocalRotation: {x: 0, y: 0, z: 0.026176924, w: 0.99965733}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1649216572}
@@ -999,8 +1019,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5e9b7949782fc4997dbd4815e12978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlacedElementNumber: 1
   Type: 1
+--- !u!60 &1211585941
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211585936}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 120, y: 178}
+      - {x: -142, y: 165}
+      - {x: -124, y: -170}
+      - {x: 138, y: -157}
+--- !u!114 &1211585942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211585936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649216575}
+          m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+          m_MethodName: QuessionHovered
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649216575}
+          m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+          m_MethodName: QuessionUnHovered
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1219883096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,7 +1106,9 @@ GameObject:
   - component: {fileID: 1219883099}
   - component: {fileID: 1219883098}
   - component: {fileID: 1219883100}
-  m_Layer: 5
+  - component: {fileID: 1219883101}
+  - component: {fileID: 1219883102}
+  m_Layer: 10
   m_Name: FinalPlace1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1028,7 +1123,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219883096}
   m_LocalRotation: {x: 0, y: 0, z: -0.026176924, w: 0.99965733}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1649216572}
@@ -1089,8 +1184,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5e9b7949782fc4997dbd4815e12978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlacedElementNumber: 0
   Type: 1
+--- !u!60 &1219883101
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219883096}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 120, y: 178}
+      - {x: -142, y: 165}
+      - {x: -124, y: -170}
+      - {x: 138, y: -157}
+--- !u!114 &1219883102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219883096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649216575}
+          m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+          m_MethodName: QuessionHovered
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649216575}
+          m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+          m_MethodName: QuessionUnHovered
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1312385807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,7 +1437,9 @@ GameObject:
   - component: {fileID: 1447815291}
   - component: {fileID: 1447815290}
   - component: {fileID: 1447815292}
-  m_Layer: 5
+  - component: {fileID: 1447815293}
+  - component: {fileID: 1447815294}
+  m_Layer: 10
   m_Name: FinalPlace5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1284,7 +1454,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447815288}
   m_LocalRotation: {x: 0, y: 0, z: -0.026176924, w: 0.99965733}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1649216572}
@@ -1345,8 +1515,280 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5e9b7949782fc4997dbd4815e12978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlacedElementNumber: 4
   Type: 1
+--- !u!60 &1447815293
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447815288}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 120, y: 178}
+      - {x: -142, y: 165}
+      - {x: -124, y: -170}
+      - {x: 138, y: -157}
+--- !u!114 &1447815294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447815288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649216575}
+          m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+          m_MethodName: QuessionHovered
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649216575}
+          m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+          m_MethodName: QuessionUnHovered
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &1499931375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1499931376}
+  - component: {fileID: 1499931379}
+  - component: {fileID: 1499931378}
+  - component: {fileID: 1499931377}
+  m_Layer: 5
+  m_Name: Next
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1499931376
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499931375}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1588423747}
+  m_Father: {fileID: 1649216572}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 728.1, y: 417}
+  m_SizeDelta: {x: 342.19122, y: 64.16086}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1499931377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499931375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1499931378}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1499931378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499931375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1499931379
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499931375}
+  m_CullTransparentMesh: 0
+--- !u!1 &1588423746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1588423747}
+  - component: {fileID: 1588423749}
+  - component: {fileID: 1588423748}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1588423747
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588423746}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1499931376}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1588423748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588423746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 42
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 42
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Next
+--- !u!222 &1588423749
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588423746}
+  m_CullTransparentMesh: 0
 --- !u!1 &1649216571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,6 +1829,7 @@ RectTransform:
   - {fileID: 143036377}
   - {fileID: 1888157322}
   - {fileID: 1447815289}
+  - {fileID: 1499931376}
   m_Father: {fileID: 1359931507}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1409,7 +1852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1457,6 +1900,7 @@ MonoBehaviour:
   - {fileID: 143036380}
   - {fileID: 1888157325}
   - {fileID: 1447815292}
+  NextButton: {fileID: 1499931375}
 --- !u!1 &1730005523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,9 +1915,8 @@ GameObject:
   - component: {fileID: 1730005525}
   - component: {fileID: 1730005528}
   - component: {fileID: 1730005529}
-  - component: {fileID: 1730005531}
   - component: {fileID: 1730005530}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: StartPlace2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1488,7 +1931,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730005523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 0.92, y: 0.92, z: 1}
   m_Children: []
   m_Father: {fileID: 1649216572}
@@ -1570,7 +2013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5e9b7949782fc4997dbd4815e12978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlacedElementNumber: 0
   Type: 0
 --- !u!95 &1730005529
 Animator:
@@ -1620,23 +2062,6 @@ PolygonCollider2D:
       - {x: -142, y: 165}
       - {x: -124, y: -170}
       - {x: 138, y: -157}
---- !u!114 &1730005531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1730005523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &1888157321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,7 +2074,9 @@ GameObject:
   - component: {fileID: 1888157324}
   - component: {fileID: 1888157323}
   - component: {fileID: 1888157325}
-  m_Layer: 5
+  - component: {fileID: 1888157326}
+  - component: {fileID: 1888157327}
+  m_Layer: 10
   m_Name: FinalPlace4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1664,7 +2091,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888157321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1649216572}
@@ -1725,8 +2152,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5e9b7949782fc4997dbd4815e12978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlacedElementNumber: 3
   Type: 1
+--- !u!60 &1888157326
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888157321}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 120, y: 178}
+      - {x: -142, y: 165}
+      - {x: -124, y: -170}
+      - {x: 138, y: -157}
+--- !u!114 &1888157327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888157321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649216575}
+          m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+          m_MethodName: QuessionHovered
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1649216575}
+          m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+          m_MethodName: QuessionUnHovered
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1943284728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,9 +2241,8 @@ GameObject:
   - component: {fileID: 1943284730}
   - component: {fileID: 1943284733}
   - component: {fileID: 1943284734}
-  - component: {fileID: 1943284736}
   - component: {fileID: 1943284737}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: StartPlace1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1758,7 +2257,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943284728}
   m_LocalRotation: {x: 0, y: 0, z: 0.043619405, w: 0.9990483}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 0.92, y: 0.92, z: 1}
   m_Children: []
   m_Father: {fileID: 1649216572}
@@ -1840,7 +2339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5e9b7949782fc4997dbd4815e12978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlacedElementNumber: 0
   Type: 0
 --- !u!95 &1943284734
 Animator:
@@ -1861,23 +2359,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1943284736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943284728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!60 &1943284737
 PolygonCollider2D:
   m_ObjectHideFlags: 0
