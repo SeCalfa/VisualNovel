@@ -2160,7 +2160,7 @@ MonoBehaviour:
   - {fileID: 8388310431346040389, guid: 7505d166853731e44886637b3ff2cde2, type: 3}
   backgroundAlphaSpeed: 0.0086
   dialogPanelAlphaSpeed: 0.0217
-  nextLevelName: Plansza4
+  nextLevelName: Puzzle
   curve:
     serializedVersion: 2
     m_Curve: []
@@ -3204,7 +3204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2132328586
 SpriteRenderer:
   m_ObjectHideFlags: 0

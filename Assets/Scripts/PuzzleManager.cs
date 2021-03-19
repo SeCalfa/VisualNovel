@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PuzzleManager : MonoBehaviour
     internal PuzzleElements[] Places = null;
     [SerializeField]
     private GameObject NextButton = null;
+    [SerializeField]
+    private string NextLevel = null;
 
     internal List<bool> PlantedList = new List<bool>() { false, false, false, false, false };
     internal List<int> PhotosPlace = new List<int>() { -1, -1, -1, -1, -1 };
@@ -29,6 +32,7 @@ public class PuzzleManager : MonoBehaviour
     {
         self = this;
         NextButton.SetActive(false);
+        NextButton.GetComponent<Button>().onClick.AddListener(Next);
     }
 
     private void Update()
@@ -69,6 +73,11 @@ public class PuzzleManager : MonoBehaviour
             NextButton.SetActive(true);
         else
             NextButton.SetActive(false);
+    }
+
+    private void Next()
+    {
+        SceneManager.LoadScene(NextLevel);
     }
 
 }

@@ -1901,6 +1901,7 @@ MonoBehaviour:
   - {fileID: 1888157325}
   - {fileID: 1447815292}
   NextButton: {fileID: 1499931375}
+  NextLevel: Plansza4
 --- !u!1 &1730005523
 GameObject:
   m_ObjectHideFlags: 0
