@@ -1259,7 +1259,7 @@ MonoBehaviour:
   characters: []
   backgroundAlphaSpeed: 0.0086
   dialogPanelAlphaSpeed: 0.0217
-  nextLevelName: BGdemo
+  nextLevelName: Plansza14
   curve:
     serializedVersion: 2
     m_Curve: []

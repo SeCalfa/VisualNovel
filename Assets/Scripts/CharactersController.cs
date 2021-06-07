@@ -88,7 +88,7 @@ public class CharactersController : MonoBehaviour
             transform.localPosition = Vector3.Lerp(endLocation, endLocationWhileTalking, Mathf.Clamp(sizeAlpha, 0, 1));
             transform.localScale = Vector3.Lerp(startScale, endScaleWhileTalking, Mathf.Clamp(sizeAlpha, 0, 1));
 
-            GetComponent<Image>().sprite = Emotion.EmotionTypes[0]; // Return to default emotion
+            //GetComponent<Image>().sprite = Emotion.EmotionTypes[0]; // Return to default emotion
         }
     }
 

@@ -62,12 +62,16 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetInt("Plansza11", 0);
             PlayerPrefs.SetInt("Plansza12", 0);
             PlayerPrefs.SetInt("Plansza13", 0);
+            PlayerPrefs.SetInt("Plansza14", 0);
+            PlayerPrefs.SetInt("Plansza15", 0);
+            PlayerPrefs.SetInt("Plansza16", 0);
+            PlayerPrefs.SetInt("Plansza17", 0);
         }
     }
 
     private void InteractibleLevels()
     {
-        for (int i = 3; i < 14; i++)
+        for (int i = 3; i < 17; i++)
         {
             if (PlayerPrefs.GetInt("Plansza" + i.ToString()) == 0)
             {

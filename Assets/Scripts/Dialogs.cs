@@ -20,7 +20,11 @@ public class Dialogs : MonoBehaviour
         Plansza10,
         Plansza11,
         Plansza12,
-        Plansza13
+        Plansza13,
+        Plansza14,
+        Plansza15,
+        Plansza16,
+        Plansza17
     };
 
     [Header("Objects")]
@@ -191,6 +195,11 @@ public class Dialogs : MonoBehaviour
         else if (levelPreset == LevelDialogQueue.Plansza13)
         {
             nameMarkText.text = "Bohater";
+            StartCoroutine(NameMarkAppear());
+        }
+        else if (levelPreset == LevelDialogQueue.Plansza14)
+        {
+            nameMarkText.text = "Profesor Antos";
             StartCoroutine(NameMarkAppear());
         }
     }
@@ -1051,7 +1060,7 @@ public class Dialogs : MonoBehaviour
                         allCharactersInScene["Czesław"].GetComponent<CharactersController>().isLeave = true;
                         allCharactersInScene.Remove("Czesław");
                     }
-                    else if(dialogRead == 8)
+                    else if (dialogRead == 8)
                     {
                         FindObjectOfType<SpriteElementFade>().ImageAppear();
                     }
@@ -1083,7 +1092,7 @@ public class Dialogs : MonoBehaviour
                         StartCoroutine(NameMarkDisappear());
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
                     }
-                    else if(dialogRead == 19)
+                    else if (dialogRead == 19)
                     {
                         FindObjectOfType<SpriteElementFade>().ImageDisappear();
                     }
@@ -1732,7 +1741,7 @@ public class Dialogs : MonoBehaviour
 
                 case LevelDialogQueue.Plansza13:
                     dialogRead += 1;
-    
+
                     if (dialogRead == 1)
                     {
                         StartCoroutine(NameMarkDisappear());
@@ -1759,6 +1768,392 @@ public class Dialogs : MonoBehaviour
                     break;
 
                 #endregion
+
+                #region Plansza14
+
+                case LevelDialogQueue.Plansza14:
+                    dialogRead += 1;
+
+                    if (dialogRead == 1)
+                    {
+                        nameMarkText.text = "Nikolai";
+                        PlayerPrefs.SetInt("Plansza14", 1);
+                    }
+                    else if (dialogRead == 2)
+                    {
+                        nameMarkText.text = "Bohater";
+                    }
+                    else if (dialogRead == 3)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                    }
+                    else if (dialogRead == 5)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Profesor Antos";
+                    }
+                    else if (dialogRead == 6)
+                    {
+                        nameMarkText.text = "Nikolai";
+                    }
+                    else if (dialogRead == 7)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                    }
+                    else if (dialogRead == 8)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Profesor Antos";
+                    }
+                    else if (dialogRead == 9)
+                    {
+                        nameMarkText.text = "Bohater";
+                    }
+                    else if (dialogRead == 10)
+                    {
+                        nameMarkText.text = "Profesor Antos";
+                    }
+                    else if (dialogRead == 11)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                    }
+                    else if (dialogRead == 12)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Korav'ye";
+                    }
+                    else if (dialogRead == 13)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                    }
+                    else if (dialogRead == 23)
+                    {
+                        fade.FadeAppear(nextLevelName);
+                    }
+
+                    break;
+
+                #endregion
+
+                #region Plansza15
+
+                case LevelDialogQueue.Plansza15:
+                    dialogRead += 1;
+
+                    if (dialogRead == 1)
+                    {
+                        PlayerPrefs.SetInt("Plansza15", 1);
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Manya";
+                    }
+                    else if (dialogRead == 2)
+                    {
+                        nameMarkText.text = "Nikolai";
+                    }
+                    else if (dialogRead == 3)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                    }
+                    else if (dialogRead == 4)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Manya";
+                    }
+                    else if (dialogRead == 5)
+                    {
+                        nameMarkText.text = "Nikolai";
+                    }
+                    else if (dialogRead == 6)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                    }
+                    else if (dialogRead == 7)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Nikolai";
+                    }
+                    else if (dialogRead == 8)
+                    {
+                        nameMarkText.text = "Profesor Antos";
+                    }
+                    else if (dialogRead == 9)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                    }
+                    else if (dialogRead == 10)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Nikolai";
+                    }
+                    else if (dialogRead == 11)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                    }
+                    else if (dialogRead == 12)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Profesor Antos";
+                    }
+                    else if (dialogRead == 13)
+                    {
+                        nameMarkText.text = "Nikolai";
+                    }
+                    else if (dialogRead == 14)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                    }
+                    else if (dialogRead == 19)
+                    {
+                        fade.BlackFadeAppear(true, nextLevelName);
+                    }
+
+                    break;
+
+                #endregion
+
+                #region Plansza 16
+
+                case LevelDialogQueue.Plansza16:
+                    dialogRead += 1;
+
+                    if (dialogRead == 1)
+                    {
+                        PlayerPrefs.SetInt("Plansza16", 1);
+                    }
+                    else if (dialogRead == 8)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Profesor Antos";
+                        allCharactersInScene.Add("Profesor", SpawnCharacter(characters[0], leftSpawnPoint, endLocLeft15, false));
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = true;
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isLeftSide = true;
+                    }
+                    else if (dialogRead == 9)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 12)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Manya";
+                        allCharactersInScene.Add("Manya", SpawnCharacter(characters[1], leftSpawnPoint, endLocLeft2, false));
+                        allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
+                        allCharactersInScene["Manya"].GetComponent<CharactersController>().isLeftSide = true;
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isNewLocationActive = true;
+                    }
+                    else if (dialogRead == 13)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                        allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 15)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Nikolai";
+                        allCharactersInScene.Add("Nikolai", SpawnCharacter(characters[2], rightSpawnPoint, endLocRight15, false));
+                        allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isTalking = true;
+                        allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isLeftSide = false;
+                    }
+                    else if (dialogRead == 16)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                        allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 17)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Manya";
+                        allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
+                    }
+                    else if (dialogRead == 18)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                        allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 19)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Manya";
+                        allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
+                    }
+                    else if (dialogRead == 20)
+                    {
+                        nameMarkText.text = "Profesor Antos";
+                        allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = false;
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = true;
+                    }
+                    else if (dialogRead == 21)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 22)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Nikolai";
+                        allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isTalking = true;
+                    }
+                    else if (dialogRead == 23)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                        allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 24)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Profesor Antos";
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = true;
+                    }
+                    else if (dialogRead == 25)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 26)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Profesor Antos";
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = true;
+                    }
+                    else if (dialogRead == 27)
+                    {
+                        nameMarkText.text = "Bohater";
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 28)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                    }
+                    else if (dialogRead == 29)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Bohater";
+                    }
+                    else if (dialogRead == 30)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                    }
+                    else if (dialogRead == 31)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Korav'ye";
+                        allCharactersInScene.Add("Korav'ye", SpawnCharacter(characters[3], rightSpawnPoint, endLocRight2, false));
+                        allCharactersInScene["Korav'ye"].GetComponent<CharactersController>().isTalking = true;
+                        allCharactersInScene["Korav'ye"].GetComponent<CharactersController>().isLeftSide = false;
+                        allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isNewLocationActive = true;
+                    }
+                    else if (dialogRead == 32)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                        allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isNewLocationActive = false;
+                        allCharactersInScene["Korav'ye"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 35)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Profesor Antos";
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = true;
+                    }
+                    else if (dialogRead == 36)
+                    {
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
+                        fade.BlackFadeAppear(true, nextLevelName);
+                    }
+
+                    break;
+
+                #endregion
+
+                #region 17
+
+                case LevelDialogQueue.Plansza17:
+                    dialogRead += 1;
+
+                    if (dialogRead == 1)
+                    {
+                        PlayerPrefs.SetInt("Plansza16", 1);
+                    }
+                    else if (dialogRead == 4)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Profesor Antos";
+                        allCharactersInScene.Add("Profesor", SpawnCharacter(characters[0], leftSpawnPoint, endLocLeft15, false));
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = true;
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isLeftSide = true;
+                    }
+                    else if (dialogRead == 5)
+                    {
+                        nameMarkText.text = "Manya";
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
+                        allCharactersInScene.Add("Manya", SpawnCharacter(characters[1], leftSpawnPoint, endLocLeft2, false));
+                        allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
+                        allCharactersInScene["Manya"].GetComponent<CharactersController>().isLeftSide = true;
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isNewLocationActive = true;
+                    }
+                    else if (dialogRead == 6)
+                    {
+                        nameMarkText.text = "Profesor Antos";
+                        allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = false;
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = true;
+                    }
+                    else if (dialogRead == 7)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 18)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Bohater";
+                    }
+                    else if (dialogRead == 19)
+                    {
+                        nameMarkText.text = "Nikolai";
+                        allCharactersInScene.Add("Nikolai", SpawnCharacter(characters[2], rightSpawnPoint, endLocRight15, false));
+                        allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isTalking = true;
+                        allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isLeftSide = false;
+                    }
+                    else if (dialogRead == 20)
+                    {
+                        nameMarkText.text = "Bohater";
+                        allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 21)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                    }
+                    else if (dialogRead == 23)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Nikolai";
+                        allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isTalking = true;
+                    }
+                    else if (dialogRead == 24)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                        allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 27)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "Profesor Antos";
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = true;
+                    }
+                    else if (dialogRead == 28)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 29)
+                    {
+                        fade.BlackFadeAppear(true, nextLevelName);
+                    }
+
+                    break;
+
+                #endregion
+
             }
         }
     }
