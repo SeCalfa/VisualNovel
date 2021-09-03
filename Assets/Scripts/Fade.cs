@@ -11,17 +11,18 @@ public class Fade : MonoBehaviour
     [SerializeField] private bool isMainMenu = false;
     [SerializeField] private Transform fadeAfterGameStart = null;
 
+    [SerializeField]
+    private Image fadeOnStart;
+
     private float fadeAlpha = 0;
 
     internal bool isFadeDisappeared = false;
     internal bool isNextLevelActive = true;
 
-    private void Start()
+    private void Awake()
     {
-        if(SceneManager.GetActiveScene().name == "MainMenu")
-        {
-            //FadeDisappear();
-        }
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+            StartCoroutine(FadeOnStart());
     }
 
     internal void FadeAppear(string sceneName)
@@ -133,4 +134,20 @@ public class Fade : MonoBehaviour
         if (fadeAlpha > 0)
             goto Reset;
     }
+
+    // --------
+
+    private IEnumerator FadeOnStart()
+    {
+        fadeOnStart.color = new Color(0, 0, 0, 1);
+
+    Reset:
+        yield return new WaitForSecondsRealtime(0.01f);
+        fadeOnStart.color = new Color(0, 0, 0, fadeOnStart.color.a - 0.01f);
+        if (fadeOnStart.color.a > 0)
+            goto Reset;
+
+        Destroy(fadeOnStart);
+    }
+
 }

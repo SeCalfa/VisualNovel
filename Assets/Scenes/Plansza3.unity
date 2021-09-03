@@ -218,6 +218,8 @@ GameObject:
   - component: {fileID: 149955786}
   - component: {fileID: 149955785}
   - component: {fileID: 149955784}
+  - component: {fileID: 149955789}
+  - component: {fileID: 149955788}
   m_Layer: 5
   m_Name: Choise1
   m_TagString: Untagged
@@ -238,7 +240,7 @@ RectTransform:
   m_Children:
   - {fileID: 347434730}
   m_Father: {fileID: 1404065444}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -357,6 +359,154 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149955782}
   m_CullTransparentMesh: 0
+--- !u!114 &149955788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149955782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &149955789
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149955782}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 10
+  m_TargetDisplay: 0
+--- !u!1 &250635872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 250635877}
+  - component: {fileID: 250635876}
+  - component: {fileID: 250635875}
+  - component: {fileID: 250635874}
+  - component: {fileID: 250635873}
+  m_Layer: 5
+  m_Name: Dog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &250635873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250635872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa9afaba48aad74bbe22da04ac88190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!223 &250635874
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250635872}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &250635875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250635872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 701df713036b6fb44aa4690ad8c8bcde, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &250635876
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250635872}
+  m_CullTransparentMesh: 0
+--- !u!224 &250635877
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250635872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1404065444}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &326336256
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +576,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1404065444}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -512,7 +662,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1cc85a87ff269bd41a1a1a89be6202c5, type: 3}
+    m_Font: {fileID: 12800000, guid: 71510907489c7ea4495dcdccaa52ae32, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -896,10 +1046,10 @@ RectTransform:
   m_Father: {fileID: 1404065444}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &668151525
 MonoBehaviour:
@@ -1018,7 +1168,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1cc85a87ff269bd41a1a1a89be6202c5, type: 3}
+    m_Font: {fileID: 12800000, guid: 71510907489c7ea4495dcdccaa52ae32, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -1210,6 +1360,116 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &793347882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 793347883}
+  - component: {fileID: 793347887}
+  - component: {fileID: 793347886}
+  - component: {fileID: 793347885}
+  - component: {fileID: 793347884}
+  m_Layer: 5
+  m_Name: Background3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &793347883
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793347882}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1404065444}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &793347884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793347882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa9afaba48aad74bbe22da04ac88190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!223 &793347885
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793347882}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &793347886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793347882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: fde781225d7918145a4ae065d1cb5e8f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &793347887
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793347882}
+  m_CullTransparentMesh: 0
 --- !u!1 &976643124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,8 +1532,8 @@ MonoBehaviour:
     New Text New Text New Text New Text New Text New Text New Text New Text New Text
     New Text '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5c28f01d24603e4e9ac58a3816f8e8a, type: 2}
+  m_sharedMaterial: {fileID: 3156893464553202503, guid: d5c28f01d24603e4e9ac58a3816f8e8a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1830,9 +2090,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 32e017d6908c5c8458e28242dd4a4161, type: 3}
     m_FontSize: 36
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 300
@@ -1868,7 +2128,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -7.81, y: 7.82}
-  m_SizeDelta: {x: 361.26562, y: 45.632294}
+  m_SizeDelta: {x: 361.26562, y: 52.7901}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1404065440
 GameObject:
@@ -1885,6 +2145,8 @@ GameObject:
   - component: {fileID: 1404065445}
   - component: {fileID: 1404065446}
   - component: {fileID: 1404065447}
+  - component: {fileID: 1404065448}
+  - component: {fileID: 1404065449}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1965,6 +2227,8 @@ RectTransform:
   m_Children:
   - {fileID: 668151524}
   - {fileID: 1864329932}
+  - {fileID: 250635877}
+  - {fileID: 793347883}
   - {fileID: 2068753449}
   - {fileID: 149955783}
   - {fileID: 2119179187}
@@ -2008,150 +2272,157 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 1829328451}
   choise1: {fileID: 149955782}
   choise2: {fileID: 2119179182}
+  choise3: {fileID: 0}
   choise1Text: {fileID: 347434731}
   choise2Text: {fileID: 729899985}
+  choise3Text: {fileID: 0}
   note: {fileID: 0}
+  staticAudio: {fileID: 0}
+  dynamicAudio: {fileID: 1404065449}
+  backgroundElementFade1: {fileID: 1864329933}
+  backgroundElementFade2: {fileID: 250635873}
+  backgroundElementFade3: {fileID: 793347884}
+  isChooseButtonDestroyed: 0
   isDialogPage: 1
   levelPreset: 0
   backgroundTexts: []
   dialogTexts:
   - "Zamie\u0107 z wolna ust\u0119puje. Moim oczom ukazuje si\u0119 le\u017C\u0105ca
-    na lodowym pustkowiu niewielka osada Czukcz\xF3w."
-  - "Plemienia, kt\xF3re od lat zamieszkuje te ziemie. "
-  - "Niskie postacie wychodz\u0105 z ma\u0142ych, niemal identycznych namiot\xF3w
-    przygl\u0105daj\u0105c si\u0119 nam nie\u015Bmia\u0142o, kiedy schodzimy z sa\u0144.
-    Co niekt\xF3rzy machaj\u0105 nam na przywitanie."
-  - "Nareszcie mo\u017Cna troch\u0119 rozprostowa\u0107 nogi! Jeszcze chwila i przymarz\u0142bym
+    na lodowym pustkowiu niewielka osada Czukcz\xF3w. Plemienia, kt\xF3re od lat
+    zamieszkuje te ziemie."
+  - "Niskie postacie wychodz\u0105 z ma\u0142ych, niemal identycznych namiot\xF3w.
+    Przygl\u0105daj\u0105 si\u0119 nam nie\u015Bmia\u0142o, kiedy schodzimy z sa\u0144.
+    Ich husky witaj\u0105 nas dono\u015Bnym szczekaniem."
+  - "Nareszcie mo\u017Cna rozprostowa\u0107 nogi! Jeszcze chwila i przymarz\u0142bym
     do tego cholerstwa."
-  - "Nikolai, pom\xF3\u017C mi zej\u015B\u0107."
-  - "Rosjanin kiwa g\u0142ow\u0105, po czym podchodzi do sa\u0144, na kt\xF3rym siedzi
-    Antos. "
-  - "Namioty musz\u0105 by\u0107 solidnie wykonane, je\u015Bli wytrzymuj\u0105 na
-    \u015Brodku tej \u015Bnie\u017Cnej pustyni."
-  - "Tak jak podstawowe wyposa\u017Cenie naszej armii."
-  - "Nie jest to szczyt osi\u0105gni\u0119\u0107 architektonicznych, ale spe\u0142nia
-    swoje zadanie\u2026"
-  - "Masz moj\u0105 morfin\u0119? Noga znowu daje o sobie zna\u0107."
-  - "Jest w plecaku, razem z pa\u0144skimi notatkami."
-  - "Profesor wyci\u0105ga z plecaka ma\u0142\u0105 tubk\u0119 zako\u0144czon\u0105
-    ig\u0142\u0105. Wbija j\u0105 w praw\u0105 nog\u0119. Z jego twarzy po chwili
-    schodzi grymas b\xF3lu."
-  - "Moj\u0105 uwag\u0119 przyci\u0105ga zbli\u017Caj\u0105cy si\u0119 do nas szary
-    pies rasy husky. Zwierz\u0119 ostro\u017Cnie w\u0105cha moj\u0105 d\u0142o\u0144. "
+  - "Nikolaj, pom\xF3\u017C mi zej\u015B\u0107. Noga znowu daje o sobie zna\u0107."
+  - "Nikolaj... Arogancki wojskowy przedstawi\u0142 mi si\u0119 wcze\u015Bniej jako
+    przyjaciel Antosa. To jemu zawdzi\u0119czamy pozyskanie pozwolenia na zorganizowanie
+    wyprawy."
+  - "Podaj mi prosz\u0119 morfin\u0119. Jest w plecaku, razem z moimi notatkami."
+  - "Nikolaj przytakuje bez s\u0142owa, a nast\u0119pnie wyci\u0105ga z plecaka ma\u0142\u0105
+    fiolk\u0119 z morfin\u0105 i wbija profesorowi ig\u0142\u0119 w nog\u0119."
+  - "Namioty Czukcz\xF3w musz\u0105 by\u0107 solidnie wykonane, je\u015Bli wytrzymuj\u0105
+    na \u015Brodku tej \u015Bnie\u017Cnej pustyni."
+  - "Nie jest to \xF3smy cud \u015Bwiata, ale spe\u0142nia swoje zadanie\u2026 och!"
+  - "Wielki szary pies okr\u0105\u017Ca profesora. Zbli\u017Ca si\u0119 do mnie i
+    ostro\u017Cnie w\u0105cha moj\u0105 d\u0142o\u0144."
   - "Schylam si\u0119, by pog\u0142aska\u0107 czworonoga. Pies usi\u0142uje dosta\u0107
-    si\u0119 do jednej z kieszeni mojego p\u0142aszcza, w kt\xF3rej znajduj\u0105
-    si\u0119 resztki suszonej wo\u0142owiny. "
-  - "Kiedy si\u0119 ni\u0105 dziel\u0119, zwierz\u0119 odpowiada dono\u015Bnym szczekaniem."
-  - "Wabi si\u0119 Sabr."
+    si\u0119 do kieszeni p\u0142aszcza, w kt\xF3rej znajduj\u0105 si\u0119 resztki
+    suszonej wo\u0142owiny."
+  - "Wabi si\u0119 Sabr, nie musisz si\u0119 go obawia\u0107."
   - "\u015Aniady m\u0119\u017Cczyzna przywo\u0142uje do siebie psa g\u0142o\u015Bnym
-    gwizdem."
-  - "W imieniu szamana i moim w\u0142asnym mi\u0142o mi was go\u015Bci\u0107 w naszej
-    spo\u0142eczno\u015Bci. Nazywam si\u0119 Korav\u2019ye. Waszymi psami zajm\u0105
-    si\u0119 moi pobratymcy."
+    gwizdem. Zaskakuje mnie, jak dobrze m\xF3wi po rosyjsku."
+  - "W imieniu szamana mi\u0142o mi was powita\u0107 w naszej spo\u0142eczno\u015Bci.
+    Nazywam si\u0119 Korav\u2019ye. Waszymi psami zajm\u0105 si\u0119 moi pobratymcy."
   - "Profesor W\u0142adys\u0142aw Antos, kierownik wyprawy. A to moi towarzysze,
-    Wiktor Staszewski i Nikolai Morozow. "
+    Wiktor Staszewski i Nikolaj Morozow."
   - "Jak wam min\u0119\u0142a podr\xF3\u017C?"
-  - "A\u017C do wioski pe\u0142nej brudas\xF3w sz\u0142o nam ca\u0142kiem nie\u017Ale..."
-  - 'Antos mierzy wzrokiem Nikolaia. '
-  - "Przepraszam za zachowanie mojego kolegi, wszyscy jeste\u015Bmy zm\u0119czeni
-    podr\xF3\u017C\u0105."
-  - "Rozumiem. Pewnie chcecie teraz rozpakowa\u0107 sw\xF3j sprz\u0119t. Szaman ko\u0144czy
-    przygotowywa\u0107 zio\u0142a na Rytua\u0142 Oczyszczenia. Przyniesie wam ukojenie
-    po podr\xF3\u017Cy."
-  - "Czy wygl\u0105dam na star\u0105 bab\u0119, kt\xF3ra za\u017Cywa zi\xF3\u0142ka
-    na uspokojenie?"
-  - "Wygl\u0105dem pasujesz raczej do tych, co nie wstydz\u0105 si\u0119 mordu. My
-    szybko nie zapomnimy o czynach armii."
-  - "Nazywasz mnie morderc\u0105? "
-  - "Nikolai pewnie rusza w kierunku Korav\u2019ye, zaciskaj\u0105c pi\u0119\u015Bci.
-    Profesor natychmiast zagradza mu drog\u0119."
-  - "Nikolai, wystarczy! To s\u0105 nasi gospodarze. Nie musisz bra\u0107 udzia\u0142u
-    w rytuale, je\u015Bli nie chcesz."
-  - "Nikolai z trudem t\u0142umi wybuch emocji. Mamrocz\u0105c co\u015B pod nosem,
-    zabiera z sa\u0144 sw\xF3j baga\u017C, po czym odchodzi z dala od podejrzliwie
-    przygl\u0105daj\u0105cych mu si\u0119 mieszka\u0144c\xF3w wioski."
+  - "A\u017C do wioski pe\u0142nej brudas\xF3w sz\u0142o nam ca\u0142kiem nie\u017Ale\u2026"
+  - "Antos spogl\u0105da karc\u0105co na Nikolaja."
+  - "Przepraszam za zachowanie mojego kolegi, wszyscy jeste\u015Bmy zm\u0119czeni."
+  - "Rozumiem. Pewnie chcecie rozpakowa\u0107 sw\xF3j sprz\u0119t. Szaman przygotowuje
+    zio\u0142a na Rytua\u0142 Oczyszczenia. To nasze tradycyjne powitanie."
+  - "Czy wygl\u0105dam na star\u0105 bab\u0119, kt\xF3ra pija zi\xF3\u0142ka?"
+  - "Rosjanin i Czukcz badaj\u0105 si\u0119 wzrokiem. Postanawiam zmieni\u0107 temat,
+    aby roz\u0142adowa\u0107 napi\u0119cie."
+  - "Macie tutaj spor\u0105 watah\u0119 ps\xF3w. Na pewno nie\u0142atwo je wy\u017Cywi\u0107."
+  - "Korav\u2019ye przenosi na mnie uwag\u0119 i nieco \u0142agodnieje."
+  - "To prawda, psy s\u0105 dla nas bardzo cenne. S\u0105 naszymi stra\u017Cnikami.
+    Chroni\u0105 przed z\u0142ymi duchami."
+  - "Bajeczki dla naiwniak\xF3w\u2026"
+  - "Nikolaj, opanuj si\u0119! To s\u0105 nasi gospodarze. Poza tym nie musisz bra\u0107
+    udzia\u0142u w rytuale, je\u015Bli nie chcesz."
+  - "Nikolaj mamrocz\u0105c co\u015B pod nosem. Zabiera z sa\u0144 sw\xF3j baga\u017C,
+    po czym odchodzi z dala od podejrzliwie przygl\u0105daj\u0105cych mu si\u0119
+    mieszka\u0144c\xF3w wioski."
   - "Jeszcze raz za niego przepraszam. Jest do\u015B\u0107 temperamentny."
-  - "Nie szkodzi. Nie pierwszy raz mam do czynienia z... jemu podobnymi. Gdy b\u0119dzie
-    Pan gotowy, zapraszam do jarangi szamana."
+  - Nie szkodzi. Nie pierwszy raz mam do czynienia z... jemu podobnymi.
+  - "Profesorze, Szaman chce si\u0119 z panem zobaczy\u0107. Gdy b\u0119dzie pan
+    gotowy, zapraszam do jarangi."
   - "Korav\u2019ye wskazuje na namiot wyr\xF3\u017Cniaj\u0105cy si\u0119 spo\u015Br\xF3d
     reszty swoim rozmiarem i zostawia nas samych."
-  - "Nasi gospodarze przez kilkaset lat musieli broni\u0107 swojej niepodleg\u0142o\u015Bci
-    przed rosyjsk\u0105 chciwo\u015Bci\u0105. "
-  - "Uda\u0142o im si\u0119?"
-  - "W pewnym stopniu tak, jednak okupili to niema\u0142ym po\u015Bwi\u0119ceniem.
-    W 1938 NKWD przeprowadzi\u0142o tutaj czystk\u0119, dzieci by\u0142y si\u0142\u0105
-    zabierane z dom\xF3w, a szamani byli s\u0105dzeni jako szpiedzy."
-  - "Wszystkie narody bloku wschodniego dziel\u0105 ten sam los."
-  - "Nikolai jest swego rodzaju \u0142\u0105cznikiem pomi\u0119dzy nami a Zwi\u0105zkiem
-    Radzieckim. Rz\u0105d wsz\u0119dzie musi mie\u0107 swoich ludzi."
-  - "Wydaje si\u0119 by\u0107 z Panem dosy\u0107 blisko."
-  - "Mieli\u015Bmy okazj\u0119 pozna\u0107 si\u0119 w trakcie pechowych dla mnie 
-    wykopalisk. Bada\u0142em osady Scyt\xF3w we wschodniej Ukrainie. \u0179le zabezpieczyli\u015Bmy
-    wykop i osun\u0119\u0142a si\u0119 na mnie ziemia, po czym zosta\u0142a mi ta
-    bolesna pami\u0105tka. Nikolai wyci\u0105gn\u0105\u0142 mnie z zawaliska, mia\u0142em
-    szcz\u0119\u015Bcie, \u017Ce ucierpia\u0142a tylko noga."
-  - "No prosz\u0119, niby komunista, a jednak ma ludzkie odruchy."
-  - "Podczas rozmowy zd\u0105\u017Cyli\u015Bmy dotrze\u0107 do namiotu wskazanego
-    przez Korav\u2019ye."
-  - "Widz\u0119 jednak, \u017Ce to nie jedyne co ci\u0119 zastanawia. Pytaj \u015Bmia\u0142o."
+  - "Jest uprzedzony wobec Czukcz\xF3w... Bra\u0142 udzia\u0142 w dzia\u0142aniach
+    NKWD na tych terenach."
+  - NKWD na Syberii?
+  - "W latach trzydziestych, podczas czystek, NKWD szuka\u0142o tutaj szpieg\xF3w.
+    Czukockie dzieci by\u0142y si\u0142\u0105 odbierane rodzinom, a szamani byli
+    s\u0105dzeni jako zdrajcy."
+  - "Widz\u0119, \u017Ce nie tylko narody bloku wschodniego padaj\u0105 ofiar\u0105
+    terroru\u2026"
+  - Lepiej mu tego nie powtarzaj.
+  - "Spotkali\u015Bmy si\u0119 podczas wykopalisk we wschodniej Ukrainie. Jak zapewne
+    wiesz, rz\u0105d lubi mie\u0107 wsz\u0119dzie swoich agent\xF3w."
+  - "Bada\u0142em osady Scyt\xF3w, a Nikolaj pe\u0142ni\u0142 funkcj\u0119 zaopatrzeniowca
+    i wsparcia logistycznego... Nigdy nie zapomn\u0119 tych wykopalisk."
+  - Czemu?
+  - "\u0179le zabezpieczyli\u015Bmy wykop. Na Nikolaja osun\u0119\u0142a si\u0119
+    ziemia. Gdyby nie moja szybka interwencja, nie by\u0142oby go tutaj."
+  - "Teraz sobie przypominam. Ojciec opowiada\u0142 mi, \u017Ce to tak nabawi\u0142e\u015B
+    si\u0119 kontuzji w nodze, prawda?"
+  - "To niska cena za uratowanie czyjego\u015B \u017Cycia\u2026 Od tamtej pory Nikolaj
+    darzy mnie zaufaniem."
+  - "Wyczuwam, \u017Ce co\u015B ci\u0119 jeszcze zastanawia. Pytaj \u015Bmia\u0142o."
+  - "Pami\u0119taj, \u017Ce zawsze mo\u017Cesz pyta\u0107 mnie o wszystko."
+  - "W tej osadzie \u017Cyje bardzo stary i skryty lud. Uwa\u017Cajmy, aby niczym
+    ich nie obrazi\u0107."
   - "Profesor u\u015Bmiecha si\u0119 i poklepuje mnie po ramieniu. Kiedy znika w
-    jurcie, zaczepia mnie m\u0119\u017Cczyzna nie wygl\u0105daj\u0105cy na miejscowego."
-  - "Po Pa\u0144skim wyrazie twarzy wnioskuj\u0119, \u017Ce podr\xF3\u017C nie by\u0142a
-    przyjemna."
-  - "Nie myli si\u0119 Pan, cholerne sanie nie nale\u017C\u0105 do najwygodniejszych."
+    jurcie szamana, zaczepia mnie m\u0119\u017Cczyzna, kt\xF3ry nie wygl\u0105da
+    na miejscowego."
+  - "Widz\u0119, \u017Ce sanie da\u0142y w ko\u015B\u0107 bardziej ni\u017C temperatura."
+  - "A\u017C tak to wida\u0107?"
+  - "M\u0142ody m\u0119\u017Cczyzna z przewieszonym przez szyj\u0119 aparatem zdejmuje
+    puchow\u0105 r\u0119kawiczk\u0119 i podaje mi r\u0119k\u0119."
   - "Czes\u0142aw Kasprowicz. B\u0119d\u0119 relacjonowa\u0142 wypraw\u0119."
-  - "M\u0119\u017Cczyzna zdejmuje r\u0119kawiczk\u0119 i podaje mi r\u0119k\u0119
-    w ge\u015Bcie powitania."
   - "Wiktor Staszewski, mi\u0142o mi. Miejmy nadziej\u0119, \u017Ce b\u0119dzie Pan
     mia\u0142 sposobno\u015B\u0107 pisa\u0107 o samych sukcesach."
-  - "Na to licz\u0119, moi chlebodawcy nie s\u0105 zbyt wyrozumiali\u2026 Dodatkowo
-    pisz\u0119 niewielki reporta\u017C o rdzennych mieszka\u0144cach tych ziem. Jestem
-    pod wra\u017Ceniem, \u017Ce radz\u0105 sobie tak dobrze w tych nieludzkich warunkach."
-  - "To prawda. Niewiele os\xF3b zdecydowa\u0142oby si\u0119 mieszka\u0107 w krainie,
-    do kt\xF3rej inni s\u0105 wywo\u017Ceni wbrew swojej woli."
-  - "Ci\u0119\u017Cko mi sobie wyobrazi\u0107 przez jakie piek\u0142o przeszli ci
-    ludzie."
-  - "M\xF3j ojciec odbywa\u0142 tu przymusowy pobyt\u2026"
-  - "My\u015Bl o ojcu budzi we mnie t\u0119sknot\u0119. M\xF3j rozm\xF3wca chyba
-    zauwa\u017Ca zmian\u0119 w wyrazie mojej twarzy."
-  - "Przepraszam. Nie chcia\u0142em przywo\u0142ywa\u0107 z\u0142ych wspomnie\u0144."
-  - "Nie szkodzi. Ojciec wr\xF3ci\u0142 po kilku latach do Polski."
-  - Panowie, potrzebna mi pomoc przy saniach!
+  - "Na to licz\u0119, nie chcia\u0142bym zawie\u015B\u0107 profesora. Gdy pokazywa\u0142em
+    mu zdj\u0119cia ruin, by\u0142 niezwykle poruszony. Wspomina\u0142 te\u017C o
+    pa\u0144skim ojcu."
+  - "Wzmianka o Karolu budzi we mnie t\u0119sknot\u0119, kt\xF3r\u0105 natychmiast
+    zauwa\u017Ca Czes\u0142aw."
+  - "Ojciec zosta\u0142 zes\u0142any na Syberi\u0119 za nauczanie po Polsku. Dopiero
+    po kilku latach wr\xF3ci\u0142 do Warszawy."
+  - "Wsp\xF3\u0142czuj\u0119, to musia\u0142o by\u0107 trudne..."
+  - "Niech\u0119tnie kiwam g\u0142ow\u0105.Po chwili k\u0142opotliwej ciszy Czes\u0142aw
+    unosi aparat i robi zdj\u0119cie otaczaj\u0105cych nas namiot\xF3w. B\u0142ysk
+    flesza odbija si\u0119 od bia\u0142ego puchu."
+  - Panowie, potrzebna pomoc przy saniach!
   - "Oho! Dama w opa\u0142ach."
-  - "Reporter u\u015Bmiecha si\u0119, po czym razem ruszamy w stron\u0119 pojazdu."
-  - "Widzimy, jak kobieta zdejmuje ciasno upakowane na saniach przedmioty - liczne
-    wiert\u0142a, pozwijane kable, grube liny. Najwi\u0119ksz\u0105 powierzchni\u0119
-    pojazdu zajmuj\u0105 cz\u0119\u015Bci sk\u0142adanego d\u017Awigu."
+  - "Widzimy, jak kobieta zdejmuje ciasno upakowane na saniach przedmioty -  wiert\u0142a,
+    pozwijane kable, grube liny. Najwi\u0119ksz\u0105 powierzchni\u0119 sa\u0144
+    zajmuj\u0105 cz\u0119\u015Bci sk\u0142adanego d\u017Awigu."
   - "W czym mo\u017Cemy pom\xF3c, Manya?"
-  - "Musz\u0119 sprawdzi\u0107, czy na pewno wszystkie cz\u0119\u015Bci przyjecha\u0142y. 
-    No, prosz\u0119 tak nie sta\u0107 i pom\xF3c mi si\u0119 do nich dosta\u0107.
-    Tylko ostro\u017Cnie, gdzie\u015B w tym majdanie jest dynamit."
-  - Czego konkretnie szukamy?
-  - "Wci\u0105gnika. Je\u017Celi go brakuje, to o jakimkolwiek d\u017Awigu mo\u017Cemy
-    zapomnie\u0107."
-  - "Cho\u0107 spora cz\u0119\u015B\u0107 \u0142adunku opu\u015Bci\u0142a ju\u017C
-    sanie, nie wygl\u0105daj\u0105 one na cho\u0107by po\u0142owicznie rozpakowane,
-    zdaj\u0105 si\u0119 wr\u0119cz ton\u0105\u0107 w skrz\u0119tnie u\u0142o\u017Conych
-    pakunkach."
-  - "Za sob\u0105 s\u0142ysz\u0119 ci\u0119\u017Ckie kroki. Kiedy po chwili do\u0142\u0105czaj\u0105
+  - "Musimy sprawdzi\u0107, czy wszystko przyjecha\u0142o. Musimy by\u0107 gotowi
+    na ka\u017Cd\u0105 sytuacj\u0119... Tylko ostro\u017Cnie, gdzie\u015B w tym majdanie
+    jest dynamit."
+  - "My chyba nie mieli\u015Bmy okazji si\u0119 pozna\u0107. Wiktor Staszewski. Archeolog."
+  - "Manya Yachnotov. In\u017Cynier 6 armii, 111 Dywizja zmechanizowana."
+  - "A tak, Profesor Antos wspomina\u0142, \u017Ce b\u0119dzie z nami in\u017Cynier.
+    Przyjecha\u0142a tu pani razem z Czes\u0142awem?"
+  - "Ta \u2026 tkwimy tu ju\u017C od dobrego tygodnia i ciesz\u0119 si\u0119, \u017Ce
+    w ko\u0144cu b\u0119dziemy mogli wyruszy\u0107."
+  - "Racja, niezbyt rozrywkowa okolica. Czego dok\u0142adnie mamy szuka\u0107?"
+  - "Wci\u0105gnika. Bez niego mo\u017Cemy zapomnie\u0107 o budowie jakiegokolwiek 
+    d\u017Awigu. "
+  - "Reporter znika po drugiej stronie sa\u0144, w milczeniu zaczynamy przerzuca\u0107
+    stosy pakunk\xF3w. Zaskakuje mnie ilo\u015B\u0107 wyposa\u017Cenia, kt\xF3r\u0105
+    tak hojnie obdarowa\u0142o nas wojsko\u2026"
+  - "Za sob\u0105 s\u0142ysz\u0119 ci\u0119\u017Ckie kroki. Kiedy do\u0142\u0105czaj\u0105
     do nich rzucane pod nosem przekle\u0144stwa, nabieram pewno\u015Bci, \u017Ce
-    w nasz\u0105 stron\u0119 zmierza Morozow."
+    w nasz\u0105 stron\u0119 zmierza Nikolaj."
   - "No prosz\u0119, czy\u017Cby o czym\u015B pani zapomnia\u0142a?"
-  - "Nie ma takiej mo\u017Cliwo\u015Bci. Osobi\u015Bcie nadzorowa\u0142am pakowanie
-    tych cholernych sa\u0144!"
-  - "To wyja\u015Bnia tak niechlujny spos\xF3b za\u0142adowania..."
-  - "Je\u017Celi zamierza pan tak sta\u0107, zamiast si\u0119 do czego\u015B przyda\u0107,
-    to prosz\u0119 si\u0119..."
-  - "Reporter wy\u0142ania si\u0119 zza g\xF3ry pakunk\xF3w, oznajmia z szerokim
-    u\u015Bmiechem."
-  - "Znalaz\u0142em. By\u0142 na samym spodzie."
-  - "Irytacja maluj\u0105ca si\u0119 do tej pory na twarzy kobiety, ust\u0119puje
-    miejsca uldze.  Wol\u0119 nie zastanawia\u0107 si\u0119, dok\u0105d mog\u0142aby
-    doprowadzi\u0107 ta burzliwa wymiana zda\u0144, gdyby nie Czes\u0142aw. Napi\u0119cie
-    dodatkowo \u0142agodzi pojawienie si\u0119 profesora. "
-  - "Nikolai doko\u0144czy sprawdzanie sprz\u0119tu."
+  - "Rosjanin wyjmuje zza pazuchy piersi\xF3wk\u0119 i poci\u0105ga spory \u0142yk."
+  - "Nie ma takiej mo\u017Cliwo\u015Bci. Na pewno\u2026"
+  - "Reporter wy\u0142ania si\u0119 zza g\xF3ry pakunk\xF3w, trzymaj\u0105c w d\u0142oni
+    wci\u0105gnik."
+  - "Znalaz\u0142em! By\u0142 na samym spodzie."
+  - "A tyle razym m\xF3wi\u0142am! Wci\u0105gnik musi by\u0107 na wierzchu, co by
+    si\u0119 nie uszkodzi\u0142."
+  - "Irytacj\u0119 na twarzy Mani \u0142agodzi powr\xF3t Antosa."
+  - "Nikolaj, doko\u0144cz sprawdzanie sprz\u0119tu. A my tymczasem\u2026"
   - "Profesor zwraca si\u0119 w nasz\u0105 stron\u0119."
-  - "Szaman chce nas widzie\u0107."
+  - Odwiedzimy szamana..
   characters:
   - {fileID: 3933146148628123448, guid: bedc063a8985d2442b4bed5da3d36b77, type: 3}
   - {fileID: 215678658477559257, guid: c3975f0b3a6eb074cb8d475a9842cfcc, type: 3}
@@ -2160,7 +2431,7 @@ MonoBehaviour:
   - {fileID: 8388310431346040389, guid: 7505d166853731e44886637b3ff2cde2, type: 3}
   backgroundAlphaSpeed: 0.0086
   dialogPanelAlphaSpeed: 0.0217
-  nextLevelName: Puzzle
+  nextLevelName: Plansza4
   curve:
     serializedVersion: 2
     m_Curve: []
@@ -2168,6 +2439,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isBlackFadeAppearOnStart: 0
+  dynamicSounds:
+  - {fileID: 8300000, guid: f5caaed2510210549b584986c2779fd9, type: 3}
+  singleFadeComponent: {fileID: 0}
+  frameFade: {fileID: 0}
 --- !u!114 &1404065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2183,6 +2458,7 @@ MonoBehaviour:
   fade: {fileID: 326336257}
   isMainMenu: 0
   fadeAfterGameStart: {fileID: 0}
+  fadeOnStart: {fileID: 0}
 --- !u!114 &1404065447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2205,6 +2481,198 @@ MonoBehaviour:
   - {fileID: 608181617}
   - {fileID: 1155511899}
   notebook: {fileID: 2132328585}
+--- !u!82 &1404065448
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404065440}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1730d4f2a2da5a74fae4f9ada1d02da7, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.02
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1404065449
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404065440}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!224 &1441041586 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1508094689544559284, guid: 40f6b16685e256e4ba44c2c05f06e9cf, type: 3}
@@ -2566,7 +3034,7 @@ RectTransform:
   - {fileID: 976643125}
   - {fileID: 2023403425}
   m_Father: {fileID: 1404065444}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -2639,7 +3107,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1404065444}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2680,10 +3148,10 @@ RectTransform:
   m_Father: {fileID: 1404065444}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1864329933
 MonoBehaviour:
@@ -2738,7 +3206,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0d767a0d097ea4b40a8e2c43307cd872, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52e52a5d434ea304798b7aa176f916d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2784,7 +3252,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1404065444}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2895,7 +3363,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1404065444}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3049,6 +3517,8 @@ GameObject:
   - component: {fileID: 2119179185}
   - component: {fileID: 2119179184}
   - component: {fileID: 2119179183}
+  - component: {fileID: 2119179189}
+  - component: {fileID: 2119179188}
   m_Layer: 5
   m_Name: Choise2
   m_TagString: Untagged
@@ -3181,13 +3651,51 @@ RectTransform:
   m_Children:
   - {fileID: 729899984}
   m_Father: {fileID: 1404065444}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 850, y: 68}
   m_SizeDelta: {x: 770, y: 137}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2119179188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119179182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &2119179189
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119179182}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 10
+  m_TargetDisplay: 0
 --- !u!1 &2132328585
 GameObject:
   m_ObjectHideFlags: 0
@@ -3279,7 +3787,7 @@ Transform:
   - {fileID: 1469532409}
   - {fileID: 789134318}
   m_Father: {fileID: 1404065444}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2132951569
 GameObject:
@@ -3348,7 +3856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1508094689544559284, guid: 40f6b16685e256e4ba44c2c05f06e9cf, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1508094689544559284, guid: 40f6b16685e256e4ba44c2c05f06e9cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

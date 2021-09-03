@@ -997,8 +997,8 @@ MonoBehaviour:
     New Text New Text New Text New Text New Text New Text New Text New Text New Text
     New Text '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5c28f01d24603e4e9ac58a3816f8e8a, type: 2}
+  m_sharedMaterial: {fileID: 3156893464553202503, guid: d5c28f01d24603e4e9ac58a3816f8e8a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1111,7 +1111,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 32e017d6908c5c8458e28242dd4a4161, type: 3}
     m_FontSize: 36
     m_FontStyle: 1
     m_BestFit: 0
@@ -1149,7 +1149,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -7.81, y: 7.82}
-  m_SizeDelta: {x: 361.26562, y: 45.632294}
+  m_SizeDelta: {x: 361.26562, y: 53.101723}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1404065440
 GameObject:
@@ -1165,6 +1165,7 @@ GameObject:
   - component: {fileID: 1404065441}
   - component: {fileID: 1404065445}
   - component: {fileID: 1404065446}
+  - component: {fileID: 1404065447}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1286,47 +1287,46 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 1829328451}
   choise1: {fileID: 149955782}
   choise2: {fileID: 2119179182}
+  choise3: {fileID: 0}
   choise1Text: {fileID: 347434731}
   choise2Text: {fileID: 729899985}
+  choise3Text: {fileID: 0}
   note: {fileID: 0}
+  staticAudio: {fileID: 0}
+  dynamicAudio: {fileID: 0}
+  backgroundElementFade1: {fileID: 0}
+  backgroundElementFade2: {fileID: 0}
+  backgroundElementFade3: {fileID: 0}
+  isChooseButtonDestroyed: 0
   isDialogPage: 1
-  levelPreset: 7
+  levelPreset: 8
   backgroundTexts: []
   dialogTexts:
-  - "Zbli\u017Camy si\u0119 do ruin. Z wzniesienia dostrzegam ju\u017C nasze sanie,
-    a obok nich widocznie poruszonych cz\u0142onk\xF3w wyprawy."
-  - "Wrota \u015Bwi\u0105tyni s\u0105... otwarte."
-  - "Zaczynam biec w stron\u0119 obozu, pozostawiaj\u0105c Korav\u2019ye w tyle."
-  - "Profesor wymachuje energicznie r\u0119k\u0105, pokrzykuj\u0105c co\u015B do
-    Nikolaia."
-  - "Nie b\u0119d\u0119 czeka\u0142 na jakiego\u015B dzikusa!"
-  - "To miejsce kultu, nie mo\u017Cemy robi\u0107, co nam si\u0119 \u017Cywnie podoba."
+  - "Z wzniesienia dostrzegam nasze sanie, a obok nich biegaj\u0105cego Sabra i widocznie
+    poruszonych cz\u0142onk\xF3w wyprawy. Profesor wymachuje energicznie r\u0119k\u0105,
+    pokrzykuj\u0105c co\u015B do Nikolaja wychodz\u0105cego z\u2026 otwartych wr\xF3t!"
+  - "Dlaczego mia\u0142bym czeka\u0107 na jakiego\u015B dzikusa!?"
+  - "To miejsce kultu, nie mo\u017Cemy robi\u0107, co nam si\u0119 \u017Cywnie podoba!"
   - "I tak tam wejdziemy! Przynajmniej teraz wiemy, \u017Ce potrzebujemy d\u017Awigu."
   - "Nie robimy nic bez zgody Korav\u2019ye!"
-  - "Czy pan profesor zapomnia\u0142, z czyjej inicjatywy ta wyprawa si\u0119 odbywa?
-    Podlegamy rz\u0105dowi radzieckiemu, nie tym zacofa\u0144com."
-  - "Widzisz tu gdzie\u015B rz\u0105d radziecki!? To ja jestem odpowiedzialny za
-    wasze poczynania. to wyprawa badawcza, a nie dzia\u0142ania wywiadowcze!"
-  - "<i>(pod nosem)</i> Ka\u017Cdy ma swoje rozkazy..."
-  - "Nigdy wcze\u015Bniej nie widzia\u0142em, \u017Ceby Antos a\u017C tak si\u0119
-    uni\xF3s\u0142."
-  - "Jest na granicy wytrzyma\u0142o\u015Bci. Nikolai widz\u0105c to, uspokaja si\u0119."
-  - "Korav\u2019ye zdaje si\u0119 by\u0107 bardziej przej\u0119ty otwartymi drzwiami
-    ni\u017C k\u0142\xF3tni\u0105."
+  - "Profesor zapomina, z czyjej inicjatywy tu jeste\u015Bmy. Podlegamy rz\u0105dowi
+    radzieckiemu, nie tym zacofa\u0144com."
+  - "Widzisz tu gdzie\u015B rz\u0105d radziecki?! To wyprawa badawcza, a nie dzia\u0142ania
+    wywiadowcze!"
+  - "Ka\u017Cdy ma swoje rozkazy..."
+  - "Korav\u2019ye, kt\xF3ry do\u0142\u0105czy\u0142 do reszty grupy, nie zwraca
+    uwagi na k\u0142\xF3tni\u0119."
   - "To znak, \u017Ce \u015Bwi\u0105tynia jest gotowa nas przyj\u0105\u0107. Duchy
     i tak odczytaj\u0105 wasze prawdziwe intencje."
-  - "Czy mo\u017Cemy zabra\u0107 si\u0119 za przetarganie tego cholerstwa do \u015Brodka?"
-  - "Tak, Nikolai i Czes\u0142aw pomog\u0105 ci  z d\u017Awigiem. Ja, Wiktor i Korav\u2019ye
-    we\u017Amiemy latarki i sprawdzimy, co skrywa to miejsce."
-  - "Manya rusza w stron\u0119 sa\u0144, zaraz za ni\u0105 Czes\u0142aw i Nikolai."
-  - "Kieruj\u0119 si\u0119 w stron\u0119 wej\u015Bcia."
-  - "Z trudem ukrywam podniecenie i strach, kt\xF3re narasta z ka\u017Cdym krokiem."
-  - "To tak musieli czu\u0107 si\u0119 Howard Carter i Georg Carnarvon, gdy odkrywali
-    grobowiec Tutanchamona."
-  - "Ostatni raz spogl\u0105dam na ochronny symbol/ symbol wypaczonej gwiazdy umieszczony
-    nad ciosanymi wrotami."
-  - "Za chwil\u0119 przekrocz\u0119 progi miejsca, w kt\xF3rym od wiek\xF3w nie stan\u0119\u0142a
-    ludzka stopa."
+  - "\u015Awietnie\u2026 Czy mo\u017Cemy zabra\u0107 si\u0119 za przytarganie tego
+    cholerstwa do \u015Brodka?"
+  - "Nikolaj i Czes\u0142aw pomog\u0105 ci z d\u017Awigiem. Ja, Wiktor i Korav\u2019ye
+    sprawdzimy wn\u0119trze."
+  - "Z trudem ukrywam podniecenie i strach, kt\xF3re narasta z ka\u017Cdym krokiem.
+    To tak musieli czu\u0107 si\u0119 Carter i Carnarvon, gdy odkrywali grobowiec
+    Tutanchamona..."
+  - "Ostatni raz spogl\u0105dam na symbol wypaczonej gwiazdy umieszczony nad ciosanymi
+    wrotami, po czym wchodz\u0119 do \u015Brodka."
   characters:
   - {fileID: 215678658477559257, guid: c3975f0b3a6eb074cb8d475a9842cfcc, type: 3}
   - {fileID: 3933146148628123448, guid: bedc063a8985d2442b4bed5da3d36b77, type: 3}
@@ -1342,6 +1342,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isBlackFadeAppearOnStart: 0
+  dynamicSounds: []
+  singleFadeComponent: {fileID: 0}
 --- !u!114 &1404065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1357,6 +1359,103 @@ MonoBehaviour:
   fade: {fileID: 326336257}
   isMainMenu: 0
   fadeAfterGameStart: {fileID: 0}
+  fadeOnStart: {fileID: 0}
+--- !u!82 &1404065447
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404065440}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1730d4f2a2da5a74fae4f9ada1d02da7, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.02
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!224 &1418887228 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1508094689544559284, guid: 40f6b16685e256e4ba44c2c05f06e9cf, type: 3}

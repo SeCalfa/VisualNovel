@@ -479,6 +479,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2084998551}
+  - {fileID: 848401392}
   m_Father: {fileID: 1404065444}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -546,6 +547,81 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &848401391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 848401392}
+  - component: {fileID: 848401394}
+  - component: {fileID: 848401393}
+  m_Layer: 5
+  m_Name: BackgroundFront
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &848401392
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848401391}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 668151524}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &848401393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848401391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &848401394
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848401391}
+  m_CullTransparentMesh: 0
 --- !u!1 &897974896
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,8 +836,8 @@ MonoBehaviour:
     New Text New Text New Text New Text New Text New Text New Text New Text New Text
     New Text '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5c28f01d24603e4e9ac58a3816f8e8a, type: 2}
+  m_sharedMaterial: {fileID: 3156893464553202503, guid: d5c28f01d24603e4e9ac58a3816f8e8a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1218,7 +1294,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 32e017d6908c5c8458e28242dd4a4161, type: 3}
     m_FontSize: 36
     m_FontStyle: 1
     m_BestFit: 0
@@ -1256,7 +1332,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -7.81, y: 7.82}
-  m_SizeDelta: {x: 361.26562, y: 45.632294}
+  m_SizeDelta: {x: 361.26562, y: 53.101723}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1404065440
 GameObject:
@@ -1272,6 +1348,7 @@ GameObject:
   - component: {fileID: 1404065441}
   - component: {fileID: 1404065445}
   - component: {fileID: 1404065446}
+  - component: {fileID: 1404065447}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1395,66 +1472,95 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 1829328451}
   choise1: {fileID: 999567050}
   choise2: {fileID: 897974896}
+  choise3: {fileID: 0}
   choise1Text: {fileID: 1425124525}
   choise2Text: {fileID: 198563472}
+  choise3Text: {fileID: 0}
   note: {fileID: 3573394505504410529, guid: c42fd7c9bf77685488fb3bb2cb7d6212, type: 3}
+  staticAudio: {fileID: 0}
+  dynamicAudio: {fileID: 0}
+  backgroundElementFade1: {fileID: 1723902151}
+  backgroundElementFade2: {fileID: 0}
+  backgroundElementFade3: {fileID: 0}
+  isChooseButtonDestroyed: 0
   isDialogPage: 1
-  levelPreset: 5
+  levelPreset: 6
   backgroundTexts: []
   dialogTexts:
-  - "Przed nami rysuje si\u0119 niewyra\u017Any kszta\u0142t, niepasuj\u0105cy do
-    reszty otoczenia."
-  - "Wreszcie docieram do \u015Bwi\u0105tyni, skrytej pod grub\u0105 warstw\u0105
-    \u015Bniegu i ska\u0142."
-  - "Cyklopowe wrota okala co\u015B na wz\xF3r macek, wtopionych w zmarzni\u0119te
-    ska\u0142y. Wrota wygl\u0105daj\u0105 na starsze ni\u017C otaczaj\u0105ce je
-    szczyty. I ten symbol. Znowu ten symbol."
-  - "Serce zaczyna bi\u0107 mi szybciej."
-  - "Po zej\u015Bciu z sa\u0144, wszyscy w milczeniu podziwiamy majestat prastarej
-    budowli. Nawet Nikolai zdaje si\u0119 by\u0107 pod wra\u017Ceniem."
-  - Niesamowite.
+  - "Wszyscy podziwiamy majestat prastarej budowli. Nawet Nikolaj zdaje si\u0119
+    by\u0107 pod wra\u017Ceniem."
   - "Nigdy nie widzia\u0142em czego\u015B tak\u2026pi\u0119knego."
-  - "Czes\u0142aw, zachwycony widokiem, przyst\u0119puje do fotografowania \u015Bwi\u0105tyni."
-  - "Korav\u2019ye rusza w stron\u0119 kamiennej bramy. Siada pod gargantuicznymi
-    wrotami i zaczyna wykonywa\u0107 dziwne ruchy r\u0119kami, od czasu do czasu
-    wodz\u0105c nimi po zamarzni\u0119tym kamieniu."
-  - "Wyci\u0105ga z torby drewnian\u0105 mis\u0119 i zio\u0142a. Po prze\u017Cuciu
-    wypluwa je do misy, nast\u0119pnie miesza, dodaj\u0105c jaki\u015B g\u0119sty
+  - "Czes\u0142aw przyst\u0119puje do fotografowania \u015Bwi\u0105tyni. Korav\u2019ye
+    natychmiast rusza w stron\u0119 kamiennej bramy."
+  - "Wyci\u0105ga z torby drewnian\u0105 mis\u0119 i zio\u0142a. Prze\u017Cuwa je
+    i wypluwa do naczynia, nast\u0119pnie dodaje do mieszaniny jaki\u015B g\u0119sty
     p\u0142yn."
-  - "Si\u0119ga po n\xF3\u017C przy pasie. Rozcina d\u0142o\u0144 i upuszcza krew
-    do mieszaniny."
-  - "Cz\u0119\u015B\u0107 mikstury wylewa na kamienne drzwi."
-  - "Z dystansu obserwujemy prymitywny rytua\u0142."
-  - "Spogl\u0105dam na profesora sceptycznie. Czy naprawd\u0119 wierzy, \u017Ce ekstatyczne
-    gesty i krople krwi otworz\u0105 wrota \u015Bwi\u0105tyni, a mo\u017Ce tylko
-    z grzeczno\u015Bci pozwala Korav\u2019ye na to szale\u0144stwo?"
-  - "Na co my w\u0142a\u015Bciwie czekamy? Przecie\u017C mamy dynamit."
-  - "Nie wiemy, co jest w \u015Brodku. Eksplozja mog\u0142aby pogrzeba\u0107 cel
-    naszej wyprawy."
-  - "Zreszt\u0105 jest to miejsce kultu Czukczy. Nasza obecno\u015B\u0107 tutaj to
-    przywilej."
-  - "W oczekiwaniu na zako\u0144czenie niezrozumia\u0142ego rytua\u0142u, rozpalamy
-    prowizoryczne ognisko."
-  - "Profesor wykorzystuje t\u0119 chwile, aby za\u017Cy\u0107 lekarstwa w postaci
-    ma\u0142ej ampu\u0142ki."
-  - "Ko\u0144cz\u0119 mocno sp\xF3\u017Anione \u015Bniadanie, gdy widz\u0119 jak
-    Czukcz wstaje, chowa swoje rzeczy do torby i rusza w nasz\u0105 stron\u0119."
-  - "Nie wygl\u0105da na zadowolonego."
-  - Nie rozumiem...
+  - "Nie przeszkadzajmy mu. To jaki\u015B ich zwyczaj."
+  - "Z dystansu obserwuj\u0119 jak  korav'ye zanurza obie d\u0142onie w naczyniu.
+    Wodzi nimi po zamarzni\u0119tym kamieniu."
+  - "Si\u0119ga po n\xF3\u017C przy pasie. Rozcina d\u0142o\u0144, upuszcza krew
+    do mieszaniny i wylewa mikstur\u0119 na kamienne wrota."
+  - "Spogl\u0105dam na profesora z zaniepokojeniem. Czy naprawd\u0119 wierzy, \u017Ce
+    ekstatyczne gesty i krople krwi otworz\u0105 wej\u015Bcie do staro\u017Cytnej
+    \u015Bwi\u0105tyni?"
+  - "Nie tylko ja mam w\u0105tpliwo\u015Bci:"
+  - "Napatrzyli\u015Bcie si\u0119? No, to Manya, dawaj dynamit."
+  - "Nie wiemy, co jest w \u015Brodku. Eksplozja mog\u0142aby zniszczy\u0107 \u015Bwi\u0105tyni\u0119."
+  - "Niczego nie b\u0119dziemy wysadza\u0107! Je\u015Bli b\u0119dzie trzeba, poszukamy
+    innego wej\u015Bcia\u2026 Na razie poczekamy."
+  - "Kryjemy si\u0119 w za\u0142omach skalnych i rozpalamy prowizoryczne ognisko.
+    Minuty mijaj\u0105 nam dziwnie powoli\u2026"
+  - "Do naszych uszu dochodz\u0105 niewyra\u017Ane nawo\u0142ywania Korav\u2019ye.
+    Mo\u017Ce s\u0142owa modlitwy?"
+  - "Przez chwil\u0119 zostaj\u0119 z profesorem sam. Zbieram si\u0119 na odwag\u0119,
+    aby zada\u0107 mu pytanie, kt\xF3re dr\u0119czy\u0142o mnie od lat."
+  - "Powiedz mi szczerze - czy wierzy\u0142e\u015B mojemu ojcu, kiedy opowiada\u0142
+    o ruinach?"
+  - "W\u0142adys\u0142aw g\u0142\u0119boko wzdycha."
+  - "Nie mia\u0142em na tyle silnej pozycji, aby go obroni\u0107. Nikt nie potwierdza\u0142
+    jego rewelacji. Nie widzia\u0142 ruin\u2026"
+  - "My\u015Bla\u0142e\u015B jak reszta, \u017Ce jest szalony."
+  - "W\u0142adys\u0142aw odwraca g\u0142ow\u0119."
+  - "Teraz \u017Ca\u0142uj\u0119, \u017Ce si\u0119 za nim nie wstawi\u0142em..."
+  - "Kilka lat po \u015Bmierci Karola przypadkiem natrafi\u0142em na kopi\u0119 Necronomiconu.
+    Bardzo rzadkie znalezisko."
+  - "Symbole, kt\xF3rymi zosta\u0142 zapisany, wygl\u0105da\u0142y identycznie jak
+    te ze szkic\xF3w twojego ojca. To da\u0142o mi do my\u015Blenia."
+  - "W\u0142adys\u0142aw spogl\u0105da na Czes\u0142awa, nieprzerwanie fotografuj\u0105cego
+    okolic\u0119."
+  - "Zdj\u0119cia ruin, kt\xF3re wykona\u0142 Czes\u0142aw, upewni\u0142y mnie w
+    tym, \u017Ce tw\xF3j ojciec naprawd\u0119 co\u015B odkry\u0142... Jestem mu winien
+    t\u0119 wypraw\u0119."
+  - "Ojciec na pewno by to doceni\u0142."
+  - "Zza ska\u0142y wy\u0142ania si\u0119 sylwetka Nikolaja, kt\xF3ry niedbale rzuca
+    w moj\u0105 stron\u0119  puszk\u0119."
+  - "Zjedz to zanim zemdlejesz z g\u0142odu."
+  - "Dzi\u0119kuj\u0119."
+  - O, wraca wasz wybawca...
+  - "Korav\u2019ye nie wygl\u0105da na zadowolonego. Siada przy ognisku, przewi\u0105zuj\u0105c
+    ran\u0119 kawa\u0142kiem materia\u0142u."
+  - "Nie rozumiem, dlaczego\u2026 Szaman przekaza\u0142 mi instrukcj\u0119."
   - "Niewiarygodne, czy\u017Cby magiczne sztuczki nie zadzia\u0142a\u0142y?"
-  - "Twarz Morozowa roz\u015Bwietla triumfalny u\u015Bmieszek."
-  - "Mo\u017Cliwe, \u017Ce trz\u0119sienie ziemi ods\u0142oni\u0142o inn\u0105 drog\u0119
-    do \u015Brodka."
-  - "Korav\u2019ye kiwa g\u0142ow\u0105, owijaj\u0105c \u015Bwie\u017C\u0105 ran\u0119
-    kawa\u0142kiem materia\u0142u."
-  - "Rozbijcie ob\xF3z. Rozejrz\u0119 si\u0119."
-  - "Spogl\u0105dam na niego. Nie mo\u017Ce unika\u0107 mnie w niesko\u0144czono\u015B\u0107."
-  - "Sam? To niebezpieczne. P\xF3jd\u0119 z tob\u0105."
-  - "Na twarzy przewodnika wyra\u017Anie wida\u0107 irytacj\u0119."
-  - "Wiktor ma racj\u0119. Id\u017Acie razem."
-  - "Zabieram sw\xF3j plecak, line i raki. Upewniam si\u0119, czy w plecaku jest
-    pistolet sygna\u0142owy, po czym ruszam z Korav\u2019ye w stron\u0119 niewielkiej
-    prze\u0142\u0119czy."
+  - "Twarz Morozowa roz\u015Bwietla triumfalny u\u015Bmieszek. Profesor wzdycha ci\u0119\u017Cko."
+  - "Czy to mo\u017Cliwe, \u017Ce jest inne wej\u015Bcie?"
+  - "Podania nic o tym nie wspominaj\u0105\u2026"
+  - Podania?
+  - "Wyrywa mi si\u0119. Antos spogl\u0105da na mnie karc\u0105co. To nie jest dobry
+    moment na lekcj\u0119 historii."
+  - "Trz\u0119sienie ziemi mog\u0142o ods\u0142oni\u0107 now\u0105 drog\u0119 do
+    \u015Brodka."
+  - "Korav\u2019ye przez chwil\u0119 rozwa\u017Ca sugesti\u0119 profesora."
+  - "Zosta\u0144cie tutaj. Rozejrz\u0119 si\u0119."
+  - "\u0141apie si\u0119 na w\u0142asnej nieufno\u015Bci wobec naszego przewodnika.
+    Korav\u2019ye nie mo\u017Ce unika\u0107 moich pyta\u0144 w niesko\u0144czono\u015B\u0107."
+  - "P\xF3jd\u0119 z tob\u0105."
+  - "Na twarzy Korav\u2019yerysuje si\u0119 irytacja, kt\xF3r\u0105 jeszcze pot\u0119guj\u0105
+    docinki Nikolaja."
+  - "Polaczek ma racj\u0119. Was miejscowych lepiej pilnowa\u0107\u2026 No i oczywi\u015Bcie
+    bezpieczniej."
+  - "Korav\u2019ye wzrusza ramionami. Wskazuje d\u0142oni\u0105 na m\xF3j plecak
+    i raki."
+  - "Skoro tak ma by\u0107. Ruszajmy."
   characters:
   - {fileID: 3933146148628123448, guid: bedc063a8985d2442b4bed5da3d36b77, type: 3}
   - {fileID: 8388310431346040389, guid: 7505d166853731e44886637b3ff2cde2, type: 3}
@@ -1471,6 +1577,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isBlackFadeAppearOnStart: 0
+  dynamicSounds: []
+  singleFadeComponent: {fileID: 0}
+  frameFade: {fileID: 0}
 --- !u!114 &1404065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,6 +1595,103 @@ MonoBehaviour:
   fade: {fileID: 326336257}
   isMainMenu: 0
   fadeAfterGameStart: {fileID: 0}
+  fadeOnStart: {fileID: 0}
+--- !u!82 &1404065447
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404065440}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1730d4f2a2da5a74fae4f9ada1d02da7, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.02
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1425124523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,7 +1886,7 @@ GameObject:
   - component: {fileID: 1723902148}
   - component: {fileID: 1723902151}
   m_Layer: 5
-  m_Name: BackgroundCharacter
+  m_Name: BackgroundElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -89,9 +89,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Emotion:
-    EmotionTypes:
+    EmotionTypesDefault:
     - {fileID: -5032129011057861184, guid: 2247915109a541542bdb820e142fb405, type: 3}
     - {fileID: 8695771540761360268, guid: 5c667c79ca1454d438bbe6f5003f4f43, type: 3}
     - {fileID: -3899139782927044948, guid: 07fdab7bfee541b4ab583ba609ddbfe4, type: 3}
     - {fileID: -4509824685445659414, guid: b74c6747f034ecf4ca565ce5182784c7, type: 3}
     - {fileID: 5315783647023222479, guid: 6a5cc3690ba68104983c7da634bc9873, type: 3}
+    EmotionTypesAlternative: []

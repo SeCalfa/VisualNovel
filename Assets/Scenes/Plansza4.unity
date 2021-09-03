@@ -693,7 +693,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -853,7 +853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundFront: {fileID: 1392748907}
-  shamanBackgrounds:
+  backgrounds:
   - {fileID: 21300000, guid: 6f4ee1c766ed2f845ba2c5c45b64d07e, type: 3}
   - {fileID: 21300000, guid: 1f7918065adb8b84b996873e6ea99fc6, type: 3}
   - {fileID: 21300000, guid: b423e7f4eaf489842aa67276ed89e00e, type: 3}
@@ -862,6 +862,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 518e7e7cff984b248a2de516d4042136, type: 3}
   - {fileID: 21300000, guid: b64f5e364cbbb67409d26ba57c4f4fd5, type: 3}
   frameRate: 2
+  singleFade: 0
+  isFrameFadeFromStart: 0
 --- !u!1001 &697427729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1064,8 +1066,8 @@ MonoBehaviour:
     New Text New Text New Text New Text New Text New Text New Text New Text New Text
     New Text '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5c28f01d24603e4e9ac58a3816f8e8a, type: 2}
+  m_sharedMaterial: {fileID: 3156893464553202503, guid: d5c28f01d24603e4e9ac58a3816f8e8a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1291,7 +1293,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 32e017d6908c5c8458e28242dd4a4161, type: 3}
     m_FontSize: 36
     m_FontStyle: 1
     m_BestFit: 0
@@ -1329,7 +1331,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -7.81, y: 7.82}
-  m_SizeDelta: {x: 361.26562, y: 45.632294}
+  m_SizeDelta: {x: 361.26562, y: 61.945435}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1392748906
 GameObject:
@@ -1425,6 +1427,8 @@ GameObject:
   - component: {fileID: 1404065441}
   - component: {fileID: 1404065445}
   - component: {fileID: 1404065446}
+  - component: {fileID: 1404065447}
+  - component: {fileID: 1404065448}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1546,59 +1550,53 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 1829328451}
   choise1: {fileID: 149955782}
   choise2: {fileID: 2119179182}
+  choise3: {fileID: 0}
   choise1Text: {fileID: 347434731}
   choise2Text: {fileID: 729899985}
+  choise3Text: {fileID: 0}
   note: {fileID: 0}
+  staticAudio: {fileID: 1404065447}
+  dynamicAudio: {fileID: 1404065448}
+  backgroundElementFade1: {fileID: 0}
+  backgroundElementFade2: {fileID: 0}
+  backgroundElementFade3: {fileID: 0}
+  isChooseButtonDestroyed: 0
   isDialogPage: 1
   levelPreset: 1
   backgroundTexts: []
   dialogTexts:
-  - "Siedzimy wok\xF3\u0142 ogniska w centralnej cz\u0119\u015Bci jurty. W powietrzu
-    unosi si\u0119 intensywny zapach zi\xF3\u0142 mieszaj\u0105cy si\u0119 z przyt\u0142aczaj\u0105c\u0105
-    woni\u0105 otaczaj\u0105cych nas sk\xF3r."
-  - "Spo\u015Br\xF3d cz\u0142onk\xF3w naszej wyprawy brakuje tu jedynie Nikolaia."
-  - "G\u0119sty, ciemny dym cz\u0119\u015Bciowo przes\u0142ania mi widok. Szaman
-    wk\u0142ada na g\u0142ow\u0119 zdobion\u0105 mask\u0119."
+  - "Siedzimy... wok\xF3\u0142 ogniska w centralnej cz\u0119\u015Bci jurty. W powietrzu
+    unosi si\u0119 intensywny zapach zi\xF3\u0142 mieszaj\u0105cy si\u0119 z woni\u0105
+    otaczaj\u0105cych nas sk\xF3r."
+  - "G\u0119sty dym cz\u0119\u015Bciowo przes\u0142ania mi widok. Szaman Aleleke
+    wk\u0142ada na g\u0142ow\u0119 ozdobion\u0105 chwostami czapk\u0119, kt\xF3ra
+    zakrywa jego oczy."
   - "Mieszka\u0144cy wioski z dzik\u0105 pasj\u0105 wymalowan\u0105 na ogorza\u0142ych
-    twarzach, ta\u0144cz\u0105 wok\xF3\u0142 graj\u0105cego na b\u0119bnie szamana,
-    kt\xF3ry osuwa\u0107 si\u0119 coraz g\u0142\u0119biej w odm\u0119ty duchowego
-    transu."
+    twarzach, ta\u0144cz\u0105 wok\xF3\u0142 graj\u0105cego na b\u0119bnie szamana.
+    Aleleke zapada si\u0119 coraz g\u0142\u0119biej w odm\u0119ty duchowego transu."
   - "Jeden z tubylc\xF3w przerywa i schyla si\u0119, by zdj\u0105\u0107 Czes\u0142awowi
-    aparat z szyi."
-  - "Reporter natychmiast wstaje i pr\xF3buje odzyska\u0107 sprz\u0119t, jednak powstrzymuje
-    go Korav\u2019ye, kt\xF3ry szepcze mu co\u015B do ucha. Czes\u0142aw uspokaja
-    si\u0119 i siada na swoim miejscu."
-  - "Antos zauwa\u017Ca moje zaniepokojenie zaistnia\u0142\u0105 sytuacj\u0105."
-  - "Rytua\u0142 odbywa si\u0119 w oparciu o rygorystyczne zasady. Aparat m\xF3g\u0142by
-    zosta\u0107 wykorzystany przez zagubione dusze i przysporzy\u0107 sporo problem\xF3w."
-  - "Atmosfera g\u0119stnieje. Namiot wype\u0142niana coraz wi\u0119ksza ilo\u015B\u0107
-    okrzyk\xF3w i melodycznych nawo\u0142ywa\u0144. Obrz\u0105dek staje si\u0119
-    przyt\u0142aczaj\u0105co osobliwy."
-  - "Korav\u2019ye, nieprzerwanie \u015Bpiewaj\u0105c, si\u0119ga po koron\u0119
-    przyozdobion\u0105 rogami i zak\u0142ada j\u0105 szamanowi, ca\u0142kowicie pogr\u0105\u017Conemu
-    w transie."
-  - "Odg\u0142osy b\u0119bn\xF3w i pokrzykiwa\u0144 narastaj\u0105, staj\u0105 si\u0119
-    wr\u0119cz nie do wytrzymania."
-  - "Nagle... Wszystkie d\u017Awi\u0119ki milkn\u0105..."
+    aparat z szyi. Reporter natychmiast wstaje, by go powstrzyma\u0107. Korav\u2019ye
+    uspokaja go, szepcz\u0105c mu co\u015B do ucha."
+  - "Antos zauwa\u017Ca moje zaniepokojenie zaistnia\u0142\u0105 sytuacj\u0105. Przysuwa
+    si\u0119 bli\u017Cej."
+  - "Rytua\u0142 odbywa si\u0119 w oparciu o staro\u017Cytne zasady. Aparat m\xF3g\u0142by
+    zosta\u0107 wykorzystany przez zagubione dusze i przysporzy\u0107 problem\xF3w."
+  - "Kiwam g\u0142ow\u0105, mimowolnie daj\u0105c si\u0119 wci\u0105gn\u0105\u0107
+    w mistyczn\u0105 atmosfer\u0119."
+  - "Namiot wype\u0142nia coraz wi\u0119ksza ilo\u015B\u0107 okrzyk\xF3w i melodycznych
+    nawo\u0142ywa\u0144."
   - "Szaman wrzuca do ogniska niewielki worek. P\u0142omie\u0144 intensywnie ro\u015Bnie.
-    Wydaje si\u0119 jakby wype\u0142nia\u0142 ca\u0142y namiot."
-  - "Dusz\u0105cy dym wdziera mi si\u0119 do p\u0142uc."
-  - "Pali je od wewn\u0105trz."
-  - "Nie jestem w stanie z\u0142apa\u0107 oddechu."
-  - "Czuj\u0119 jak p\u0142omie\u0144 rozlewa si\u0119 po ca\u0142ym ciele."
-  - "Pr\xF3buje z\u0142apa\u0107 Antosa za rami\u0119, jednak orientuje si\u0119,
-    i\u017C jestem sam."
-  - "Ogie\u0144 przeszywa cia\u0142o na wskro\u015B."
+    Wydaje si\u0119, jakby wype\u0142nia\u0142 ca\u0142y namiot."
+  - "Czuj\u0119 ogie\u0144 w gardle. Dusz\u0105cy dym wdziera mi si\u0119 do p\u0142uc."
+  - "Pali je od wewn\u0105trz\u2026 Nie jestem w stanie z\u0142apa\u0107 oddechu."
+  - "Czuj\u0119, jak p\u0142omie\u0144 rozlewa si\u0119 po ca\u0142ym ciele."
   - "Moje d\u0142onie\u2026 moje d\u0142onie topi\u0105 si\u0119 w jednolit\u0105,
     bezkszta\u0142tn\u0105 mas\u0119\u2026"
-  - "B\xF3l przeradza si\u0119 w agoni\u0119. Rozrywa m\xF3j umys\u0142."
-  - "Przed oczami mam tylko ciemno\u015B\u0107."
-  - "B\xF3l znika."
+  - "B\xF3l ust\u0119puje tak szybko, jak si\u0119 pojawi\u0142."
   - "Nic ju\u017C nie czuj\u0119."
   - "Do resztek pod\u015Bwiadomo\u015Bci dociera pojedynczy impuls."
   - Zimno.
-  characters:
-  - {fileID: 3933146148628123448, guid: bedc063a8985d2442b4bed5da3d36b77, type: 3}
+  characters: []
   backgroundAlphaSpeed: 0.0086
   dialogPanelAlphaSpeed: 0.0217
   nextLevelName: Plansza5
@@ -1609,6 +1607,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isBlackFadeAppearOnStart: 0
+  dynamicSounds:
+  - {fileID: 8300000, guid: 51ba544ed7f17de4d918c1e43333c362, type: 3}
+  singleFadeComponent: {fileID: 0}
+  frameFade: {fileID: 668151528}
 --- !u!114 &1404065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1624,6 +1626,199 @@ MonoBehaviour:
   fade: {fileID: 326336257}
   isMainMenu: 0
   fadeAfterGameStart: {fileID: 0}
+  fadeOnStart: {fileID: 0}
+--- !u!82 &1404065447
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404065440}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f17f173c78515de4dab5e16b63a15c1d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.04
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1404065448
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404065440}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6b3f7201a90edb6498e65543e898a777, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.05
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1773301149
 GameObject:
   m_ObjectHideFlags: 0

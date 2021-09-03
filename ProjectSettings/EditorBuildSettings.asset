@@ -6,10 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 5151688ca8d1e7f459ad4fe5fd4e6643
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: d54fbf86ec10b2a4ba837a419bd735aa
   - enabled: 1
-    path: Assets/Scenes/IntroScene.unity
+    path: Assets/Scenes/Plansza2.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Plansza3.unity
@@ -25,10 +28,13 @@ EditorBuildSettings:
     guid: bfe8cf312977e8f4ab91260d592cd47e
   - enabled: 1
     path: Assets/Scenes/Plansza7.unity
-    guid: 7109fe3edca56f3408a7d29be4e8aea7
+    guid: a41dd03b60e36fd46876266588b198e3
   - enabled: 1
     path: Assets/Scenes/Plansza8.unity
     guid: ae52694b134a0f14cb1977b1f2513ef0
+  - enabled: 1
+    path: Assets/Scenes/Plansza8.5.unity
+    guid: 9c1d75dc655be7d4ba1f02b89dfcfc4b
   - enabled: 1
     path: Assets/Scenes/Plansza9.unity
     guid: df226bdbdbafa2d43bee58e50ea52d0c
@@ -48,18 +54,108 @@ EditorBuildSettings:
     path: Assets/Scenes/Plansza14.unity
     guid: bd4b9e341ca51b84e8db6d042c54c63f
   - enabled: 1
-    path: Assets/Scenes/Plansza15.unity
-    guid: c5a34140dd1d10147a91d06f2cc9114d
-  - enabled: 1
     path: Assets/Scenes/Plansza16.unity
     guid: 0eaa08d8da1fcd246afa5fb9497cc8a9
   - enabled: 1
     path: Assets/Scenes/Plansza17.unity
     guid: 06d0f9e3129b9e045bc04419183240c0
   - enabled: 1
-    path: Assets/Scenes/BGdemo.unity
-    guid: 5e240c14e8b20c74896a00b90f416786
+    path: Assets/Scenes/Plansza18.unity
+    guid: db788705fea822147b354d96d409dc15
+  - enabled: 1
+    path: Assets/Scenes/Plansza19.unity
+    guid: d660c5640933d4b4f900956e73f43e4c
+  - enabled: 1
+    path: Assets/Scenes/Plansza20.unity
+    guid: ace896f6a16bafb45b2abe090250bb12
+  - enabled: 1
+    path: Assets/Scenes/Plansza21.unity
+    guid: c3c5b999496076849a9d365ace317af0
+  - enabled: 1
+    path: Assets/Scenes/Plansza22.unity
+    guid: 7c86be197eef3254cbb097920a8acdf3
+  - enabled: 1
+    path: Assets/Scenes/Plansza23.unity
+    guid: 768b8f85a7680e2448bcce0f6d4930b7
+  - enabled: 1
+    path: Assets/Scenes/Plansza24.unity
+    guid: e3bd2f090f71f584f82232216c18c5c6
+  - enabled: 1
+    path: Assets/Scenes/Plansza26.unity
+    guid: 7109fe3edca56f3408a7d29be4e8aea7
+  - enabled: 1
+    path: Assets/Scenes/Plansza27.unity
+    guid: 6b750f2ced213994ca33a49b572bea32
   - enabled: 1
     path: Assets/Scenes/Puzzle.unity
     guid: d34ed32cd1d17a4448abf37f0cc859ba
+  - enabled: 1
+    path: Assets/Scenes/Plansza27_Incorrect.unity
+    guid: 8b44dc02ca432d14c859da41766ae8f4
+  - enabled: 1
+    path: Assets/Scenes/Plansza30_Incorrect.unity
+    guid: 337f1830adc320e4b84f47c88c3f1e0c
+  - enabled: 1
+    path: Assets/Scenes/Plansza31_Incorrect.unity
+    guid: ac2a700f68ae7934a814e8de05e07b43
+  - enabled: 1
+    path: Assets/Scenes/Plansza27_Correct.unity
+    guid: a19e9c291d628c641840abc6f506b447
+  - enabled: 1
+    path: Assets/Scenes/Plansza28.unity
+    guid: 06078cda15759c4408c68b20986fdd4d
+  - enabled: 1
+    path: Assets/Scenes/Plansza29.unity
+    guid: a482cd32c90531245bdf2f1caf8ffb8d
+  - enabled: 1
+    path: Assets/Scenes/Plansza30_Correct.unity
+    guid: fb7ec9a3e8d74f44c8cdff0dbde626aa
+  - enabled: 1
+    path: Assets/Scenes/Plansza31_Correct.unity
+    guid: c7fb713567e6cea4c85b5728907889f9
+  - enabled: 1
+    path: Assets/Scenes/Plansza32.unity
+    guid: 7c5c6a435a0434541a95fdbebec80efb
+  - enabled: 1
+    path: Assets/Scenes/Plansza33.unity
+    guid: b1bea440daba852409357425b633ccb0
+  - enabled: 1
+    path: Assets/Scenes/Plansza34.unity
+    guid: edbd2b6ad3a20e94ca3d7caef3bfbfd0
+  - enabled: 1
+    path: Assets/Scenes/Plansza35.unity
+    guid: 2cfce38bb8777314fb34b5c0efa091cc
+  - enabled: 1
+    path: Assets/Scenes/Plansza36.unity
+    guid: 5fc54846c21210a4f9accf7873c8a32a
+  - enabled: 1
+    path: Assets/Scenes/Plansza37.unity
+    guid: ce551d333c91f544e934a803193d8bd1
+  - enabled: 1
+    path: Assets/Scenes/Plansza38.unity
+    guid: 22bf8060d5e99cd4abd444f11bd8ea01
+  - enabled: 1
+    path: Assets/Scenes/Plansza39.unity
+    guid: 3efe0d54a3999094abe3bf3c925db9fd
+  - enabled: 1
+    path: Assets/Scenes/Plansza40.unity
+    guid: 3fe36b66b3ad7a042bfcc28be973271f
+  - enabled: 1
+    path: Assets/Scenes/Plansza41.unity
+    guid: 46c84259feca06f4a8787b097ed1fbe9
+  - enabled: 1
+    path: Assets/Scenes/Plansza42.unity
+    guid: 30b7a8d1924f1cf409f1acaf6db2ba7c
+  - enabled: 1
+    path: Assets/Scenes/Plansza42.5.unity
+    guid: c55662571246e1b489dbfb8a1f78ad7b
+  - enabled: 1
+    path: Assets/Scenes/Plansza43.unity
+    guid: 2bb14cc60215cd742a3a0cb4c13f97c3
+  - enabled: 1
+    path: Assets/Scenes/Plansza44.unity
+    guid: 69a6dfc85fa5f3142b37b35990218d8f
+  - enabled: 1
+    path: Assets/Scenes/BGdemo.unity
+    guid: 5e240c14e8b20c74896a00b90f416786
   m_configObjects: {}

@@ -507,8 +507,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 214.4, y: 275.8}
-  m_SizeDelta: {x: 583.3581, y: 96.318054}
+  m_AnchoredPosition: {x: 204.3, y: 275.8}
+  m_SizeDelta: {x: 603.52106, y: 96.318054}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &700978595
 MonoBehaviour:
@@ -532,8 +532,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Wtorek, 13 lutego 1962 roku, Syberia, Czukocki Okr\u0119g Autonomiczny."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6e225e7ba9f7b914c8604777b2dd4388, type: 2}
-  m_sharedMaterial: {fileID: 7861219457280425632, guid: 6e225e7ba9f7b914c8604777b2dd4388, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 87354bf1660461a4eba27c00eab8a0f6, type: 2}
+  m_sharedMaterial: {fileID: 1452342833550200035, guid: 87354bf1660461a4eba27c00eab8a0f6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -557,13 +557,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -626,6 +626,7 @@ GameObject:
   - component: {fileID: 1404065441}
   - component: {fileID: 1404065445}
   - component: {fileID: 1404065446}
+  - component: {fileID: 1404065447}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -738,9 +739,17 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 0}
   choise1: {fileID: 0}
   choise2: {fileID: 0}
+  choise3: {fileID: 0}
   choise1Text: {fileID: 0}
   choise2Text: {fileID: 0}
+  choise3Text: {fileID: 0}
   note: {fileID: 0}
+  staticAudio: {fileID: 0}
+  dynamicAudio: {fileID: 0}
+  backgroundElementFade1: {fileID: 0}
+  backgroundElementFade2: {fileID: 0}
+  backgroundElementFade3: {fileID: 0}
+  isChooseButtonDestroyed: 0
   isDialogPage: 0
   levelPreset: 0
   backgroundTexts: []
@@ -748,7 +757,7 @@ MonoBehaviour:
   characters: []
   backgroundAlphaSpeed: 0.0086
   dialogPanelAlphaSpeed: 0
-  nextLevelName: Plansza9
+  nextLevelName: Plansza8.5
   curve:
     serializedVersion: 2
     m_Curve: []
@@ -756,6 +765,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isBlackFadeAppearOnStart: 0
+  dynamicSounds: []
+  singleFadeComponent: {fileID: 0}
 --- !u!114 &1404065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,6 +782,103 @@ MonoBehaviour:
   fade: {fileID: 1435434364}
   isMainMenu: 0
   fadeAfterGameStart: {fileID: 0}
+  fadeOnStart: {fileID: 0}
+--- !u!82 &1404065447
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404065440}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a0f2b3c9bf2c01b4bbfc38ff8acedecf, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 67.558075
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1435434363
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,18 +1038,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "P\u0119dzimy po tafli bieli, zostawiaj\u0105c daleko za sob\u0105 osad\u0119
-    Czukcz\xF3w.\n\nKorav\u2019ye jest na szpicy. Na przedzie jego sa\u0144 stoi
+  m_text: "P\u0119dzimy po tafli lodu, zostawiaj\u0105c daleko za sob\u0105 osad\u0119
+    Czukcz\xF3w.\n\nKorav\u2019ye jedzie na szpicy. Na przedzie jego sa\u0144 stoi
     dumnie Sabr. Przyjmuje pozycj\u0119 przypominaj\u0105c\u0105 st\xF3jk\u0119 u
-    ps\xF3w my\u015Bliwskich.\r\n\nTeren, na kt\xF3ry wje\u017Cd\u017Camy wita nas
-    ch\u0142odniejszym klimatem. Przed nami wyrasta masyw g\xF3rski, kt\xF3rego szczyty,
-    niczym harpuny wbite s\u0105 w sklepienie. Gdzie\u015B tam znajduje si\u0119
-    cel naszej wyprawy.\n\nZa chwil\u0119 ujrz\u0119 miejsce tak cz\u0119sto opisywane
-    przez mojego ojca. Stan\u0119 przed budowl\u0105, kt\xF3ra od wiek\xF3w, a mo\u017Ce
-    i mileni\xF3w, nie go\u015Bci\u0142a ludzkiej duszy..."
+    ps\xF3w my\u015Bliwskich.\n\nPrzed nami wyrasta masyw g\xF3rski, kt\xF3rego szczyty
+    przypominaj\u0105 wycelowane w niebo harpuny. Gdzie\u015B tam znajduje si\u0119
+    cel naszej wyprawy...\n\nMiejsca tak cz\u0119sto opisywane przez mojego ojca.
+    Budowl\u0105, w kt\xF3rej od wiek\xF3w, a mo\u017Ce i mileni\xF3w, nie stan\u0119\u0142a
+    ludzka stopa\u2026"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6e225e7ba9f7b914c8604777b2dd4388, type: 2}
-  m_sharedMaterial: {fileID: 7861219457280425632, guid: 6e225e7ba9f7b914c8604777b2dd4388, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d8ac2c854156a5c4893cc97f2e994109, type: 2}
+  m_sharedMaterial: {fileID: 1452342833550200035, guid: d8ac2c854156a5c4893cc97f2e994109, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -965,13 +1072,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34
-  m_fontSizeBase: 34
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535

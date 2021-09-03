@@ -1228,8 +1228,13 @@ MonoBehaviour:
   choise1Text: {fileID: 347434731}
   choise2Text: {fileID: 729899985}
   note: {fileID: 0}
+  staticAudio: {fileID: 0}
+  dynamicAudio: {fileID: 0}
+  backgroundElementFade1: {fileID: 0}
+  backgroundElementFade2: {fileID: 0}
+  backgroundElementFade3: {fileID: 0}
   isDialogPage: 1
-  levelPreset: 11
+  levelPreset: 12
   backgroundTexts: []
   dialogTexts:
   - "Manya nerwowo szarpie to za jedn\u0105 to za druga lin\u0119."
@@ -1273,6 +1278,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isBlackFadeAppearOnStart: 0
+  dynamicSounds: []
+  singleFadeComponent: {fileID: 0}
 --- !u!114 &1404065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,6 +1295,7 @@ MonoBehaviour:
   fade: {fileID: 326336257}
   isMainMenu: 0
   fadeAfterGameStart: {fileID: 0}
+  fadeOnStart: {fileID: 0}
 --- !u!224 &1418887228 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1508094689544559284, guid: 40f6b16685e256e4ba44c2c05f06e9cf, type: 3}

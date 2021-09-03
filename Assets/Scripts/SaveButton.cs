@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 public class SaveButton : MonoBehaviour
 {
     [SerializeField] private Image lockImage = null;
-    [SerializeField] private string levelName = null;
+    [SerializeField] internal int levelNumber;
 
     public Image GetLockImage { get { return lockImage; } }
 
     public void LoadLevel()
     {
-        SceneManager.LoadScene(levelName);
+        SceneManager.LoadScene("Plansza" + levelNumber);
     }
 }

@@ -988,98 +988,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105299, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105299, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startSpeed.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startSpeed.minScalar
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startColor.minMaxState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startColor.minColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startColor.minColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startColor.minColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startRotation.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startRotationX.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startRotationY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startRotation.scalar
-      value: 6.283185
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.randomizeRotationDirection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: prewarm
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105300, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: InitialModule.startColor.minColor.a
-      value: 0.49019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105301, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: m_MinParticleSize
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105301, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: m_MaxParticleSize
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439055034857105301, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
-      propertyPath: m_SortingOrder
-      value: -3
-      objectReference: {fileID: 0}
     - target: {fileID: 3439055034857105302, guid: 205e89eb964421c439af63526ba3aa8b, type: 3}
       propertyPath: m_Name
       value: ParticleSystem_SnowSmoke
@@ -1148,8 +1056,8 @@ MonoBehaviour:
     New Text New Text New Text New Text New Text New Text New Text New Text New Text
     New Text '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5c28f01d24603e4e9ac58a3816f8e8a, type: 2}
+  m_sharedMaterial: {fileID: 3156893464553202503, guid: d5c28f01d24603e4e9ac58a3816f8e8a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1262,7 +1170,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 32e017d6908c5c8458e28242dd4a4161, type: 3}
     m_FontSize: 36
     m_FontStyle: 1
     m_BestFit: 0
@@ -1300,7 +1208,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -7.81, y: 7.82}
-  m_SizeDelta: {x: 361.26562, y: 45.632294}
+  m_SizeDelta: {x: 361.26562, y: 59.61508}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1404065440
 GameObject:
@@ -1316,6 +1224,7 @@ GameObject:
   - component: {fileID: 1404065441}
   - component: {fileID: 1404065445}
   - component: {fileID: 1404065446}
+  - component: {fileID: 1404065447}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1437,50 +1346,47 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 1829328451}
   choise1: {fileID: 149955782}
   choise2: {fileID: 2119179182}
+  choise3: {fileID: 0}
   choise1Text: {fileID: 347434731}
   choise2Text: {fileID: 729899985}
+  choise3Text: {fileID: 0}
   note: {fileID: 0}
+  staticAudio: {fileID: 0}
+  dynamicAudio: {fileID: 0}
+  backgroundElementFade1: {fileID: 0}
+  backgroundElementFade2: {fileID: 0}
+  backgroundElementFade3: {fileID: 0}
+  isChooseButtonDestroyed: 0
   isDialogPage: 1
   levelPreset: 2
   backgroundTexts: []
   dialogTexts:
-  - "Le\u017C\u0119 w \u015Bniegu. Wstaj\u0119, widz\u0119 biel. Zamie\u0107."
-  - "\u015Anieg rani moje cia\u0142o."
-  - "Przeszywaj\u0105ce zimno otrze\u017Awia. Odzyskuj\u0119 cz\u0119\u015B\u0107
-    zmys\u0142\xF3w."
-  - "W oddali dostrzegam niewyra\u017An\u0105 sylwetk\u0119 majacz\u0105c\u0105 w
-    \u015Bniegu."
-  - "Pr\xF3buj\u0119 j\u0105 dogoni\u0107. Biegn\u0119, ale nie jestem w stanie si\u0119
-    zbli\u017Cy\u0107."
-  - "Zamie\u0107 ust\u0119puje. Spo\u015Br\xF3d bieli wy\u0142ania si\u0119 kszta\u0142t."
-  - "Ogrom ciosanych ska\u0142 skutych lodem zlewa si\u0119 z masywem g\xF3rskim."
-  - "Ledwie dostrzegam posta\u0107, kt\xF3rej drobna sylwetka znika w cyklopowych
-    wrotach."
-  - "Podchodz\u0119 bli\u017Cej. M\xF3j wzrok przyci\u0105ga widniej\u0105ca na zwie\u0144czeniu
-    bramy wypaczona, pi\u0119cioramienna gwiazda. Centraln\u0105 cz\u0119\u015B\u0107
-    znaku zajmuje oko ze \u017Arenic\u0105 w kszta\u0142cie p\u0142omienia."
-  - "Zdaje si\u0119 natarczywie wpatrywa\u0107 w g\u0142\u0105b mojej duszy, jakby
-    w poszukiwaniu s\u0142abo\u015Bci."
-  - "Od symbolu odrywa mnie znajomy, tak dawno nie s\u0142yszany g\u0142os."
-  - "Niemo\u017Cliwe..."
+  - "Przeszywaj\u0105cy zi\u0105b nieco mnie otrze\u017Awia. Powoli odzyskuj\u0119
+    cz\u0119\u015B\u0107 zmys\u0142\xF3w."
+  - "W oddali dostrzegam niewyra\u017An\u0105 sylwetk\u0119 m\u0119\u017Cczyzny majacz\u0105c\u0105
+    gdzie\u015B w \u015Bniegu."
+  - "Pr\xF3buj\u0119 j\u0105 dogoni\u0107.  Biegn\u0119, ale nie jestem w stanie
+    si\u0119 zbli\u017Cy\u0107. Mam wra\u017Cenie, jakbym porusza\u0142 si\u0119
+    w miejscu."
+  - "Zamie\u0107 wreszcie ust\u0119puje. Moim oczom ukazuj\u0105 si\u0119 cyklopowe
+    wrota zwie\u0144czone wypaczon\u0105 pi\u0119cioramienn\u0105 gwiazd\u0105."
+  - "Centraln\u0105 cz\u0119\u015B\u0107 znaku zajmuje oko ze \u017Arenic\u0105 w
+    kszta\u0142cie p\u0142omienia. Oko zdaje si\u0119 natarczywie wpatrywa\u0107
+    we mnie, jakby w poszukiwaniu jakiej\u015B s\u0142abo\u015Bci."
+  - Synu...
+  - "Niemo\u017Cliwe\u2026 przecie\u017C Karol nie \u017Cyje od dekady. Zmar\u0142
+    wkr\xF3tce potem, jak zosta\u0142 wyrzucony z uczelni... jak mog\u0119 go teraz
+    s\u0142ysze\u0107?"
   - Tato?
-  - "G\u0142os be\u0142kocze niezrozumiale. Przypomina to bardziej nosowe echo, ani\u017Celi
-    sk\u0142adn\u0105 mow\u0119."
-  - "Pod\u0105\u017Cam za g\u0142osem przez otwart\u0105 bram\u0119 i wchodz\u0119
-    do ogarni\u0119tego mrokiem pomieszczenia. Po drugiej stronie owalnej komnaty
-    widz\u0119 mojego ojca."
-  - "Jego g\u0142os ju\u017C do mnie nie dociera."
-  - "Odwraca g\u0142ow\u0119 w moj\u0105 stron\u0119. Jego puste spojrzenie nie jest
-    skupione na \u017Cadnym konkretnym punkcie a jednak czuje je na sobie."
+  - "Ojciec be\u0142kocze co\u015B w odpowiedzi. Jego puste spojrzenie nie jest nigdzie
+    skupione, a jednak czuj\u0119 je na sobie."
+  - "Pod\u0105\u017Cam za nim przez otwart\u0105 bram\u0119 do ogarni\u0119tego mrokiem
+    pomieszczenia."
   - "Powoli wyci\u0105ga w moj\u0105 stron\u0119 praw\u0105 r\u0119k\u0119. Zaprasza
     mnie."
-  - "Ka\u017Cda kom\xF3rka mojego cia\u0142a wo\u0142a z ut\u0119sknieniem. To musi
-    by\u0107 on. To on. Jedynie m\xF3\u017Cd\u017Cek w ca\u0142ej swej prymitywnej
-    formie krzyczy: NIE."
-  - "Robi\u0119 pierwszy krok i\u2026 trac\u0119 grunt pod nogami."
-  - Spadam.
-  - "A mo\u017Ce wznosz\u0119 si\u0119?"
-  - "Przed oczami tylko ciemno\u015B\u0107..."
+  - "Chc\u0119 podej\u015B\u0107 bli\u017Cej."
+  - "Robi\u0119 pierwszy krok i..."
+  - "Trac\u0119 grunt pod nogami."
   characters:
   - {fileID: 3933146148628123448, guid: bedc063a8985d2442b4bed5da3d36b77, type: 3}
   backgroundAlphaSpeed: 0.0086
@@ -1493,6 +1399,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isBlackFadeAppearOnStart: 1
+  dynamicSounds: []
+  singleFadeComponent: {fileID: 0}
+  frameFade: {fileID: 0}
 --- !u!114 &1404065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1508,6 +1417,103 @@ MonoBehaviour:
   fade: {fileID: 326336257}
   isMainMenu: 0
   fadeAfterGameStart: {fileID: 0}
+  fadeOnStart: {fileID: 0}
+--- !u!82 &1404065447
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404065440}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b8ad213978d722a43857c2b9adfe56f2, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!224 &1418887228 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1508094689544559284, guid: 40f6b16685e256e4ba44c2c05f06e9cf, type: 3}

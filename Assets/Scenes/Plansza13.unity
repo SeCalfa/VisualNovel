@@ -1225,37 +1225,41 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 1829328451}
   choise1: {fileID: 149955782}
   choise2: {fileID: 2119179182}
+  choise3: {fileID: 0}
   choise1Text: {fileID: 347434731}
   choise2Text: {fileID: 729899985}
+  choise3Text: {fileID: 0}
   note: {fileID: 0}
+  staticAudio: {fileID: 0}
+  dynamicAudio: {fileID: 0}
+  backgroundElementFade1: {fileID: 0}
+  backgroundElementFade2: {fileID: 0}
+  backgroundElementFade3: {fileID: 0}
+  isChooseButtonDestroyed: 0
   isDialogPage: 1
-  levelPreset: 9
+  levelPreset: 10
   backgroundTexts: []
   dialogTexts:
+  - Platforma uderza o kamienie.
+  - "Kto\u015B le\u017Cy na ziemi. W bezruchu. Wok\xF3\u0142 walaj\u0105 si\u0119
+    resztki zapas\xF3w i porzucone ubrania."
   - "Czes\u0142aw!"
-  - "Zeskakuj\u0119 z platformy, gdy ta jeszcze wisi w powietrzu i biegn\u0119 w
-    stron\u0119 Czes\u0142awa, mijaj\u0105c porozrzucane ubrania."
-  - "Naga, wyn\u0119dznia\u0142a sylwetka, jak u nieszcz\u0119\u015Bnik\xF3w z gu\u0142ag\xF3w,
-    o kt\xF3rych opowiada\u0142 mi ojciec.  Sk\xF3ra pokryta szronem nabra\u0142a
-    ju\u017C niebieskiego odcienia. Pod ni\u0105 wyra\u017Anie rysuj\u0105 si\u0119
-    ko\u015Bci. "
-  - "Wzrok przyci\u0105gaj\u0105 wystaj\u0105ce obojczyki i \u017Cebra, kt\xF3re
-    bez trudu mo\u017Cna policzy\u0107. Pozbawiona \u017Cycia d\u0142o\u0144 spoczywa
-    na sercu. Tylko le\u017C\u0105cy obok apart sugeruje, \u017Ce jest to cia\u0142o
-    reportera."
-  - "Korav\u2019ye ze stoickim spokojem kl\u0119ka przy zw\u0142okach."
+  - "Nie odpowiada\u2026 Zeskakuj\u0119 z platformy i przygl\u0105dam si\u0119 jego
+    cia\u0142u."
+  - "Sk\xF3ra Czes\u0142awa ju\u017C pokry\u0142a si\u0119 szronem i nabra\u0142a
+    niebieskiego odcienia. Pod ni\u0105 wyra\u017Anie rysuj\u0105 si\u0119 ko\u015Bci.
+    Mog\u0119 zliczy\u0107 wszystkie \u017Cebra."
+  - "Naga, wyn\u0119dznia\u0142a sylwetka\u2026 przypomina nieszcz\u0119\u015Bnik\xF3w
+    z gu\u0142ag\xF3w, o kt\xF3rych opowiada\u0142 mi ojciec. Tylko le\u017C\u0105cy
+    obok apart sugeruje, \u017Ce jest to cia\u0142o reportera."
+  - "Korav\u2019ye z nienaturalnym spokojem kl\u0119ka przy zw\u0142okach.Sabr k\u0142adzie
+    si\u0119 obok, cicho skomle."
   - "Nie \u017Cyje od d\u0142u\u017Cszego czasu."
-  - "Jak to od d\u0142u\u017Cszego czasu?! Dlaczego jest nagi i wychudzony? Przecie\u017C
-    by\u0142 tu sam tylko kilka minut..."
-  - "Czukcz nie odpowiada. Sabr k\u0142adzie si\u0119 obok cicho skoml\u0105c. Wygl\u0105da
-    na przybitego."
-  - "Dostrzegam spor\u0105 ilo\u015B\u0107 puszek i opakowa\u0144 po prowiancie a
-    tak\u017Ce jeden z baga\u017Cy, kt\xF3ry by\u0142 na platformie razem z Czes\u0142awem."
-  - "To niemo\u017Cliwe! Ilo\u015B\u0107 \u015Bmieci sugeruje, \u017Ce Czes\u0142aw
-    sp\u0119dzi\u0142 tutaj co najmniej dwa tygodnie. Stan zw\u0142ok wskazuje na
-    jeszcze d\u0142u\u017Csz\u0105 g\u0142od\xF3wk\u0119."
-  - "Platforma z pozosta\u0142\u0105 cz\u0119\u015Bci\u0105 grupy dociera na dno
-    studni."
+  - "Dlaczego jest nagi i tak wychudzony? Przecie\u017C by\u0142 tu sam tylko kilka
+    minut\u2026"
+  - "M\xF3wi\u0119, chocia\u017C stan Czes\u0142awa wskazuje na co\u015B innego.
+    M\u0119\u017Cczyzna wygl\u0105da tak jakby przed zamarzni\u0119ciem sp\u0119dzi\u0142
+    tutaj ca\u0142e tygodnie..."
   characters: []
   backgroundAlphaSpeed: 0.0086
   dialogPanelAlphaSpeed: 0.0217
@@ -1267,6 +1271,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isBlackFadeAppearOnStart: 1
+  dynamicSounds: []
+  singleFadeComponent: {fileID: 0}
+  frameFade: {fileID: 0}
 --- !u!114 &1404065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,6 +1289,7 @@ MonoBehaviour:
   fade: {fileID: 326336257}
   isMainMenu: 0
   fadeAfterGameStart: {fileID: 0}
+  fadeOnStart: {fileID: 0}
 --- !u!224 &1418887228 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1508094689544559284, guid: 40f6b16685e256e4ba44c2c05f06e9cf, type: 3}

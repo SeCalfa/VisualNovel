@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PuzzleElements : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PuzzleElements : MonoBehaviour
 
     [SerializeField]
     private ElementType Type;
+    [SerializeField]
+    internal int Count;
 
     private bool isPlanted = false;
     private Vector2 posOnAwake;
@@ -89,6 +92,7 @@ public class PuzzleElements : MonoBehaviour
                     PuzzleManager.self.PlantedList[PuzzleManager.self.number] = true;
                     isPlanted = true;
                     GetComponent<Animator>().SetTrigger("UnHovered");
+                    print("UP" + gameObject.name);
                     PuzzleManager.self.TestButtonAppearence(1);
                 }
                 else // target = start pos

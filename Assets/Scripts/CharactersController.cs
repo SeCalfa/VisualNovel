@@ -31,6 +31,8 @@ public class CharactersController : MonoBehaviour
     internal bool isLeftSide = false;
     internal bool isMiddleReturn = false;
 
+    internal bool isAlternativeCloth = false;
+
     private void Start()
     {
         startLocation = transform.localPosition;
@@ -94,7 +96,10 @@ public class CharactersController : MonoBehaviour
 
     internal void SetEmotion(int emotionNumber) // Set new emotion
     {
-        GetComponent<Image>().sprite = Emotion.EmotionTypes[emotionNumber];
+        if (isAlternativeCloth)
+            GetComponent<Image>().sprite = Emotion.EmotionTypesAlternative[emotionNumber];
+        else
+            GetComponent<Image>().sprite = Emotion.EmotionTypesDefault[emotionNumber];
     }
 
     private void NewLocation() // Перемещение персонажа когда появляется еще один с его стороны
@@ -140,7 +145,8 @@ public class CharactersController : MonoBehaviour
     [System.Serializable]
     private struct Emotions
     {
-        public Sprite[] EmotionTypes;
+        public Sprite[] EmotionTypesDefault;
+        public Sprite[] EmotionTypesAlternative;
     }
 
 }

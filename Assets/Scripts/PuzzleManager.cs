@@ -17,10 +17,13 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField]
     private GameObject NextButton = null;
     [SerializeField]
-    private string NextLevel = null;
+    private string CorrectNextLevel = null;
+    [SerializeField]
+    private string IncorrectNextLevel = null;
 
     internal List<bool> PlantedList = new List<bool>() { false, false, false, false, false };
     internal List<int> PhotosPlace = new List<int>() { -1, -1, -1, -1, -1 };
+    internal List<int> PlantedOrder = new List<int> { 0, 0, 0, 0, 0 };
 
     internal GameObject takenPhoto = null;
     internal bool isHovered = false;
@@ -77,7 +80,11 @@ public class PuzzleManager : MonoBehaviour
 
     private void Next()
     {
-        SceneManager.LoadScene(NextLevel);
+        string nextLevel = null;
+
+
+
+        SceneManager.LoadScene(nextLevel);
     }
 
 }

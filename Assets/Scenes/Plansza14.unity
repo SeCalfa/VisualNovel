@@ -1225,58 +1225,82 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 1829328451}
   choise1: {fileID: 149955782}
   choise2: {fileID: 2119179182}
+  choise3: {fileID: 0}
   choise1Text: {fileID: 347434731}
   choise2Text: {fileID: 729899985}
+  choise3Text: {fileID: 0}
   note: {fileID: 0}
+  staticAudio: {fileID: 0}
+  dynamicAudio: {fileID: 0}
+  backgroundElementFade1: {fileID: 0}
+  backgroundElementFade2: {fileID: 0}
+  backgroundElementFade3: {fileID: 0}
+  isChooseButtonDestroyed: 0
   isDialogPage: 1
-  levelPreset: 10
+  levelPreset: 11
   backgroundTexts: []
   dialogTexts:
-  - "Co tu si\u0119 sta\u0142o?!"
-  - "Hipotermia t\u0142umaczy brak ubra\u0144. Tylko czemu jest tak wychudzony?"
-  - "Prowiant zosta\u0142 wyjedzony do ostatniego okrucha. To bez sensu, ale wszystko
-    wygl\u0105da\u2026 jakby sp\u0119dzi\u0142 tu co najmniej dwa tygodnie!"
-  - "Korav\u2019ye tkwi przy ciele bez ruchu, jedynie jego wargi pracuj\u0105, mamrocz\u0105c
-    co\u015B w j\u0119zyku, kt\xF3ry zawsze towarzyszy czukockim obrz\u0105dkom.
-    Mimo, \u017Ce nie jestem pewien znaczenia tych s\u0142\xF3w, przynosz\u0105 mi
-    one nieoczekiwan\u0105 ulg\u0119."
-  - "Na twarzach pozosta\u0142ych za to wci\u0105\u017C maluje si\u0119 niepok\xF3j."
-  - "Jedyne wyt\u0142umaczenie to \u2026 dylatacja czasu. W teorii wzgl\u0119dno\u015Bci
-    \u2026"
-  - "Te naukowe brednie niczego nie t\u0142umacz\u0105! Jak to jest mo\u017Cliwe?!"
-  - "Profesor wyra\u017Anie zbity z tropu zaczyna be\u0142kota\u0107, jakby pr\xF3buj\u0105c
-    przekona\u0107 samego siebie."
-  - "Do tej pory ja te\u017C... ale w obliczu tych wydarze\u0144..."
-  - "Panowie, spokojnie. Nie jeste\u015Bmy teraz w stanie tego wyja\u015Bni\u0107.
-    Skupmy si\u0119 na rzeczach istotnych."
-  - "Wiktor ma racj\u0119. Musimy przenie\u015B\u0107 cia\u0142o na g\xF3r\u0119."
-  - "Korav\u2019ye tymczasem si\u0119ga po koc. Zakrywa nim cia\u0142o denata, a
-    nast\u0119pnie wycina w materiale otw\xF3r na wysoko\u015Bci ust."
+  - "Korav\u2019ye kl\u0119czy przy ciele bez ruchu. Mamrocze co\u015B w j\u0119zyku,
+    kt\xF3ry zawsze towarzyszy czukockim obrz\u0105dkom. Mimo, \u017Ce nie jestem
+    pewien znaczenia tych s\u0142\xF3w, przynosz\u0105 mi one nieoczekiwan\u0105
+    ulg\u0119."
   - "Jego dusza jeszcze tu jest. Nie potrafi odej\u015B\u0107... Musz\u0119 mu pom\xF3c."
-  - "Zrezygnowany Nikolai siada na ziemi i wyci\u0105ga piersi\xF3wk\u0119, z kt\xF3rej
-    poci\u0105ga sowity \u0142yk."
-  - "Korav\u2019ye wyjmuje z torby fajk\u0119 i troch\u0119 suszonego mi\u0119sa.
-    Nast\u0119pnie wydobywa z fajki odrobin\u0119 popio\u0142u i rozsmarowuje j\u0105
-    na swoich policzkach. Wk\u0142ada do ust zmar\u0142ego kawa\u0142ki suszonego
-    mi\u0119sa... Ostatni posi\u0142ek?"
-  - "Siedzimy w ciszy. Ka\u017Cdy pr\xF3buje poradzi\u0107 sobie z tragedi\u0105
-    na sw\xF3j spos\xF3b."
-  - "Czukcz kontynuuje rytua\u0142. \u015Aci\u0105ga z szyi z\u0142oty medalion."
-  - "Owija rzemyk wok\xF3\u0142 d\u0142oni i zaczyna wykonywa\u0107 gesty nad cia\u0142em,
-    szepcz\u0105c niezrozumiale."
-  - "Ruchy, kt\xF3re wykonuje Korav\u2019ye, wygl\u0105daj\u0105 jakby mia\u0142y
-    na celu wyprawienie duszy w ostatni\u0105 podr\xF3\u017C."
-  - "Po d\u0142u\u017Cszej chwili Czukcz przerywa i daje nam znak, aby przygotowa\u0107
-    zw\u0142oki do transportu."
-  - "Owijamy cia\u0142o dodatkow\u0105 warstw\u0105 brezentu. Zwi\u0105zujemy ciasno
-    sznurem, a nast\u0119pnie w milczeniu przenosimy na platform\u0119."
-  - "Manya poci\u0105ga za lin\u0119 przymocowan\u0105 do d\u017Awigu. odpowiada
-    nam puste, metaliczne echo dochodz\u0105ce ze szczytu studni..."
-  - "Platforma nawet si\u0119 nie poruszy\u0142a."
+  - "Czukcz si\u0119ga po le\u017C\u0105cy obok koc. Zakrywa cia\u0142o brezentem,
+    a nast\u0119pnie wycina w materiale otw\xF3r na wysoko\u015Bci ust."
+  - "Nast\u0119pnie wyjmuje z torby fajk\u0119 i troch\u0119 suszonego mi\u0119sa.
+    Z fajki wydobywa odrobin\u0119 popio\u0142u i rozsmarowuje j\u0105 na swoich
+    policzkach. Wk\u0142ada do ust zmar\u0142ego kawa\u0142ki mi\u0119sa... ostatni
+    posi\u0142ek?"
+  - "Platforma z pozosta\u0142\u0105 cz\u0119\u015Bci\u0105 grupy z \u0142oskotem
+    dociera na dno studni. W\u0142adys\u0142aw trz\u0119s\u0105c\u0105 si\u0119 r\u0119k\u0105
+    zdejmuje okulary."
+  - "Co si\u0119 sta\u0142o?"
+  - "Manya milczy. Jej twarz niewiele r\xF3\u017Cni si\u0119 kolorem od otaczaj\u0105cych
+    nas zamarzni\u0119tych \u015Bcian."
+  - "Tak go znale\u017Ali\u015Bmy..."
+  - "Musia\u0142 oszale\u0107. Hipotermia t\u0142umaczy\u0142aby brak ubra\u0144..."
+  - "Prowiant zosta\u0142 wyjedzony do ostatniego okrucha. To bez sensu, ale to wygl\u0105da\u2026
+    jakby sp\u0119dzi\u0142 tu co najmniej dwa tygodnie."
+  - "Widz\u0119, \u017Ce wy te\u017C oszaleli\u015Bcie. Musi istnie\u0107 jakie\u015B
+    rozs\u0105dne wyja\u015Bnienie..."
+  - "Rosjanin siada na ziemi. Wyci\u0105ga piersi\xF3wk\u0119, z kt\xF3rej poci\u0105ga
+    spory \u0142yk."
+  - "Profesor stara si\u0119 zachowa\u0107 zimn\u0105 krew."
+  - "Nie mo\u017Cemy go tu zostawi\u0107. Musimy przewie\u017A\u0107 cia\u0142o na
+    g\xF3r\u0119."
+  - "Chcesz go zostawi\u0107 na powierzchni?"
+  - "Nie mo\u017Cemy teraz kontynuowa\u0107 wyprawy."
+  - Wywieziemy go, a potem co?
+  - "Przeka\u017Cemy cia\u0142o Czukczom."
+  - "Manya poci\u0105ga za lin\u0119 przymocowan\u0105 do d\u017Awigu."
+  - "Odpowiada jej tylko puste, metaliczne echo dochodz\u0105ce ze szczytu studni\u2026"
+  - "Nerwowo szarpie to za jedn\u0105, to za druga lin\u0119. Platforma ani drgnie."
+  - "Liny pracuj\u0105 prawid\u0142owo, wi\u0119c prze\u0142\u0105cznik dzia\u0142a.
+    Musia\u0142 pa\u015B\u0107 agregat."
+  - "Oczywi\u015Bcie! Pewnie nikt nie uzupe\u0142ni\u0142 paliwa."
+  - "Nikolaj spogl\u0105da z wyrzutem na Many\u0119."
+  - "Paliwa by\u0142o do\u015B\u0107, \u017Ceby zjecha\u0107 tu dziesi\u0119\u0107
+    razy!"
+  - "Trzeba by\u0142o sprawdzi\u0107 zbiornik!"
+  - "Sam mog\u0142e\u015B to zrobi\u0107!"
+  - "Chcesz nas zabi\u0107. Bez reszty naszych zapas\xF3w szybko tu zdechniemy!"
+  - "Sabrowi udziela si\u0119 panuj\u0105ce wok\xF3\u0142 napi\u0119cie. Zaczyna
+    zawzi\u0119cie ujada\u0107 na Nikolaja."
+  - "Je\u015Bli ten pies zaraz si\u0119 nie zamknie, to przysi\u0119gam, \u017Ce
+    go odstrzel\u0119!"
+  - "Korav\u2019ye \u0142apie Sabra za kark i przyci\u0105ga go do swojej klatki
+    piersiowej. Pies wydaje z siebie skowyt. Wyrywa si\u0119 ze zbyt mocnego u\u015Bcisku."
+  - "To jest jaki\u015B cyrk! Sam naprawi\u0119 ten cholerny d\u017Awig!"
+  - "Postrada\u0142e\u015B zmys\u0142y?! Nie potrzebujemy wi\u0119cej trup\xF3w!"
+  - "\u017Bo\u0142nierz nie reaguje. \u0141apie za lin\u0119 przymocowan\u0105 do
+    platformy i zaczyna j\u0105 ci\u0105gn\u0105\u0107 z ca\u0142ej si\u0142y."
+  - "Z g\xF3ry dociera do nas metaliczny zgrzyt. Studni\u0119 nagle przykrywa cie\u0144..."
+  - "Z ciemno\u015Bci wy\u0142aniaj\u0105 si\u0119 ostre kszta\u0142ty, lec\u0105c
+    prosto na nas..."
   characters: []
   backgroundAlphaSpeed: 0.0086
   dialogPanelAlphaSpeed: 0.0217
-  nextLevelName: MainMenu
+  nextLevelName: Plansza16
   curve:
     serializedVersion: 2
     m_Curve: []
@@ -1284,6 +1308,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isBlackFadeAppearOnStart: 0
+  dynamicSounds: []
+  singleFadeComponent: {fileID: 0}
+  frameFade: {fileID: 0}
 --- !u!114 &1404065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,6 +1326,7 @@ MonoBehaviour:
   fade: {fileID: 326336257}
   isMainMenu: 0
   fadeAfterGameStart: {fileID: 0}
+  fadeOnStart: {fileID: 0}
 --- !u!224 &1418887228 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1508094689544559284, guid: 40f6b16685e256e4ba44c2c05f06e9cf, type: 3}

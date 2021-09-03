@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     #region Button Methods
     public void NewGame()
     {
-        GetComponent<Fade>().FadeAppear("IntroScene");
+        GetComponent<Fade>().FadeAppear("Plansza2");
     }
 
     public void LoadGame()
@@ -51,37 +51,46 @@ public class MainMenu : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("Plansza3"))
         {
-            PlayerPrefs.SetInt("Plansza3", 0);
-            PlayerPrefs.SetInt("Plansza4", 0);
-            PlayerPrefs.SetInt("Plansza5", 0);
-            PlayerPrefs.SetInt("Plansza6", 0);
-            PlayerPrefs.SetInt("Plansza7", 0);
-            PlayerPrefs.SetInt("Plansza8", 0);
-            PlayerPrefs.SetInt("Plansza9", 0);
-            PlayerPrefs.SetInt("Plansza10", 0);
-            PlayerPrefs.SetInt("Plansza11", 0);
-            PlayerPrefs.SetInt("Plansza12", 0);
-            PlayerPrefs.SetInt("Plansza13", 0);
-            PlayerPrefs.SetInt("Plansza14", 0);
-            PlayerPrefs.SetInt("Plansza15", 0);
-            PlayerPrefs.SetInt("Plansza16", 0);
-            PlayerPrefs.SetInt("Plansza17", 0);
+            PlayerPrefs.SetInt("Plansza3", 1);
+            PlayerPrefs.SetInt("Plansza4", 1);
+            PlayerPrefs.SetInt("Plansza5", 1);
+            PlayerPrefs.SetInt("Plansza6", 1);
+            PlayerPrefs.SetInt("Plansza7", 1);
+            PlayerPrefs.SetInt("Plansza8", 1);
+            PlayerPrefs.SetInt("Plansza9", 1);
+            PlayerPrefs.SetInt("Plansza10", 1);
+            PlayerPrefs.SetInt("Plansza11", 1);
+            PlayerPrefs.SetInt("Plansza12", 1);
+            PlayerPrefs.SetInt("Plansza13", 1);
+            PlayerPrefs.SetInt("Plansza14", 1);
+            PlayerPrefs.SetInt("Plansza15", 1); // Removed
+            PlayerPrefs.SetInt("Plansza16", 1);
+            PlayerPrefs.SetInt("Plansza17", 1);
+            PlayerPrefs.SetInt("Plansza18", 1);
+            PlayerPrefs.SetInt("Plansza19", 1);
+            PlayerPrefs.SetInt("Plansza20", 1);
+            PlayerPrefs.SetInt("Plansza21", 1);
+            PlayerPrefs.SetInt("Plansza22", 1);
+            PlayerPrefs.SetInt("Plansza23", 1);
+            PlayerPrefs.SetInt("Plansza24", 1);
+            PlayerPrefs.SetInt("Plansza26", 1);
+            PlayerPrefs.SetInt("Plansza27", 1);
         }
     }
 
     private void InteractibleLevels()
     {
-        for (int i = 3; i < 17; i++)
+        foreach (var level in allLevels)
         {
-            if (PlayerPrefs.GetInt("Plansza" + i.ToString()) == 0)
+            if (PlayerPrefs.GetInt("Plansza" + level.GetComponent<SaveButton>().levelNumber) == 0)
             {
-                allLevels[i - 3].GetComponent<SaveButton>().GetLockImage.gameObject.SetActive(true);
-                allLevels[i - 3].GetComponent<Button>().interactable = false;
+                level.GetComponent<SaveButton>().GetLockImage.gameObject.SetActive(true);
+                level.GetComponent<Button>().interactable = false;
             }
             else
             {
-                allLevels[i - 3].GetComponent<SaveButton>().GetLockImage.gameObject.SetActive(false);
-                allLevels[i - 3].GetComponent<Button>().interactable = true;
+                level.GetComponent<SaveButton>().GetLockImage.gameObject.SetActive(false);
+                level.GetComponent<Button>().interactable = true;
             }
         }
     }

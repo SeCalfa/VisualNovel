@@ -1225,75 +1225,83 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 1829328451}
   choise1: {fileID: 149955782}
   choise2: {fileID: 2119179182}
+  choise3: {fileID: 0}
   choise1Text: {fileID: 347434731}
   choise2Text: {fileID: 729899985}
+  choise3Text: {fileID: 0}
   note: {fileID: 0}
+  staticAudio: {fileID: 0}
+  dynamicAudio: {fileID: 0}
+  backgroundElementFade1: {fileID: 0}
+  backgroundElementFade2: {fileID: 0}
+  backgroundElementFade3: {fileID: 0}
+  isChooseButtonDestroyed: 0
   isDialogPage: 1
-  levelPreset: 13
+  levelPreset: 14
   backgroundTexts: []
   dialogTexts:
-  - "Z posadzki pod moimi stopami wyrasta przepastny most. Jest jedyn\u0105 drog\u0105
-    prowadz\u0105c\u0105 ponad przepa\u015Bci\u0105."
-  - "W oddali dostrzegam kolejne rozga\u0142\u0119ziaj\u0105ce si\u0119 w r\xF3\u017Cnych
-    kierunkach k\u0142adki \u0142\u0105cz\u0105ce obie \u015Bciany bezdennej czelu\u015Bci.
-    Sploty tworz\u0105 konstrukcj\u0119, kt\xF3rej ludzki umys\u0142 nie jest w stanie
-    poj\u0105\u0107."
-  - "Czuj\u0119 na plecach podmuch ch\u0142odnego wiatru. Popycha mnie w g\u0142\u0105b
-    ruin, jakby sugeruj\u0105c, \u017Ce zmierzam w dobrym kierunku."
-  - "Id\u0119 jako pierwszy. Kroki pozosta\u0142ych nios\u0105 si\u0119 echem, ich
-    g\u0142osy wydaj\u0105 si\u0119 dziwnie odleg\u0142e."
-  - "\u2026 gdyby nie wiert\u0142o Pabodiego, nie wiem, ile by nam to zaj\u0119\u0142o."
-  - Tego Pabodiego?!
-  - "W rzeczy samej! W ka\u017Cdym razie..."
-  - "Podnosz\u0119 wzrok na twarze towarzyszy. Poch\u0142oni\u0119ci rozmow\u0105
-    nie wygl\u0105daj\u0105, jakby dopiero co prze\u017Cyli tragedi\u0119. Zachwyt
-    i ekscytacja zwi\u0105zane z odkryciem ruin zdaj\u0105 si\u0119 stopniowo wypiera\u0107
-    z nas smutek."
-  - "Spogl\u0105dam w g\xF3r\u0119, by przekona\u0107 si\u0119, czy uda mi si\u0119
-    dojrze\u0107 sklepienie jaskini. Jednak zanim udaje mi si\u0119 przyjrze\u0107
-    mu dok\u0142adniej, co\u015B wypada z mojej kieszeni."
-  - "Kiedy schylam si\u0119 \u017Ceby podnie\u015B\u0107 bateri\u0119, moja latarka
-    o\u015Bwietla wg\u0142\u0119bienie w powierzchni mostu. Przykl\u0119kam \u017Ceby
-    przyjrze\u0107 mu si\u0119 z bliska. Wg\u0142\u0119bienie przypomina kszta\u0142tem
-    d\u0142o\u0144."
-  - "Podnosz\u0119 bateri\u0119, ale nie mog\u0119 oprze\u0107 si\u0119 ch\u0119ci
-    umieszczenia swojej d\u0142oni w wy\u017C\u0142obieniu."
-  - "Moj\u0105 uwag\u0119 odci\u0105ga dyszenie Sabra, za kt\xF3rym idzie Korav\u2019ye."
-  - "Nie jestem w stanie przyjrze\u0107 si\u0119/dostrzec twarzy Czukcza, gdy\u017C
-    stale si\u0119 rozgl\u0105da. Mija mnie szybkim krokiem."
-  - "Przyk\u0142adam swoj\u0105 d\u0142o\u0144 do odcisku, odnosz\u0119 wra\u017Cenie,
-    \u017Ce kamie\u0144 zdaje si\u0119 przyssywa\u0107 do mojej d\u0142oni niczym
-    macka."
-  - "Odrywam d\u0142o\u0144, a po wy\u017C\u0142obieniu/wg\u0142\u0119bieniu nie
-    ma ani \u015Bladu."
-  - "Odskakuj\u0119 niczym oparzony, podnosz\u0105c jednocze\u015Bnie latark\u0119."
-  - "O\u015Bwietlam posadzk\u0119 dooko\u0142a siebie pr\xF3buj\u0105c ponownie zlokalizowa\u0107
-    odcisk."
-  - "Czuj\u0119 na sobie czyj\u015B wzrok. Zdaj\u0119 sobie spraw\u0119, \u017Ce
-    id\u0105cy na ko\u0144cu Nikolaj przystan\u0105\u0142 i przygl\u0105da mi si\u0119
-    z zaciekawieniem."
-  - "Widzia\u0142e\u015B to?"
+  - "Z posadzki pod moimi stopami wyrasta okaza\u0142y most b\u0119d\u0105cy jedyn\u0105
+    drog\u0105 na drug\u0105 stron\u0119 przepa\u015Bci."
+  - "W oddali rozga\u0142\u0119ziaj\u0105ce si\u0119 w r\xF3\u017Cnych kierunkach
+    k\u0142adki \u0142\u0105cz\u0105 obie \u015Bciany bezdennej czelu\u015Bci. Ca\u0142o\u015B\u0107
+    konstrukcji zdaje si\u0119 wymyka\u0107 zdolno\u015Bci\u0105 ludzkiej percepcji."
+  - "Podmuch ch\u0142odnego wiatru popycha mnie w g\u0142\u0105b ruin, jakby sugeruj\u0105c,
+    \u017Ce zmierzam w dobrym kierunku."
+  - "Przez echo krok\xF3w pozosta\u0142ych cz\u0142onk\xF3w dru\u017Cyny dochodz\u0105
+    do mnie odg\u0142osy rozm\xF3w:"
+  - "Dlaczego tak wygl\u0105da\u0142? Co mu si\u0119 sta\u0142o\u2026"
+  - "Nie potrafi\u0119 tego wyja\u015Bni\u0107. Zupe\u0142nie, jakby czas p\u0142yn\u0105\u0142
+    tutaj inaczej, ni\u017C na g\xF3rze."
+  - "To mo\u017Cliwe?"
+  - "Nie przy obecnym stanie wiedzy\u2026 Nie, on musia\u0142 zwariowa\u0107."
+  - "Zmuszam si\u0119 do milczenia, aby nie sia\u0107 paniki. \u017Badne szale\u0144stwo
+    nie wyja\u015Bnia stanu cia\u0142a Czes\u0142awa i Antos zapewne dobrze o tym
+    wie."
+  - "Widzia\u0142am martwe cia\u0142a, ale nigdy w takim stanie."
+  - "Wypadki\u2026 czasem si\u0119 zdarzaj\u0105. Jak stoimy z zapasami?"
+  - "Z dwa dni mo\u017Cemy tu prze\u017Cy\u0107. Wi\u0119kszo\u015B\u0107 rzeczy
+    zosta\u0142a na g\xF3rze. To samo sprz\u0119t i dynamit."
+  - "Niedobrze\u2026 b\u0119dziemy musieli jako\u015B sobie poradzi\u0107."
+  - "Potykam si\u0119 o dziwn\u0105 nier\xF3wno\u015B\u0107 i prawie upadam. Gdy
+    kieruje \u015Bwiat\u0142o latarki w jej stron\u0119, dostrzegam osobliwe wg\u0142\u0119bienie,
+    kszta\u0142tem przypominaj\u0105ce ludzk\u0105 d\u0142o\u0144."
+  - "Czuj\u0119 na sobie czyj\u015B wzrok. To Nikolaj przystan\u0105\u0142 i przygl\u0105da
+    mi si\u0119 z zaciekawieniem."
+  - "Widzia\u0142e\u015B?"
   - Co takiego?
-  - "Odcisk d\u0142oni, tutaj na posadzce!"
-  - "Nikolaj wyci\u0105ga i odkr\u0119ca piersi\xF3wk\u0119. Wr\u0119cza mi j\u0105,
-    lekkim skinieniem g\u0142owy zach\u0119caj\u0105c mnie do zaczerpni\u0119cia."
-  - "Bior\u0119 \u0142yk i mam wra\u017Cenie, \u017Ce m\xF3j prze\u0142yk wype\u0142nia
-    si\u0119 ogniem. Moje cia\u0142o reaguje w jedyny naturalny spos\xF3b - krztusz\u0119
-    si\u0119. Nikolaj zabiera trunek z moich r\u0105k i klepie mnie po plecach."
-  - "Idzie przywykn\u0105\u0107."
-  - "Rzuca i rusza w dalsz\u0105 drog\u0119, zanosz\u0105c si\u0119 \u015Bmiechem."
-  - "Po doj\u015Bciu do siebie podbiegam na koniec mostu. Przez rami\u0119 rzucam
-    ostatnie spojrzenie na tajemniczy most zawieszony jakby w nico\u015Bci."
-  - "Moj\u0105 uwag\u0119 odwraca wo\u0142anie."
-  - "Wiktor, pozw\xF3l tutaj szybko!"
-  - "To W\u0142adys\u0142aw, w jego g\u0142osie wyczuwam podniecenie."
+  - "Chocia\u017C si\u0119 staram, nie mog\u0119 dojrze\u0107 \u015Bladu, kt\xF3ry
+    jeszcze przed sekund\u0105 tutaj by\u0142."
+  - "Odcisk d\u0142oni, by\u0142 tutaj."
+  - Jasne...
+  - "Nikolaj wyci\u0105ga piersi\xF3wk\u0119 i odkr\u0119ca korek. Wr\u0119cza mi
+    j\u0105 i lekkim skinieniem g\u0142owy zach\u0119ca mnie do zaczerpni\u0119cia."
+  - "Bior\u0119 \u0142yk i mam wra\u017Cenie, \u017Ce moje gard\u0142o wype\u0142nia
+    si\u0119 ogniem. Krztusz\u0119 si\u0119. Nikolaj zabiera alkohol z moich r\u0105k
+    i klepie mnie po plecach."
+  - "Idzie przywykn\u0105\u0107. Ba, nawet mo\u017Cna polubi\u0107. Jakby\u015B widzia\u0142
+    to co ja, zrozumia\u0142by\u015B."
+  - "Co widzia\u0142e\u015B?"
+  - "Wojn\u0119\u2026 Nie masz poj\u0119cia do czego zdolny jest drugi cz\u0142owiek,
+    aby prze\u017Cy\u0107."
+  - "Stan Czes\u0142awa\u2026 spotka\u0142e\u015B si\u0119 z czym\u015B podobnym?"
+  - "Nie na froncie. Ale widzia\u0142em ju\u017C r\xF3\u017Cne\u2026 sztuczki. Na
+    froncie gin\u0105 nie tylko \u017Co\u0142nierze\u2026 czasem trafiaj\u0105 si\u0119
+    arty\u015Bci\u2026"
+  - "To by\u0142a w\u0119drowna trupa. Jeden z iluzjonist\xF3w pokaza\u0142 mi wszystkie
+    swoje triki\u2026 i wiesz co? Dobrze si\u0119 bawi\u0142em, kiedy go zabijali\u015Bmy.
+    Naprawd\u0119\u2026"
+  - "Lodowaty spok\xF3j w g\u0142osie Nikolaja sprawia, \u017Ce zaczynam dr\u017Ce\u0107."
+  - "Lepiej czasem zapomnie\u0107 o tym, co si\u0119 widzia\u0142o. Od rozpami\u0119tywania
+    \u015Bmierci mo\u017Cna oszale\u0107."
+  - "Nasz\u0105 rozmow\u0119 przerywa nag\u0142y krzyk Antosa."
+  - "Wiktor, pozw\xF3l tutaj!"
   characters:
   - {fileID: 3933146148628123448, guid: bedc063a8985d2442b4bed5da3d36b77, type: 3}
   - {fileID: 8388310431346040389, guid: f6daff6589df7fc419b2d1b2638a3c2a, type: 3}
   - {fileID: 215678658477559257, guid: c3975f0b3a6eb074cb8d475a9842cfcc, type: 3}
   backgroundAlphaSpeed: 0.0086
   dialogPanelAlphaSpeed: 0.0217
-  nextLevelName: MainMenu
+  nextLevelName: Plansza18
   curve:
     serializedVersion: 2
     m_Curve: []
@@ -1301,6 +1309,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isBlackFadeAppearOnStart: 1
+  dynamicSounds: []
+  singleFadeComponent: {fileID: 0}
+  frameFade: {fileID: 0}
 --- !u!114 &1404065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1316,6 +1327,7 @@ MonoBehaviour:
   fade: {fileID: 326336257}
   isMainMenu: 0
   fadeAfterGameStart: {fileID: 0}
+  fadeOnStart: {fileID: 0}
 --- !u!224 &1418887228 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1508094689544559284, guid: 40f6b16685e256e4ba44c2c05f06e9cf, type: 3}

@@ -586,6 +586,7 @@ GameObject:
   - component: {fileID: 668151526}
   - component: {fileID: 668151525}
   - component: {fileID: 668151527}
+  - component: {fileID: 668151528}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -605,6 +606,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2084998551}
+  - {fileID: 739006527}
   m_Father: {fileID: 1404065444}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -633,7 +635,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3c1215b6fc95f7143bee0e05d4b3e982, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1685b12fde2b40147a7fd2375313f83a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -672,6 +674,26 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &668151528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668151523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a20f3c1ef1fb694190c1d472f46068f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundFront: {fileID: 739006525}
+  backgrounds:
+  - {fileID: 21300000, guid: 4d0d9d4e975a3204cb6203526b2606b5, type: 3}
+  - {fileID: 21300000, guid: 1685b12fde2b40147a7fd2375313f83a, type: 3}
+  frameRate: 10
+  singleFade: 0
+  isFrameFadeFromStart: 1
+  doubleSideFade: 0
 --- !u!1 &729899983
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +773,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729899983}
   m_CullTransparentMesh: 0
+--- !u!1 &739006524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 739006527}
+  - component: {fileID: 739006526}
+  - component: {fileID: 739006525}
+  m_Layer: 5
+  m_Name: BackgroundFront
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &739006525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739006524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 4d0d9d4e975a3204cb6203526b2606b5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &739006526
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739006524}
+  m_CullTransparentMesh: 0
+--- !u!224 &739006527
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739006524}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 668151524}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &976643124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,6 +1144,8 @@ GameObject:
   - component: {fileID: 1404065441}
   - component: {fileID: 1404065445}
   - component: {fileID: 1404065446}
+  - component: {fileID: 1404065447}
+  - component: {fileID: 1404065448}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1168,164 +1267,123 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 1829328451}
   choise1: {fileID: 149955782}
   choise2: {fileID: 2119179182}
+  choise3: {fileID: 0}
   choise1Text: {fileID: 347434731}
   choise2Text: {fileID: 729899985}
+  choise3Text: {fileID: 0}
   note: {fileID: 0}
+  staticAudio: {fileID: 0}
+  dynamicAudio: {fileID: 1404065448}
+  backgroundElementFade1: {fileID: 0}
+  backgroundElementFade2: {fileID: 0}
+  backgroundElementFade3: {fileID: 0}
+  isChooseButtonDestroyed: 0
   isDialogPage: 1
-  levelPreset: 8
+  levelPreset: 9
   backgroundTexts: []
   dialogTexts:
-  - "Kiedy wchodzimy do \u015Brodka, wita nas mrok, szybko spychany przez \u015Bwiat\u0142o
-    wpadaj\u0105ce zza otwartych wr\xF3t."
-  - "Owaln\u0105 komnat\u0119 otaczaj\u0105 rz\u0119dy masywnych kolumn."
-  - "Niekt\xF3re z nich zachowa\u0142y si\u0119 w niemal\u017Ce nienaruszonym stanie.
-    Z innymi natomiast czas nie obszed\u0142 si\u0119 \u0142askawie."
-  - "Moj\u0105 uwag\u0119 przykuwa znajduj\u0105cy si\u0119 w centralnej cz\u0119\u015Bci
-    sali ziej\u0105cy ciemno\u015Bci\u0105 otw\xF3r."
-  - "Wylewaj\u0105cy si\u0119 z niego mrok zdaje si\u0119 mnie przyci\u0105ga\u0107.
-    Jakby owija\u0142 mnie widmowymi mackami."
-  - "Niepewnym krokiem zbli\u017Cam si\u0119 do kraw\u0119dzi studni\u2026 Nagle
-    czuj\u0119, jak kto\u015B chwyta mnie za rami\u0119."
-  - "Widzia\u0142e\u015B ten sufit, Wiktor?"
+  - "Owaln\u0105 komnat\u0119 otaczaj\u0105 rz\u0119dy masywnych kolumn. Niekt\xF3re
+    z nich zachowa\u0142y si\u0119 w niemal\u017Ce nienaruszonym stanie. Z innymi
+    czas nie obszed\u0142 si\u0119 tak \u0142askawie."
+  - "Moj\u0105 uwag\u0119 przykuwa studnia na \u015Brodku sali. Wylewaj\u0105cy si\u0119
+    z niej mrok zdaje si\u0119 mnie przyci\u0105ga\u0107. Jakby owija\u0142 mnie
+    swymi widmowymi mackami."
+  - "Widzia\u0142e\u015B sufit, Wiktor?"
   - "M\xF3j wzrok pod\u0105\u017Ca za \u015Bwiat\u0142em latarki Antosa. Dopiero
     teraz orientuj\u0119 si\u0119, \u017Ce nawet nie pomy\u015Bla\u0142em o wyci\u0105gni\u0119ciu
     swojej."
-  - "Chyba ju\u017C wiem, co tak zdziwi\u0142o profesora..."
   - "Wzory na suficie przypominaj\u0105 motywy geometryczne spotykane w islamskich
     meczetach."
-  - "Zupe\u0142nie jak na bliskim wschodzie."
-  - "Dok\u0142adnie! Podobne wzory widzia\u0142em w Damaszku podczas wykopalisk.
-    Ciekawe, jak znalaz\u0142y si\u0119 tutaj. Musz\u0105 mie\u0107 setki lat!"
-  - "W drzwiach pojawiaj\u0105 si\u0119 Manya i Czes\u0142aw nios\u0105cy niepor\u0119czny
-    pakunek. Zaraz za nimi idzie Nikolai, kt\xF3ry bez problemu radzi sobie z \u0142adunkiem.
-    Ich ubrania przypr\xF3szone s\u0105 spor\u0105 ilo\u015Bci\u0105 bia\u0142ych
-    p\u0142atk\xF3w \u015Bniegu."
-  - "Na zewn\u0105trz zaczyna szale\u0107 \u015Bnie\u017Cyca!"
-  - "Wiktor, pom\xF3\u017C mi z agregatem."
-  - "Gdy ruszam za Nikolaiem w stron\u0119 wej\u015Bcia, Manya zaczyna sk\u0142ada\u0107
-    elementy d\u017Awigu."
-  - "Gdy zatrzymujemy si\u0119 przy urz\u0105dzeniu poka\u017Anych rozmiar\xF3w maszynie,
-    zaczynam w\u0105tpi\u0107, czy damy sobie z ni\u0105 rad\u0119."
-  - "Poradzimy sobie we dw\xF3ch?"
-  - "Nikolai pewnie \u0142apie za uchwyty na urz\u0105dzeniu. Skinieniem wskazuje
-    mi drug\u0105 stron\u0119."
+  - "Zupe\u0142nie jak na bliskim wschodzie\u2026"
+  - "Dok\u0142adnie! Podobne motywy widzia\u0142em w Damaszku podczas wykopalisk.
+    Musz\u0105 mie\u0107 setki lat!"
+  - "We wrotach \u015Bwi\u0105tyni pojawiaj\u0105 si\u0119 Manya i Czes\u0142aw.
+    Ich ubrania przypr\xF3szone s\u0105 spor\u0105 ilo\u015Bci\u0105 \u015Bniegu."
+  - "Nadci\u0105ga \u015Bnie\u017Cyca! Wiktor, przydaj si\u0119 do czego\u015B. Pom\xF3\u017C
+    mi z agregatem przy wrotach!"
+  - "Nikolaj pewnie \u0142apie za uchwyty na urz\u0105dzeniu. Skinieniem wskazuje
+    mi drug\u0105 stron\u0119 maszyny."
   - Raz...Dwa...Trzy!
-  - "Udaje nam si\u0119 unie\u015B\u0107 maszyn\u0119. Powoli i z nadzwyczajn\u0105
-    ostro\u017Cno\u015Bci\u0105 st\u0105pamy po pop\u0119kanej posadzce."
-  - "Zauwa\u017Cam stoj\u0105cego przed wrotami Sabra. Jego postawa i naje\u017Cona
-    na karku sier\u015B\u0107 sugeruj\u0105 niepok\xF3j, a mo\u017Ce nawet strach
-    przed wej\u015Bciem do \u015Brodka."
-  - "Cholerny Czukcz! Przywl\xF3k\u0142 ze sob\u0105 tego psa nie wiadomo po co!"
-  - "Jestem \u017Co\u0142nierzem. Ca\u0142e \u017Cycie uczono mnie, \u017Ce aby osi\u0105gn\u0105\u0107
-    cel nale\u017Cy dzia\u0142a\u0107. Nie jestem w stanie przekona\u0107 si\u0119
-    do kultury, kt\xF3ra liczy na pomoc wymy\u015Blonych bo\u017Ck\xF3w."
-  - "Ja wierz\u0119 w dzia\u0142ania, kt\xF3re poprowadz\u0105 nasz lud do lepszej
-    przysz\u0142o\u015Bci. To my decydujemy o w\u0142asnym losie, nie licz\u0119
-    na pomoc boga."
-  - "Odstawiamy agregat przy sprz\u0119cie Manyi. Kobieta zapala \u015Bwiat\u0142a
-    i kontynuuje budow\u0119 d\u017Awigu."
-  - "Przepraszam, ale Sabr nadal stoi przed wej\u015Bciem i nie mam serca patrze\u0107
-    jak tam marznie. P\xF3jd\u0119 po niego."
-  - "Nikolai z wymalowan\u0105 na twarzy oboj\u0119tno\u015Bci\u0105 przytakuje."
-  - "Pies nie wygl\u0105da ju\u017C na wystraszonego, jedynie trz\u0119sie si\u0119
-    z zimna."
+  - "Razem udaje nam si\u0119 unie\u015B\u0107 maszyn\u0119. Manya tymczasem przyst\u0119puj\u0119
+    do budowy konstrukcji, kt\xF3ra ma nas opu\u015Bci\u0107 w d\xF3\u0142 studni."
+  - "Wraz z Nikolajem powoli st\u0105pamy po pop\u0119kanej posadzce, \u015Bledzeni
+    przez czujny wzrok Sabra. Jego postawa i naje\u017Cona na karku sier\u015B\u0107
+    sugeruj\u0105 niepok\xF3j."
   - "Co tam, kolego? B\u0119dziesz musia\u0142 wej\u015B\u0107, je\u015Bli chcesz
-    si\u0119 ogrza\u0107."
-  - "Pies podbiega i id\u0105c przy nodze wchodzi ze mn\u0105 do \u015Bwi\u0105tyni.
-    Z drugiego ko\u0144ca pomieszczenia docieraj\u0105 do nas uniesione g\u0142osy
-    k\u0142\xF3tni."
-  - "Uwa\u017Cam, \u017Ce to z\u0142y pomys\u0142. Jako pierwszy powinien zej\u015B\u0107
-    Korav\u2019ye, w ko\u0144cu jest naszym przewodnikiem."
-  - "Profesorze, prosz\u0119!"
-  - "Je\u015Bli tak chce, niech zjedzie pierwszy."
-  - "W takim razie niech b\u0119dzie."
-  - Wspaniale! Nawet nie wiem, czy starczy mi kliszy!
-  - "Prosz\u0119, aby\u015B zachowa\u0142 najwy\u017Csz\u0105 ostro\u017Cno\u015B\u0107."
+    si\u0119 ogrza\u0107. No, chod\u017A!"
+  - "Sabr podbiega bli\u017Cej. Id\u0105c niepewnie przy nodze wchodzi ze mn\u0105
+    do \u015Bwi\u0105tyni."
+  - "Cholerny Czukcz! Wsz\u0119dzie musi wlec tego psa!"
+  - "To prymityw. Zobaczysz, \u017Ce te jego rytua\u0142y tylko b\u0119d\u0105 nas
+    spowalnia\u0107."
+  - "Korav\u2019ye jest tutaj, \u017Ceby nam pom\xF3c. Otworzy\u0142 wrota..."
+  - "Te\u017C mi sztuka. Korav\u2019ye nie m\xF3wi nam wszystkiego. Nie ufam mu i
+    tobie radz\u0119 zrobi\u0107 to samo."
+  - "Jak dla mnie to strata czasu, ale rz\u0105d ma widocznie inne zdanie. Licz\u0105,
+    \u017Ce co\u015B tu znajdziemy, inaczej nie daliby nam pozwolenia i sprz\u0119tu."
+  - "Czemu te ruiny mia\u0142yby ich interesowa\u0107?"
+  - "Nie wiem. Ja tylko wykonuje rozkazy. Nie pytam czego tutaj szukamy, czy po jak\u0105
+    choler\u0119 kopali\u015Bmy na Ukrainie..."
+  - "To tam pozna\u0142e\u015B profesora. M\xF3wi\u0142, \u017Ce zawali\u0142 si\u0119
+    na ciebie wykop."
+  - "K\u0105ciki ust Nikolaja uk\u0142adaj\u0105 si\u0119 w co\u015B, co mo\u017Cna
+    uzna\u0107 za u\u015Bmiech."
+  - "Skoro tak to uj\u0105\u0142, niech mu b\u0119dzie."
+  - "Nikolaj zaczyna wrzuca\u0107 pakunki na platform\u0119. Manya staje przy studni
+    i wrzuca do niej kamie\u0144. Jej usta poruszaj\u0105 si\u0119 bezg\u0142o\u015Bnie,
+    kiedy odlicza sekundy do upadku."
+  - "Oko\u0142o stu metr\xF3w. Powinni\u015Bmy da\u0107 rad\u0119..."
+  - "Po kilku godzinach Manya ko\u0144czy monta\u017C d\u017Awigu, kt\xF3ry wkr\xF3tce
+    ma zabra\u0107 nas w g\u0142\u0105b ruin."
+  - "Czes\u0142aw znajduje sobie miejsce pomi\u0119dzy tobo\u0142ami. Profesor spogl\u0105da
+    na niego sceptycznie."
+  - "Uwa\u017Cam, \u017Ce to z\u0142y pomys\u0142. Pierwszy powinien zjecha\u0107
+    Korav\u2019ye."
+  - "Profesorze, prosz\u0119..."
+  - "Nie mo\u017Cesz jecha\u0107 sam. To zbyt niebezpieczne."
+  - "Z ca\u0142ym tym grajdo\u0142em, lepiej aby jecha\u0142a jedna osoba. Czes\u0142aw
+    jest lekki. korav'ye musia\u0142by wzi\u0105\u0107 ze sob\u0105 tak\u017Ce psa."
+  - "Je\u015Bli taka jego wola, niech zjedzie pierwszy."
+  - "Niech b\u0119dzie, ale zachowaj ostro\u017Cno\u015B\u0107."
   - "Czes\u0142aw wyci\u0105ga z plecaka lamp\u0119 b\u0142yskow\u0105, kt\xF3r\u0105
-    doczepia do aparatu. Nast\u0119pnie zwraca wzrok w moim kierunku."
-  - "Dziwi\u0119 si\u0119, \u017Ce ty nie chcesz zej\u015B\u0107 pierwszy."
-  - Czemu?
-  - "Tyle tu jechali\u015Bmy, nie wytrzyma\u0142bym, gdybym musia\u0142 czeka\u0107
-    jeszcze d\u0142u\u017Cej!"
-  - "Czes\u0142aw zbli\u017Ca si\u0119 do mnie. Szepcze ze s\u0142yszalnym napi\u0119ciem."
-  - "Nie s\u0142yszysz, jak nas wo\u0142aj\u0105?"
-  - "W os\u0142upieniu patrz\u0119, jak przyk\u0142ada palec do ust i nas\u0142uchuj\u0105c
-    zastyga w bezruchu. Jedynie jego wzrok w\u0119druje po pomieszczeniu, jakby czego\u015B
-    szuka\u0142."
-  - "Czes\u0142aw odsuwa si\u0119 nagle, si\u0119ga do plecaka po now\u0105 klisz\u0119.
-    Chowa j\u0105 do kieszeni."
-  - "Tyle tu jechali\u015Bmy, nie wytrzyma\u0142bym, gdybym musia\u0142 czeka\u0107
-    jeszcze d\u0142u\u017Cej!"
-  - "Czes\u0142aw najwidoczniej jest tak podekscytowany, \u017Ce zaczyna si\u0119
-    powtarza\u0107. Jego  entuzjazm przypomina mi zachowanie dziecka, kt\xF3re nie
-    potrafi poradzi\u0107 sobie z emocjami. "
-  - "Czes\u0142aw zak\u0142ada na szyj\u0119 aparat, u\u015Bmiecha si\u0119 i klepie
-    mnie po ramieniu."
-  - "Musisz mi wybaczy\u0107, powinienem przypilnowa\u0107 Manyi, nie mo\u017Ce nas
-    op\xF3\u017Ania\u0107!"
-  - "Podchodz\u0119 do Antosa, kt\xF3ry ze swoim notesem w d\u0142oni siedzi na jednej
-    z powalonych kolumn. Jest tak poch\u0142oni\u0119ty szkicowaniem sufitu pomieszczenia,
-    \u017Ce nawet mnie nie spostrzega."
-  - "Zauwa\u017Cam, \u017Ce profesor bardzo wiarygodnie uchwyci\u0142 na rysunku
-    mozaik\u0119 pokrywaj\u0105c\u0105 sklepienie. Misterny wz\xF3r przywodzi na
-    my\u015Bl ohydne owadzie konstrukcje."
-  - "Manya ko\u0144czy montowa\u0107 d\u017Awig. Nikolaj wrzuca kilka pakunk\xF3w
-    z ekwipunkiem na platform\u0119. Czes\u0142aw szykuje si\u0119 do zjazdu."
-  - "Dla pewno\u015Bci trzymaj si\u0119 liny."
-  - Do zobaczenia na dole!
-  - "Nikolai uruchamia agregat pr\u0105dotw\xF3rczy. Wci\u0105gnik zaczyna pracowa\u0107
-    i rozwija\u0107 lin\u0119, opuszczaj\u0105c Czes\u0142awa w niezbadane ciemno\u015Bci."
-  - "M\u0119\u017Cczyzna pr\xF3buje o\u015Bwietli\u0107 latark\u0105 drog\u0119 w
-    d\xF3\u0142, jednak jej \u015Bwiat\u0142o ginie w mroku."
+    doczepia do aparatu."
+  - "B\u0119d\u0119 na was czeka\u0142 na dole."
+  - "Nikolaj na znak dany przez Mani\u0119 uruchamia agregat. Wci\u0105gnik zaczyna
+    pracowa\u0107 i rozwija\u0107 lin\u0119."
+  - "Czes\u0142aw znika w niezbadanych ciemno\u015Bciach. Pr\xF3buje o\u015Bwietli\u0107
+    latark\u0105 drog\u0119 w d\xF3\u0142, jednak jej \u015Bwiat\u0142o ginie w mroku."
   - "Z wn\u0119trza studni wydobywa si\u0119 wycie wiatru przypominaj\u0105ce przyt\u0142umiony
-    lament. Ca\u0142kiem jakby miejsce to chcia\u0142o podzieli\u0107 si\u0119 tym
-    wszystkim co zosta\u0142o w nim st\u0142umione."
-  - "Zauwa\u017Camy, jak ju\u017C ledwo widoczne \u015Bwiat\u0142o zaczyna oddala\u0107
+    lament."
+  - "Ledwo widoczne \u015Bwiat\u0142o latarki Czes\u0142awa zaczyna oddala\u0107
     si\u0119 z niepokoj\u0105c\u0105 pr\u0119dko\u015Bci\u0105. Po chwili dociera
     do nas d\u017Awi\u0119k uderzenia metalu o kamie\u0144, a latarka ga\u015Bnie
     ca\u0142kowicie."
   - "Czes\u0142aw, wszystko w porz\u0105dku?"
-  - "Odpowiada nam tylko niepokoj\u0105ca cisza."
-  - "Niepok\xF3j ust\u0119puje przera\u017Ceniu, kt\xF3re przeradza si\u0119 w panik\u0119."
+  - Cisza.
   - "Czes\u0142aw!"
   - "Na co czekacie?! Wci\u0105gajcie go do g\xF3ry!"
-  - "Skrzypienie rozwijanej liny przerywa nag\u0142y trzask. "
   - "Z ciemno\u015Bci wy\u0142ania si\u0119 platforma. Jedna lina jest zerwana, przez
-    co ca\u0142o\u015B\u0107 konstrukcji jest przechylona. Nie pozostawia to w\u0105tpliwo\u015Bci
-    co do tego, gdzie znajduje si\u0119 Czes\u0142aw. Nie wiadomo tylko w jakim stanie."
-  - "Manya, prosz\u0119, naci\u0105gnij line i popraw mocowanie platformy. Wiktor
-    i Korav\u2019ye, wy zjedziecie pierwsi. Ka\u017Cda minuta si\u0119 liczy!"
-  - "Dru\u017Cyna po\u015Bpiesznie zaczyna zarzuca\u0107 baga\u017Ce na plecy. Tylko
-    Manya trzyma nerwy na wodzy."
+    co ca\u0142o\u015B\u0107 konstrukcji jest przechylona. Czes\u0142aw musia\u0142
+    spa\u015B\u0107..."
+  - "Manya, popraw mocowanie platformy. Wiktor i Korav\u2019ye, wy zjedziecie pierwsi.
+    Ka\u017Cda minuta si\u0119 liczy!"
   - "B\u0119d\u0119 potrzebowa\u0107 dw\xF3ch lin, \u017Ceby\u015Bmy mogli uruchomi\u0107
     d\u017Awig z dna studni."
-  - "Wywracaj\u0105c zawarto\u015B\u0107 baga\u017Cu do g\xF3ry nogami, wygrzebuj\u0119
-    po\u017C\u0105dany przedmiot."
+  - "Z rosn\u0105cym niepokojem przegl\u0105dam sw\xF3j plecak."
   - "Czy ma kto\u015B zapasow\u0105 lin\u0119!? Potrzebuj\u0119 jeszcze jednej!"
   - "\u0141ap!"
-  - "Nikolaj rzuca w moim kierunku bucht\u0105. Pr\xF3buj\u0119 j\u0105 z\u0142apa\u0107,
+  - "Nikolaj rzuca w moim kierunku bucht\u0119. Pr\xF3buj\u0119 j\u0105 z\u0142apa\u0107,
     jednak uderza mnie w klatk\u0119 piersiow\u0105, niemal pozbawiaj\u0105c tchu."
   - "Prosz\u0119, b\u0105d\u017Acie ostro\u017Cni!"
   - "Manya odbiera ode mnie liny i przywi\u0105zuje je do wajchy uruchamiaj\u0105cej
     d\u017Awig. Jedn\u0105 z nich przerzuca przez rami\u0119 d\u017Awigu, a drug\u0105
     spuszcza po kraw\u0119dzi studni."
   - "Wchodzimy z Korav\u2019ye na platform\u0119. Sabr merdaj\u0105c ogonem wskakuje
-    za nami i spogl\u0105da na mnie z wyra\u017Anym zaciekawieniem."
-  - Dla ciebie to wszystko zabawa, nie?
+    za nami i spogl\u0105da na mnie z wyra\u017Anym zaciekawieniem. Nie ma chyba
+    poj\u0119cia, co si\u0119 dzieje."
   - "Manya uruchamia d\u017Awig. Ruszamy w d\xF3\u0142. Jedn\u0105 r\u0119k\u0105
     obejmuj\u0119 siedz\u0105cego przy mnie Sabra."
-  - "\u015Awiat\u0142o latarek niknie, gdy nagle przestrze\u0144 wok\xF3\u0142 nas
-    staje si\u0119 \u2026 ja\u015Bniejsza."
-  - "Wychylaj\u0105c si\u0119 ostro\u017Cnie poza platform\u0119, zauwa\u017Cam na
-    dole niewyra\u017An\u0105 sylwetk\u0119."
-  - "Kiedy zbli\u017Camy si\u0119 do dna, nabieram pewno\u015Bci, \u017Ce posta\u0107
-    le\u017Cy na ziemi. W bezruchu."
-  characters:
-  - {fileID: 3933146148628123448, guid: bedc063a8985d2442b4bed5da3d36b77, type: 3}
-  - {fileID: 215678658477559257, guid: c3975f0b3a6eb074cb8d475a9842cfcc, type: 3}
-  - {fileID: 8388310431346040389, guid: 6613bf0f32553d947befee8b9421e59d, type: 3}
-  - {fileID: 8388310431346040389, guid: f6daff6589df7fc419b2d1b2638a3c2a, type: 3}
-  - {fileID: 8388310431346040389, guid: 7505d166853731e44886637b3ff2cde2, type: 3}
+  characters: []
   backgroundAlphaSpeed: 0.0086
   dialogPanelAlphaSpeed: 0.0217
   nextLevelName: Plansza13
@@ -1336,6 +1394,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isBlackFadeAppearOnStart: 0
+  dynamicSounds:
+  - {fileID: 8300000, guid: 0ac2277263540934787257bd2e7310d9, type: 3}
+  singleFadeComponent: {fileID: 0}
+  frameFade: {fileID: 0}
 --- !u!114 &1404065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1351,6 +1413,199 @@ MonoBehaviour:
   fade: {fileID: 326336257}
   isMainMenu: 0
   fadeAfterGameStart: {fileID: 0}
+  fadeOnStart: {fileID: 0}
+--- !u!82 &1404065447
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404065440}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5bc7ab925718f2c4aaab3ce0028523fe, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.27
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1404065448
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404065440}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!224 &1441041586 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1508094689544559284, guid: 40f6b16685e256e4ba44c2c05f06e9cf, type: 3}

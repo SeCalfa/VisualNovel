@@ -709,6 +709,7 @@ GameObject:
   - component: {fileID: 668151526}
   - component: {fileID: 668151525}
   - component: {fileID: 668151527}
+  - component: {fileID: 668151528}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -728,6 +729,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2084998551}
+  - {fileID: 1400547281}
   m_Father: {fileID: 1404065444}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -756,7 +758,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e479d1f41cc480848af4567e757b4911, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a5c5b59521363d4db530b271077a5f9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -795,6 +797,30 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &668151528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668151523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a20f3c1ef1fb694190c1d472f46068f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundFront: {fileID: 1400547279}
+  backgrounds:
+  - {fileID: 21300000, guid: 37b73db41d41fd84baa7861a8a485c21, type: 3}
+  - {fileID: 21300000, guid: f1a53da973eee474088ac7cb08179b82, type: 3}
+  - {fileID: 21300000, guid: 8ccd04cbb427f1044b719fa3b6a85577, type: 3}
+  - {fileID: 21300000, guid: 6a5c5b59521363d4db530b271077a5f9, type: 3}
+  - {fileID: 21300000, guid: 8ccd04cbb427f1044b719fa3b6a85577, type: 3}
+  - {fileID: 21300000, guid: f1a53da973eee474088ac7cb08179b82, type: 3}
+  frameRate: 2
+  singleFade: 0
+  isFrameFadeFromStart: 1
+  doubleSideFade: 0
 --- !u!1 &729899983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,6 +1116,81 @@ RectTransform:
   m_AnchoredPosition: {x: -7.81, y: 7.82}
   m_SizeDelta: {x: 361.26562, y: 45.632294}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1400547278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1400547281}
+  - component: {fileID: 1400547280}
+  - component: {fileID: 1400547279}
+  m_Layer: 5
+  m_Name: BackgroundFront
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1400547279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400547278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 37b73db41d41fd84baa7861a8a485c21, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1400547280
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400547278}
+  m_CullTransparentMesh: 0
+--- !u!224 &1400547281
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400547278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 668151524}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1404065440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,70 +1326,73 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 1829328451}
   choise1: {fileID: 149955782}
   choise2: {fileID: 2119179182}
+  choise3: {fileID: 0}
   choise1Text: {fileID: 347434731}
   choise2Text: {fileID: 729899985}
+  choise3Text: {fileID: 0}
   note: {fileID: 0}
+  staticAudio: {fileID: 0}
+  dynamicAudio: {fileID: 0}
+  backgroundElementFade1: {fileID: 0}
+  backgroundElementFade2: {fileID: 0}
+  backgroundElementFade3: {fileID: 0}
+  isChooseButtonDestroyed: 0
   isDialogPage: 1
-  levelPreset: 12
+  levelPreset: 13
   backgroundTexts: []
   dialogTexts:
-  - "W przyp\u0142ywie adrenaliny rzucam si\u0119 do ucieczki."
-  - "Konstrukcja roztrzaskuje si\u0119 o kamienn\u0105 posadzk\u0119 wyrzucaj\u0105c
-    kawa\u0142ki drewna i stali we wszystkich kierunkach. Si\u0142a uderzenia unosi
-    w powietrze tumany py\u0142u."
-  - "Moje uszy wype\u0142nia og\u0142uszaj\u0105cy pisk. W g\u0142owie czuj\u0119
-    pulsuj\u0105ce bicie serca."
-  - "Podnosz\u0119 si\u0119."
-  - "Og\u0142uszaj\u0105cy ha\u0142as ust\u0119puje. Pr\xF3buj\u0119 otrzepa\u0107
-    swoje ubranie."
+  - "Konstrukcja d\u017Awigu roztrzaskuje si\u0119, wyrzuca kawa\u0142ki drewna i
+    stali we wszystkich kierunkach."
+  - "Instynktownie padam na ziemi\u0119. Moje uszy wype\u0142nia og\u0142uszaj\u0105cy
+    pisk. W g\u0142owie czuj\u0119 pulsuj\u0105ce bicie serca."
   - "Zdaj\u0119 sobie spraw\u0119, \u017Ce ca\u0142y jestem w pyle. Drobinki dostaj\u0105
-    si\u0119 do oczu, powoduj\u0105c niezno\u015Bne pieczenie."
-  - "Co si\u0119 sta\u0142o?"
+    si\u0119 do oczu, powoduj\u0105c pieczenie."
   - "Przez opadaj\u0105ce k\u0142\u0119by kurzu dostrzegam niewyra\u017Ane sylwetki."
-  - "Ostro\u017Cnie! Nikolai nie ruszaj si\u0119!"
-  - "Profesor, Manya i Korav\u2019ye odrzucaj\u0105 kolejne fragmenty stela\u017Ca
-    i ska\u0142, kt\xF3re najwyra\u017Aniej oderwa\u0142y si\u0119 wraz z d\u017Awigiem."
-  - Chwiejnym krokiem docieram do reszty.
-  - "Pomi\u0119dzy elementami konstrukcji widzimy Nikolaia. Z wielk\u0105 ostro\u017Cno\u015Bci\u0105
-    wyci\u0105gamy go spomi\u0119dzy pozosta\u0142o\u015Bci d\u017Awigu."
-  - "Niech kto\u015B roz\u0142o\u017Cy koc, trzeba go po\u0142o\u017Cy\u0107!"
-  - "Czukcz szybkim ruchem rozk\u0142ada materia\u0142 na ziemi."
-  - "Uk\u0142adamy Nikolaia na przygotowanym przez Korav\u2019ye kawa\u0142ku materia\u0142u."
+  - "Ostro\u017Cnie! Nikolaj, nie ruszaj si\u0119!"
+  - "Profesor, Manya i Korav\u2019ye odrzucaj\u0105 kolejne kawa\u0142ki stela\u017Ca
+    i ska\u0142, kt\xF3re oderwa\u0142y si\u0119 wraz z d\u017Awigiem, przygniataj\u0105c
+    Nikolaja."
+  - "Pomagam reszcie odkopa\u0107 go spod zgliszczy."
+  - "Trzeba go po\u0142o\u017Cy\u0107!"
+  - "Nikolaj pr\xF3buje wyszarpa\u0107 si\u0119 Manyi."
   - "Najpierw Czes\u0142aw, teraz ja! Chcesz nas wszystkich wyko\u0144czy\u0107?!"
   - "Oczy Manyi zaczynaj\u0105 si\u0119 szkli\u0107. G\u0142os dr\u017Cy."
-  - "Nikolai prosz\u0119, nie ruszaj si\u0119, musz\u0119 ci\u0119 obejrze\u0107."
-  - "Nikolai uspokaja si\u0119, s\u0142ysz\u0105c ton Manyi i pozwala si\u0119 zbada\u0107.
-    Kobieta wyci\u0105ga ma\u0142\u0105 latark\u0119 i zaczyna ni\u0105 \u015Bwieci\u0107
-    po oczach \u017Co\u0142nierza."
-  - "Nie wiem, jak to mo\u017Cliwe, ale poza st\u0142uczeniem barku nic ci nie dolega."
+  - "Nikolaj, prosz\u0119, nie ruszaj si\u0119, musz\u0119 ci\u0119 obejrze\u0107."
+  - "Nikolaj uspokaja si\u0119, s\u0142ysz\u0105c ton Manyi i niech\u0119tnie pozwala
+    si\u0119 zbada\u0107. Kobieta wyci\u0105ga ma\u0142\u0105 latark\u0119 i \u015Bwieci
+    ni\u0105 w oczy \u017Co\u0142nierza."
+  - "Mia\u0142e\u015B szcz\u0119\u015Bcie..."
   - "Dzi\u0119ki Bogu! Mo\u017Cesz chodzi\u0107?"
-  - "Nikolai podnosi si\u0119 ostro\u017Cnie, wk\u0142ada r\u0119k\u0119 za pazuch\u0119
-    i wyci\u0105ga lekko zgniecion\u0105 piersi\xF3wke. Nast\u0119pnie poci\u0105ga
-    solidny \u0142yk trunku."
+  - "Nikolaj podnosi si\u0119 ostro\u017Cnie, wk\u0142ada r\u0119k\u0119 za pazuch\u0119
+    i wyci\u0105ga lekko zgniecion\u0105 piersi\xF3wke."
   - "Dam rad\u0119."
-  - "Profesor staje przy zasypanej gruzem platformie. Moim oczom ukazuje si\u0119
-    ciasno owini\u0119ty brezentem pod\u0142u\u017Cny kszta\u0142t przysypany kawa\u0142kami
-    d\u017Awigu.."
-  - "Obawiam si\u0119, \u017Ce nie zdo\u0142amy go teraz wyci\u0105gn\u0105\u0107\u2026"
-  - "Antos patrzy na ka\u017Cdego z cz\u0142onk\xF3w wyprawy z osobna."
-  - Wszyscy cali?
-  - "Na to wygl\u0105da."
-  - "Moja twarz wykrzywia si\u0119 do u\u015Bmiechu."
-  - "Musimy znale\u017A\u0107 wyj\u015Bcie. Jedyna droga prowadzi w g\u0142\u0105b.
-    Zbierzmy rzeczy, nie wiadomo, czego b\u0119dziemy potrzebowa\u0107 przy przeprawie
-    / co mo\u017Ce nam si\u0119 przyda\u0107."
-  - "Korav\u2019ye podnosi z ziemi kilka kawa\u0142k\xF3w drewna i chowa je do plecaka.
-    Gdy nasz wzrok si\u0119 spotyka, t\u0142umaczy."
-  - "Gdyby\u015Bmy potrzebowali si\u0119 ogrza\u0107."
+  - "Profesor staje przy zasypanej platformie. Gdzie\u015B pod gruzami znajduje si\u0119
+    teraz cia\u0142o Czes\u0142awa..."
+  - "Obawiam si\u0119, \u017Ce nie zdo\u0142amy wyci\u0105gn\u0105\u0107 cia\u0142a\u2026"
+  - "Ani wr\xF3ci\u0107."
+  - "Dodaje Nikolaj ponuro. Antos patrzy na ka\u017Cdego z cz\u0142onk\xF3w wyprawy
+    z osobna."
+  - "Musimy znale\u017A\u0107 inne wyj\u015Bcie."
+  - "Jedyna droga prowadzi w g\u0142\u0105b \u015Bwi\u0105tyni. Zbierzmy rzeczy.
+    Nie wiadomo, co mo\u017Ce nam si\u0119 przyda\u0107."
+  - "Korav\u2019ye podnosi z ziemi kilka kawa\u0142k\xF3w drewna i chowa je do plecaka."
+  - "Gdyby\u015Bmy  musieli si\u0119 ogrza\u0107."
   - "Antos kiwa g\u0142ow\u0105 i wyci\u0105ga z plecaka ma\u0142\u0105 ampu\u0142k\u0119.
-    Wbija j\u0105 sobie w nog\u0119, po czym siada na ziemi i przymyka oczy. Po chwili
-    wraz z reszt\u0105 grupy zaczyna przeczesywa\u0107 gruzowisko."
-  - "Podnosz\u0119 aparat Czes\u0142awa. Dotyk zimnego metalu wybudza mnie z resztek
-    szoku i dezorientacji. Dopiero teraz czuj\u0119 \u0142zy sp\u0142ywaj\u0105ce
-    po twarzy."
-  - "Musz\u0119 si\u0119 wzi\u0105\u0107 w gar\u015B\u0107. Przecieram twarz zakurzonym
-    r\u0119kawem."
-  - "Gotowi? Wi\u0119c ruszajmy."
+    Wbija j\u0105 sobie w nog\u0119, po czym siada na ziemi i przymyka oczy. Przez
+    chwil\u0119 walczy z b\xF3lem."
+  - "Podnosz\u0119 aparat Czes\u0142awa. Ku mojemu zdziwieniu, urz\u0105dzenie wydaje
+    si\u0119 sprawne."
+  - "Przecieram obiektyw zakurzonym r\u0119kawem i siadam obok W\u0142adys\u0142awa."
+  - "Otwieram metalow\u0105 klapk\u0119 z ty\u0142u aparatu. Przygl\u0105dam si\u0119
+    uchwyconym obrazom."
+  - "Ostatni z nich przedstawia nadnaturalne postaci\u2026 walcz\u0105ce ze sob\u0105?
+    Pod nimi widniej\u0105 jakie\u015B nieznane mi znaki."
+  - "Podaje aparat W\u0142adys\u0142awowi, kt\xF3ry przeciera okulary i przyst\u0119puje
+    do odcyfrowywania inskrypcji."
+  - "\u201DDwie si\u0142y bez pocz\u0105tku i bez ko\u0144ca, na zawsze podzielone\u201D."
+  - Co to znaczy?
+  - "Nie wiem\u2026 Nigdy nie widzia\u0142em czego\u015B podobnego. Lepiej zachowaj
+    aparat. Mo\u017Ce si\u0119 nam jeszcze przyda\u0107\u2026"
   characters:
   - {fileID: 3933146148628123448, guid: bedc063a8985d2442b4bed5da3d36b77, type: 3}
   - {fileID: 8388310431346040389, guid: f6daff6589df7fc419b2d1b2638a3c2a, type: 3}
@@ -1304,6 +1408,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isBlackFadeAppearOnStart: 1
+  dynamicSounds: []
+  singleFadeComponent: {fileID: 0}
+  frameFade: {fileID: 0}
 --- !u!114 &1404065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,6 +1426,7 @@ MonoBehaviour:
   fade: {fileID: 326336257}
   isMainMenu: 0
   fadeAfterGameStart: {fileID: 0}
+  fadeOnStart: {fileID: 0}
 --- !u!224 &1418887228 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1508094689544559284, guid: 40f6b16685e256e4ba44c2c05f06e9cf, type: 3}
