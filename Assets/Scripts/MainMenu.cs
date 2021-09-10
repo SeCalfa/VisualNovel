@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
     {
         menu.GetComponent<Animation>().clip = menu.GetComponent<Animation>().GetClip("MainMenuDisappear");
         menu.GetComponent<Animation>().Play();
-        levelsBar.GetComponent<Animation>().clip = levelsBar.GetComponent<Animation>().GetClip("LevelsBarAppear");
+        levelsBar.GetComponent<Animation>().clip = levelsBar.GetComponent<Animation>().GetClip("LevelBarBackgroundAppear");
         levelsBar.GetComponent<Animation>().Play();
 
         GetComponent<Fade>().MainMenuFadeAppear();
@@ -35,7 +35,7 @@ public class MainMenu : MonoBehaviour
     {
         menu.GetComponent<Animation>().clip = menu.GetComponent<Animation>().GetClip("MainMenuAppear");
         menu.GetComponent<Animation>().Play();
-        levelsBar.GetComponent<Animation>().clip = levelsBar.GetComponent<Animation>().GetClip("LevelsBarDisappear");
+        levelsBar.GetComponent<Animation>().clip = levelsBar.GetComponent<Animation>().GetClip("LevelBarBackgroundDisappear");
         levelsBar.GetComponent<Animation>().Play();
 
         GetComponent<Fade>().MainMenuFadeDisappear();
@@ -84,12 +84,12 @@ public class MainMenu : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("Plansza" + level.GetComponent<SaveButton>().levelNumber) == 0)
             {
-                level.GetComponent<SaveButton>().GetLockImage.gameObject.SetActive(true);
+                level.GetComponent<SaveButton>().GetPicture.gameObject.SetActive(false);
                 level.GetComponent<Button>().interactable = false;
             }
             else
             {
-                level.GetComponent<SaveButton>().GetLockImage.gameObject.SetActive(false);
+                level.GetComponent<SaveButton>().GetPicture.gameObject.SetActive(true);
                 level.GetComponent<Button>().interactable = true;
             }
         }

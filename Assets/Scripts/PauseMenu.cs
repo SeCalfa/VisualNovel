@@ -6,20 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    private Animator pauseAnimation;
-    private bool isPauseActive = false;
+    internal bool isPauseActive = false;
+    private Animator animator;
+
+    [HideInInspector]
+    public bool isCanOpenOrClose = true;
 
     private void Awake()
     {
-        pauseAnimation = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && isCanOpenOrClose)
         {
-            isPauseActive = !isPauseActive;
             Pause();
+            isPauseActive = !isPauseActive;
         }
     }
 
@@ -27,20 +30,24 @@ public class PauseMenu : MonoBehaviour
     {
         if (isPauseActive)
         {
-            Time.timeScale = 0;
-            pauseAnimation.Play("PauseMenuAppear");
+            animator.SetTrigger("Disappear");
         }
         else
         {
-            Time.timeScale = 1;
-            pauseAnimation.Play("PauseMenuDisappear");
+            Time.timeScale = 0;
+            animator.SetTrigger("Appear");
         }
+    }
+
+    public void TimeScaleToNormal()
+    {
+        Time.timeScale = 1;
     }
 
     public void Resume()
     {
-        isPauseActive = false;
         Pause();
+        isPauseActive = false;
     }
 
     public void MainMenu()

@@ -9,22 +9,28 @@ public class PhotoZoom : MonoBehaviour
     [SerializeField]
     private Transform Target;
     [SerializeField]
-    private Image Fade = null;
+    private Image Fade;
+    [SerializeField]
+    private NoteBook noteBook;
+    [SerializeField]
+    private GameObject upParent;
+    [SerializeField]
+    private Transform photos;
 
-    private Button photoZoom;
+    [HideInInspector]
+    public float alpha = 0;
+
     private bool isPhotoZoomed = false;
     private Vector3 currentPosition;
     private Quaternion currentRotation;
     private Vector3 currentScale;
 
-    private Vector3 targetPosition = new Vector3(0, 0, 0);
-    private Vector3 targetScale = new Vector3(1.6f, 1.6f, 1);
+    private Vector3 targetScale = new Vector3(3.5f, 3.5f, 1);
+
+    public GameObject GetUpParent { get { return upParent; } }
 
     private void Awake()
     {
-        photoZoom = GetComponent<Button>();
-        photoZoom.onClick.AddListener(PhotoOpen);
-
         SetCurrentTransform(); // Нужно будет менять из скрипта переварачивающего страницы
     }
 
@@ -34,6 +40,17 @@ public class PhotoZoom : MonoBehaviour
         {
             PhotoClose();
         }
+
+        ParametresUpdating();
+    }
+
+    private void ParametresUpdating()
+    {
+        Fade.color = new Color(0, 0, 0, noteBook.alpha / 2); // Fade after notebook open
+
+        transform.localPosition = Vector3.Lerp(currentPosition, Target.localPosition, alpha);
+        transform.rotation = Quaternion.Lerp(currentRotation, Target.rotation, alpha);
+        transform.localScale = Vector3.Lerp(currentScale, targetScale, alpha);
     }
 
     internal void SetCurrentTransform()
@@ -43,13 +60,14 @@ public class PhotoZoom : MonoBehaviour
         currentScale = transform.localScale;
     }
 
-    private void PhotoOpen()
+    public void PhotoOpen()
     {
-        if (!isPhotoZoomed)
+        if (!isPhotoZoomed && !noteBook.isActivePhotoNow)
         {
             isPhotoZoomed = true;
-            StopAllCoroutines();
-            StartCoroutine(ZoomOn(1, 0));
+            GetComponent<Animation>().clip = GetComponent<Animation>().GetClip("AlphaForPhotosUp");
+            GetComponent<Animation>().Play();
+            transform.SetParent(upParent.transform);
         }
     }
 
@@ -58,23 +76,22 @@ public class PhotoZoom : MonoBehaviour
         if (isPhotoZoomed)
         {
             isPhotoZoomed = false;
-            StopAllCoroutines();
-            StartCoroutine(ZoomOn(-1, 1));
+            GetComponent<Animation>().clip = GetComponent<Animation>().GetClip("AlphaForPhotosDown");
+            GetComponent<Animation>().Play();
+            transform.SetParent(photos);
         }
     }
 
-    private IEnumerator ZoomOn(float direction, float alpha)
+    public void SetPhotoOnDefaultPlace()
     {
-    Reset:
-        transform.localPosition = Vector3.Lerp(currentPosition, targetPosition, alpha);
-        transform.rotation = Quaternion.Lerp(currentRotation, Target.rotation, alpha);
-        transform.localScale = Vector3.Lerp(currentScale, targetScale, alpha);
-        Fade.color = new Color(0, 0, 0, alpha / 2);
-        yield return new WaitForSeconds(0.01f);
-        alpha += 0.025f * direction;
-        if (alpha < 1)
-            goto Reset;
-
+        transform.SetAsFirstSibling();
+        noteBook.isActivePhotoNow = false;
+        noteBook.activePhoto = null;
     }
 
+    public void ActivatePhoto()
+    {
+        noteBook.isActivePhotoNow = true;
+        noteBook.activePhoto = this;
+    }
 }

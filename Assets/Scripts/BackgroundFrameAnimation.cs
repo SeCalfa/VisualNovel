@@ -13,17 +13,23 @@ public class BackgroundFrameAnimation : MonoBehaviour
     [Space]
     [SerializeField]
     private float frameRate = 1.0f;
-    [Space]
-    [SerializeField]
-    private bool singleFade = false;
 
     [Space]
     [SerializeField]
     private bool isFrameFadeFromStart = true;
 
+    public enum FadingType
+    {
+        Loop,
+        LoopFull,
+        Single,
+        DoubleSide,
+        Plansza40
+    }
+
     [Space]
     [SerializeField]
-    private bool doubleSideFade = false;
+    private FadingType fadeType;
 
     internal bool singleFadeActivate = false;
 
@@ -57,21 +63,59 @@ public class BackgroundFrameAnimation : MonoBehaviour
     {
         if (frameFadeStart)
         {
-            if (!doubleSideFade)
+            if(fadeType == FadingType.Single)
             {
-                if (!singleFade)
-                {
-                    TimerMulty();
-                    FadeMulty();
-                }
-                else
-                {
-                    TimerSingle();
-                    FadeSingle();
-                }
+                TimerSingle();
+                FadeSingle();
             }
-            else
+            else if(fadeType == FadingType.Loop)
+            {
+                TimerMulty();
+                Loop();
+            }
+            else if (fadeType == FadingType.LoopFull)
+            {
+                TimerMulty();
+                LoopFull();
+            }
+            else if(fadeType == FadingType.DoubleSide)
+            {
                 DoubleFade();
+            }
+            else if(fadeType == FadingType.Plansza40)
+            {
+                Plansza40Fade();
+                Loop();
+            }
+        }
+    }
+
+    private void Plansza40Fade()
+    {
+        currentTime -= Time.deltaTime; // alpha down
+        float alphaGrown = 1 - currentTime;
+
+        if(currentTime <= 0)
+        {
+            currentTime = frameRate;
+            pastState = currentState;
+            currentState += 1;
+
+            if (currentState == 3)
+            {
+                frameRate = 0.5f;
+            }
+
+            if (currentState == maxState)
+            {
+                currentState = 3;
+            }
+
+            GetComponent<Image>().sprite = backgrounds[pastState];
+            backgroundFront.sprite = backgrounds[currentState];
+
+            fadeStart = true;
+            fadeTime = 0;
         }
     }
 
@@ -122,7 +166,25 @@ public class BackgroundFrameAnimation : MonoBehaviour
         }
     }
 
-    private void FadeMulty()
+    private void Loop()
+    {
+        if (fadeStart)
+        {
+            fadeTime += Time.deltaTime;
+
+            float alpha = Mathf.Lerp(0, 1, fadeTime / frameRate);
+
+            backgroundFront.color = new Color(1, 1, 1, alpha);
+            GetComponent<Image>().color = new Color(1, 1, 1, 1 - alpha);
+
+            if (fadeTime >= frameRate)
+            {
+                fadeStart = false;
+            }
+        }
+    }
+
+    private void LoopFull()
     {
         if (fadeStart)
         {

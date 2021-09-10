@@ -22,10 +22,10 @@ MonoBehaviour:
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0
+    value: 1
   fastMode:
     overrideState: 1
-    value: 0
+    value: 1
 --- !u!114 &-3832763101328471017
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -44,13 +44,13 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: 100
+    value: 57.3
   threshold:
     overrideState: 1
     value: 1
   softKnee:
     overrideState: 1
-    value: 0
+    value: 0.265
   clamp:
     overrideState: 1
     value: 65472
@@ -62,7 +62,7 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 1, g: 0, b: 0, a: 1}
   fastMode:
     overrideState: 1
     value: 0
@@ -88,10 +88,10 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 0
+    value: 1
   intensity:
     overrideState: 1
-    value: 1
+    value: 0
   intensityX:
     overrideState: 1
     value: 1
@@ -147,7 +147,7 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 0, g: 0, b: 0, a: 1}
+    value: {r: 1, g: 0, b: 0, a: 1}
   center:
     overrideState: 1
     value: {x: 0.5, y: 0.5}
@@ -162,7 +162,7 @@ MonoBehaviour:
     value: 1
   rounded:
     overrideState: 1
-    value: 0
+    value: 1
   mask:
     overrideState: 1
     value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
@@ -185,7 +185,7 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 0
+    value: 1
   colored:
     overrideState: 1
     value: 1
@@ -213,17 +213,17 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   gradingMode:
     overrideState: 1
-    value: 1
+    value: 0
   externalLut:
     overrideState: 0
     value: {fileID: 0}
     defaultState: 1
   tonemapper:
     overrideState: 1
-    value: 1
+    value: 0
   toneCurveToeStrength:
     overrideState: 0
     value: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
     value: 0
   mixerRedOutRedIn:
     overrideState: 1
-    value: 100
+    value: 200
   mixerRedOutGreenIn:
     overrideState: 1
     value: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
     value: {x: 1, y: 1, z: 1, w: 0}
   gamma:
     overrideState: 1
-    value: {x: 1, y: 1, z: 1, w: 0}
+    value: {x: 1, y: 0.8802177, z: 0.8802177, w: 0}
   gain:
     overrideState: 1
     value: {x: 1, y: 1, z: 1, w: 0}

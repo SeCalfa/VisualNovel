@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class SaveButton : MonoBehaviour
 {
-    [SerializeField] private Image lockImage = null;
+    [SerializeField] private Image picture;
     [SerializeField] internal int levelNumber;
 
-    public Image GetLockImage { get { return lockImage; } }
+    public Image GetPicture { get { return picture; } }
 
     public void LoadLevel()
     {

@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Last Treshold
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: b06c29f8700e6194e916bf184623b7aa, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1

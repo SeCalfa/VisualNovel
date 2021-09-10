@@ -81,6 +81,8 @@ public class Dialogs : MonoBehaviour
     [SerializeField] private SpriteElementFade backgroundElementFade1;
     [SerializeField] private SpriteElementFade backgroundElementFade2;
     [SerializeField] private SpriteElementFade backgroundElementFade3;
+    [SerializeField] private PauseMenu pauseMenu;
+    [SerializeField] private NoteBook noteBook;
 
     [Header("Parametrs")]
     [SerializeField]
@@ -93,6 +95,7 @@ public class Dialogs : MonoBehaviour
     [SerializeField] private GameObject[] characters;
     [SerializeField] [Range(0, 0.05f)] private float backgroundAlphaSpeed = 0;
     [SerializeField] [Range(0, 0.05f)] private float dialogPanelAlphaSpeed = 0;
+    [SerializeField] private bool dialogPanelActive = true;
     [SerializeField] private string nextLevelName;
     [SerializeField] private AnimationCurve curve;
     [SerializeField] private bool isBlackFadeAppearOnStart = false;
@@ -143,6 +146,9 @@ public class Dialogs : MonoBehaviour
     private bool button2Choosen = false;
     private bool button3Choosen = false;
 
+    private float timeToNextLevel = 0;
+    bool isNextLevelEventActive = false;
+
     private void Awake()
     {
         SettingsOnAwake();
@@ -169,6 +175,18 @@ public class Dialogs : MonoBehaviour
 
         if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) && !isDialogNeedBeStopped)
         {
+            if(pauseMenu != null)
+            {
+                if (pauseMenu.isPauseActive)
+                    return;
+            }
+
+            if(noteBook != null)
+            {
+                if (noteBook.isNoteBookActive)
+                    return;
+            }
+
             if (!isDialogPage)
             {
                 if (fade.isFadeDisappeared && timer > 5.0f)
@@ -196,26 +214,40 @@ public class Dialogs : MonoBehaviour
                 timer = 0;
             }
         }
+
+        PressToNextLevel();
+    }
+
+    private void PressToNextLevel()
+    {
+        timeToNextLevel += Time.deltaTime;
+
+        if (!isNextLevelEventActive)
+        {
+            if (levelPreset == LevelDialogQueue.Plansza28)
+            {
+                if (timeToNextLevel > 10)
+                {
+                    fade.FadeAppear(nextLevelName);
+                    isNextLevelEventActive = true;
+                }
+            }
+        }
     }
 
     private void PaperDrop()
     {
-        string animation = "";
-
-        if(currentPaper >= papers.Length)
-            return;
-        else if (currentPaper == 0)
-            animation = "PaperDisapp";
-        else if (currentPaper == 1)
-            animation = "PaperDisapp2";
-        else if (currentPaper == 2)
-            animation = "PaperDisapp3";
-
-        papers[currentPaper].GetComponent<Animation>().Play(animation);
+        papers[currentPaper].GetComponent<Animation>().Play();
         currentPaper++;
 
         if (currentPaper == papers.Length)
-            LastPaperDropped();
+            StartCoroutine(CdAfterFade());
+    }
+
+    private IEnumerator CdAfterFade()
+    {
+        yield return new WaitForSeconds(2.0f);
+        LastPaperDropped();
     }
 
     internal void LastPaperDropped()
@@ -225,12 +257,14 @@ public class Dialogs : MonoBehaviour
 
     public void DialogTextOpacityTimerForButton()
     {
-        StartCoroutine(DialogOpacityTimer());
+        if (dialogPanelActive)
+            StartCoroutine(DialogOpacityTimer());
     }
 
     private void DialogOpacityTimerVoid()
     {
-        StartCoroutine(DialogOpacityTimer());
+        if (dialogPanelActive)
+            StartCoroutine(DialogOpacityTimer());
     }
 
     private IEnumerator DialogOpacityTimer() // Появление
@@ -299,7 +333,7 @@ public class Dialogs : MonoBehaviour
         for (int s = 0; s < dialText.Length; s++)
         {
             dialogText.text += dialText[s];
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.03f);
             if (isTextRead)
                 break;
 
@@ -322,6 +356,73 @@ public class Dialogs : MonoBehaviour
             }
         }
         isTextRead = true;
+        TextWasRead();
+    }
+
+    private void TextWasRead()
+    {
+        if (levelPreset == LevelDialogQueue.Plansza3)
+        {
+            if (dialogRead == 1)
+            {
+                PlayDynamicSound(0);
+            }
+            else if(dialogRead == 31)
+            {
+                ChooseAppear("Co ugryzło Nikolaja?", "Skąd się znasz z Nikolajem?");
+            }
+            else if(dialogRead == 43)
+            {
+                if (choosenDialogElements[0] == 1) // Певый выбор был первой репликой
+                {
+                    ChooseAppear("Skąd się znasz z Nikolajem?", "Nie, to nic takiego");
+                }
+                else if (choosenDialogElements[0] == 2) // Певый выбор был второй репликой
+                {
+                    ChooseAppear("Co ugryzło Nikolaja?", "Nie, to nic takiego");
+                }
+            }
+        }
+        else if (levelPreset == LevelDialogQueue.Plansza10)
+        {
+            if (dialogRead == 4)
+            {
+                ChooseAppearTriple("Wspominałeś, że dostałeś od szamana jakieś instrukcje...", "Byłeś tu wcześniej?", "Widziałem medalion, który wręczył ci Aleleke.");
+            }
+            else if (dialogRead == 7)
+            {
+                ChooseAppearTriple("Wspominałeś, że dostałeś od szamana jakieś instrukcje...", "Byłeś tu wcześniej?", "Widziałem medalion, który wręczył ci Aleleke.");
+            }
+            else if (dialogRead == 11)
+            {
+                ChooseAppearTriple("Wspominałeś, że dostałeś od szamana jakieś instrukcje...", "Byłeś tu wcześniej?", "Widziałem medalion, który wręczył ci Aleleke.");
+            }
+            else if(dialogRead == 18)
+            {
+                ChooseAppearTriple("Wspominałeś, że dostałeś od szamana instrukcje...", "Byłeś tu wcześniej?", "Widziałem medalion, który wręczył ci Aleleke.");
+            }
+        }
+        else if(levelPreset == LevelDialogQueue.Plansza12)
+        {
+            if(dialogRead == 15)
+            {
+                ChooseAppear("Dlaczego tak nie znosisz Korav’ye?", "Co myślisz o wyprawie?");
+            }
+        }
+        else if(levelPreset == LevelDialogQueue.Plansza21)
+        {
+            if(dialogRead == 27)
+            {
+                ChooseAppear("Korav’ye nie mówi nam wszystkiego.", "Sądzisz, że Czesław nie zginął... przypadkiem?");
+            }
+        }
+        else if(levelPreset == LevelDialogQueue.Plansza32)
+        {
+            if(dialogRead == 21)
+            {
+                ChooseAppear("Sięgnij po broń.", "Wycofaj się.");
+            }
+        }
     }
 
     private void LevelPreset()
@@ -342,8 +443,7 @@ public class Dialogs : MonoBehaviour
 
                     if (dialogRead == 1)
                     {
-                        PlayerPrefs.SetInt("Plansza3", 1);
-                        PlayDynamicSound(0);
+                        PlayerPrefs.SetInt("Plansza3", 1);                        
                     }
                     else if (dialogRead == 2)
                     {
@@ -452,7 +552,6 @@ public class Dialogs : MonoBehaviour
                         nameMarkText.text = "Korav'ye";
                         allCharactersInScene["Czukcz"].GetComponent<CharactersController>().isTalking = true;
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
-                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().SetEmotion(0);
                     }
                     else if (dialogRead == 20)
                     {
@@ -523,7 +622,6 @@ public class Dialogs : MonoBehaviour
                         allCharactersInScene.Remove("Czukcz");
                         backgroundElementFade2.ImageDisappear();
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isMiddleReturn = true;
-                        ChooseAppear("Co ugryzło Nikolaja?", "Skąd się znasz z Nikolajem?");
                     }
                     else if (dialogRead == 32)
                     {
@@ -602,14 +700,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 43) // L
                     {
-                        if (choosenDialogElements[0] == 1) // Певый выбор был первой репликой
-                        {
-                            ChooseAppear("Skąd się znasz z Nikolajem?", "Nie, to nic takiego");
-                        }
-                        else if (choosenDialogElements[0] == 2) // Певый выбор был второй репликой
-                        {
-                            ChooseAppear("Co ugryzło Nikolaja?", "Nie, to nic takiego");
-                        }
+                        
                     }
                     else if (dialogRead == 46)
                     {
@@ -640,7 +731,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 50)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Czesław";
+                        nameMarkText.text = "Czesław Kasprowicz";
                         allCharactersInScene["Reporter"].GetComponent<CharactersController>().isTalking = true;
                     }
                     else if (dialogRead == 51)
@@ -650,7 +741,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 52)
                     {
-                        nameMarkText.text = "Czesław";
+                        nameMarkText.text = "Czesław Kasprowicz";
                         allCharactersInScene["Reporter"].GetComponent<CharactersController>().isTalking = true;
                     }
                     else if (dialogRead == 53)
@@ -666,7 +757,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 55)
                     {
-                        nameMarkText.text = "Czesław";
+                        nameMarkText.text = "Czesław Kasprowicz";
                         allCharactersInScene["Reporter"].GetComponent<CharactersController>().isTalking = true;
                         allCharactersInScene["Reporter"].GetComponent<CharactersController>().SetEmotion(1);
                     }
@@ -688,7 +779,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 58)
                     {
-                        nameMarkText.text = "Czesław";
+                        nameMarkText.text = "Czesław Kasprowicz";
                         allCharactersInScene["Reporter"].GetComponent<CharactersController>().isTalking = true;
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = false;
                         allCharactersInScene["Reporter"].GetComponent<CharactersController>().SetEmotion(2);
@@ -702,7 +793,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 60)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Czesław";
+                        nameMarkText.text = "Czesław Kasprowicz";
                         allCharactersInScene["Reporter"].GetComponent<CharactersController>().isTalking = true;
                         allCharactersInScene["Reporter"].GetComponent<CharactersController>().SetEmotion(3);
                     }
@@ -721,7 +812,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 63)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                     }
                     else if (dialogRead == 64)
@@ -731,7 +822,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 65)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                     }
                     else if (dialogRead == 66)
@@ -741,7 +832,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 67)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                     }
                     else if (dialogRead == 68)
@@ -768,7 +859,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 72)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().SetEmotion(3);
                     }
@@ -779,7 +870,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 74)
                     {
-                        nameMarkText.text = "Czesław";
+                        nameMarkText.text = "Czesław Kasprowicz";
                         StartCoroutine(NameMarkAppear());
                         allCharactersInScene.Add("Reporter", SpawnCharacter(characters[4], rightSpawnPoint, endLocRight2, false));
                         allCharactersInScene["Reporter"].GetComponent<CharactersController>().isTalking = true;
@@ -789,7 +880,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 75)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                         allCharactersInScene["Reporter"].GetComponent<CharactersController>().isTalking = false;
                     }
@@ -991,7 +1082,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 11)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isTalking = false;
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                     }
@@ -1013,7 +1104,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 15)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         StartCoroutine(NameMarkAppear());
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                     }
@@ -1024,7 +1115,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 17)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                     }
                     else if (dialogRead == 18)
@@ -1105,7 +1196,7 @@ public class Dialogs : MonoBehaviour
                     if (dialogRead == 1)
                     {
                         PlayerPrefs.SetInt("Plansza9", 1);
-                        nameMarkText.text = "Czesław";
+                        nameMarkText.text = "Czesław Kasprowicz";
                         StartCoroutine(NameMarkAppear());
                         allCharactersInScene.Add("Czesław", SpawnCharacter(characters[1], rightSpawnPoint, endLocRight15, false));
                         allCharactersInScene["Czesław"].GetComponent<CharactersController>().isTalking = true;
@@ -1145,7 +1236,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 10)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene.Add("Manya", SpawnCharacter(characters[3], leftSpawnPoint, endLocLeft2, false));
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isLeftSide = true;
@@ -1186,7 +1277,7 @@ public class Dialogs : MonoBehaviour
                         nameMarkText.text = "Profesor Antos";
                         StartCoroutine(NameMarkAppear());
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = true;
-                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().SetEmotion(7);
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().SetEmotion(5);
                     }
                     else if (dialogRead == 18)
                     {
@@ -1376,7 +1467,6 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 4)
                     {
-                        ChooseAppearTriple("Wspominałeś, że dostałeś od szamana jakieś instrukcje...", "Byłeś tu wcześniej?", "Widziałem medalion, który wręczył ci Aleleke.");
                         nameMarkText.text = "Korav'ye";
                         allCharactersInScene.Add("Czukcz", SpawnCharacter(characters[0], leftSpawnPoint, endLocLeft15, true));
                         allCharactersInScene["Czukcz"].GetComponent<CharactersController>().isLeftSide = true;
@@ -1391,8 +1481,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 7)
                     {
-                        StartCoroutine(NameMarkDisappear());
-                        ChooseAppearTriple("Wspominałeś, że dostałeś od szamana jakieś instrukcje...", "Byłeś tu wcześniej?", "Widziałem medalion, który wręczył ci Aleleke.");
+                        StartCoroutine(NameMarkDisappear());                        
                     }
                     else if (dialogRead == 9)
                     {
@@ -1408,7 +1497,6 @@ public class Dialogs : MonoBehaviour
                     {
                         nameMarkText.text = "Korav'ye";
                         allCharactersInScene["Czukcz"].GetComponent<CharactersController>().isTalking = true;
-                        ChooseAppearTriple("Wspominałeś, że dostałeś od szamana jakieś instrukcje...", "Byłeś tu wcześniej?", "Widziałem medalion, który wręczył ci Aleleke.");
                     }
                     else if (dialogRead == 13)
                     {
@@ -1440,7 +1528,6 @@ public class Dialogs : MonoBehaviour
                         nameMarkText.text = "Korav'ye";
                         StartCoroutine(NameMarkAppear());
                         allCharactersInScene["Czukcz"].GetComponent<CharactersController>().isTalking = true;
-                        ChooseAppearTriple("Wspominałeś, że dostałeś od szamana instrukcje...", "Byłeś tu wcześniej?", "Widziałem medalion, który wręczył ci Aleleke.");
                     }
                     else if (dialogRead == 19)
                     {
@@ -1539,7 +1626,7 @@ public class Dialogs : MonoBehaviour
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = true;
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isLeftSide = true;
                         allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isTalking = false;
-                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().SetEmotion(5);
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().SetEmotion(7);
                     }
                     else if (dialogRead == 3)
                     {
@@ -1584,12 +1671,13 @@ public class Dialogs : MonoBehaviour
                         allCharactersInScene.Add("Czucz", SpawnCharacter(characters[2], rightSpawnPoint, endLocRight2, false));
                         allCharactersInScene["Czucz"].GetComponent<CharactersController>().isTalking = true;
                         allCharactersInScene["Czucz"].GetComponent<CharactersController>().isLeftSide = false;
+                        allCharactersInScene["Czucz"].GetComponent<CharactersController>().isAlternativeCloth = true;
                         allCharactersInScene["Czucz"].GetComponent<CharactersController>().SetEmotion(0);
                         allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isNewLocationActive = true;
                     }
                     else if (dialogRead == 10)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene.Add("Manya", SpawnCharacter(characters[3], leftSpawnPoint, endLocLeft2, false));
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isLeftSide = true;
@@ -1608,6 +1696,17 @@ public class Dialogs : MonoBehaviour
                     {
                         StartCoroutine(NameMarkDisappear());
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
+                    }
+                    else if (dialogRead == 13)
+                    {
+                        allCharactersInScene["Profesor"].GetComponent<CharactersController>().isLeave = true;
+                        allCharactersInScene.Remove("Profesor");
+                        allCharactersInScene["Manya"].GetComponent<CharactersController>().isLeave = true;
+                        allCharactersInScene.Remove("Manya");
+                        allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isLeave = true;
+                        allCharactersInScene.Remove("Nikolai");
+                        allCharactersInScene["Czucz"].GetComponent<CharactersController>().isLeave = true;
+                        allCharactersInScene.Remove("Czucz");
                     }
                     else if (dialogRead == 14)
                     {
@@ -1680,7 +1779,6 @@ public class Dialogs : MonoBehaviour
                     {
                         nameMarkText.text = "Nikolai Morozov";
                         StartCoroutine(NameMarkAppear());
-                        ChooseAppear("Dlaczego tak nie znosisz Korav’ye?", "Co myślisz o wyprawie?");
                     }
                     else if (dialogRead == 17)
                     {
@@ -1718,7 +1816,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 26)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         StartCoroutine(NameMarkAppear());
                     }
                     else if (dialogRead == 27)
@@ -1732,7 +1830,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 30)
                     {
-                        nameMarkText.text = "Czesław";
+                        nameMarkText.text = "Czesław Kasprowicz";
                     }
                     else if (dialogRead == 31)
                     {
@@ -1740,7 +1838,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 32)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                     }
                     else if (dialogRead == 33)
                     {
@@ -1756,7 +1854,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 36)
                     {
-                        nameMarkText.text = "Czesław";
+                        nameMarkText.text = "Czesław Kasprowicz";
                         StartCoroutine(NameMarkAppear());
                     }
                     else if (dialogRead == 37)
@@ -1792,7 +1890,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 47)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                     }
                     else if (dialogRead == 48)
                     {
@@ -1921,7 +2019,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 14)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                     }
                     else if (dialogRead == 15)
                     {
@@ -1942,7 +2040,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 21)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                     }
                     else if (dialogRead == 22)
                     {
@@ -1955,7 +2053,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 24)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                     }
                     else if (dialogRead == 25)
                     {
@@ -1963,7 +2061,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 26)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                     }
                     else if (dialogRead == 27)
                     {
@@ -2013,7 +2111,7 @@ public class Dialogs : MonoBehaviour
                     {
                         PlayerPrefs.SetInt("Plansza15", 1);
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                     }
                     else if (dialogRead == 2)
                     {
@@ -2026,7 +2124,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 4)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                     }
                     else if (dialogRead == 5)
                     {
@@ -2105,7 +2203,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 7)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene.Add("Manya", SpawnCharacter(characters[1], leftSpawnPoint, endLocLeft2, false));
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isLeftSide = true;
@@ -2132,7 +2230,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 11)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                     }
                     else if (dialogRead == 12)
@@ -2143,7 +2241,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 13)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                     }
                     else if (dialogRead == 14)
@@ -2188,7 +2286,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 21)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                     }
                     else if (dialogRead == 22)
@@ -2252,7 +2350,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 4)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene.Add("Manya", SpawnCharacter(characters[1], leftSpawnPoint, endLocLeft15, false));
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isLeftSide = true;
@@ -2267,7 +2365,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 6)
                     {
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
                     }
@@ -2285,7 +2383,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 9)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Manya";
+                        nameMarkText.text = "Manya Yachnotov";
                         allCharactersInScene["Manya"].GetComponent<CharactersController>().isTalking = true;
                     }
                     else if (dialogRead == 10)
@@ -2422,7 +2520,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 3)
                     {
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
                     }
                     else if (dialogRead == 4)
@@ -2434,7 +2532,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 5)
                     {
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                         allCharactersInScene["Nikolai"].GetComponent<CharactersController>().isTalking = false;
                     }
                     else if (dialogRead == 6)
@@ -2562,7 +2660,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 9)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                     }
                     else if (dialogRead == 10)
                     {
@@ -2573,7 +2671,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 11)
                     {
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
                     }
                     else if (dialogRead == 12)
@@ -2589,7 +2687,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 14)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                     }
                     else if (dialogRead == 15)
                     {
@@ -2603,7 +2701,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 17)
                     {
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
                     }
                     else if (dialogRead == 18)
@@ -2617,7 +2715,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 20)
                     {
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
                     }
                     else if (dialogRead == 21)
@@ -2633,7 +2731,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 23)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                     }
                     else if (dialogRead == 24)
                     {
@@ -2642,7 +2740,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 25)
                     {
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
                     }
                     else if (dialogRead == 26)
@@ -2654,11 +2752,10 @@ public class Dialogs : MonoBehaviour
                         StartCoroutine(NameMarkAppear());
                         nameMarkText.text = "Profesor Antos";
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = true;
-                        ChooseAppear("Korav’ye nie mówi nam wszystkiego.", "Sądzisz, że Czesław nie zginął... przypadkiem?");
                     }
                     else if (dialogRead == 29)
                     {
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
                     }
                     else if (dialogRead == 30) // Был сделан выбор А
@@ -2680,7 +2777,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 33)
                     {
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                         allCharactersInScene["Profesor"].GetComponent<CharactersController>().isTalking = false;
                     }
                     else if (dialogRead == 34)
@@ -2691,7 +2788,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 36)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                     }
                     else if (dialogRead == 37)
                     {
@@ -2765,7 +2862,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 7)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                     }
                     else if (dialogRead == 8)
                     {
@@ -2773,7 +2870,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 9)
                     {
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                     }
                     else if (dialogRead == 10)
                     {
@@ -2812,7 +2909,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 3)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                     }
                     else if (dialogRead == 4)
                     {
@@ -2820,7 +2917,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 5)
                     {
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                     }
                     else if (dialogRead == 6)
                     {
@@ -2833,7 +2930,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 8)
                     {
                         StartCoroutine(NameMarkAppear());
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                     }
                     else if (dialogRead == 9)
                     {
@@ -2846,7 +2943,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 12)
                     {
-                        nameMarkText.text = "Bohater";
+                        nameMarkText.text = "Wiktor";
                     }
                     else if (dialogRead == 13)
                     {
@@ -3195,6 +3292,10 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 6)
                     {
+                        nameMarkText.text = "...";
+                    }
+                    else if (dialogRead == 7)
+                    {
                         StartCoroutine(NameMarkDisappear());
                     }
                     else if (dialogRead == 8)
@@ -3285,7 +3386,7 @@ public class Dialogs : MonoBehaviour
 
                     if (dialogRead == 1)
                     {
-                        fade.BlackFadeAppear(true, nextLevelName);
+                        fade.FadeAppear(nextLevelName);
                     }
                     break;
 
@@ -3296,7 +3397,16 @@ public class Dialogs : MonoBehaviour
                 case LevelDialogQueue.Plansza29:
                     dialogRead += 1;
 
-                    if (dialogRead == 8)
+                    if(dialogRead == 5)
+                    {
+                        StartCoroutine(NameMarkAppear());
+                        nameMarkText.text = "...";
+                    }
+                    else if (dialogRead == 6)
+                    {
+                        StartCoroutine(NameMarkDisappear());
+                    }
+                    else if (dialogRead == 8)
                     {
                         fade.BlackFadeAppear(true, nextLevelName);
                     }
@@ -3372,12 +3482,11 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 10)
                     {
-                        StartCoroutine(NameMarkDisappear());
+                        nameMarkText.text = "...";
                     }
                     else if (dialogRead == 11)
                     {
                         nameMarkText.text = "Korav'ye";
-                        StartCoroutine(NameMarkAppear());
                     }
                     else if (dialogRead == 12)
                     {
@@ -3387,7 +3496,11 @@ public class Dialogs : MonoBehaviour
                     {
                         nameMarkText.text = "Korav'ye";
                     }
-                    else if (dialogRead == 14)
+                    else if (dialogRead == 15)
+                    {
+                        nameMarkText.text = "...";
+                    }
+                    else if (dialogRead == 16)
                     {
                         StartCoroutine(NameMarkDisappear());
                     }
@@ -3399,7 +3512,6 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 21)
                     {
                         StartCoroutine(NameMarkDisappear());
-                        ChooseAppear("Sięgnij po broń.", "Wycofaj się.");
                     }
                     else if (dialogRead == 24)
                     {
@@ -3497,7 +3609,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 6)
                     {
-                        nameMarkText.text = "Karol";
+                        nameMarkText.text = "Karol Staszewski";
                     }
                     else if (dialogRead == 7)
                     {
@@ -3506,7 +3618,7 @@ public class Dialogs : MonoBehaviour
                     }
                     else if (dialogRead == 8)
                     {
-                        nameMarkText.text = "Karol";
+                        nameMarkText.text = "Karol Staszewski";
                         StartCoroutine(NameMarkAppear());
                     }
                     else if (dialogRead == 9)
@@ -3595,6 +3707,7 @@ public class Dialogs : MonoBehaviour
                     else if (dialogRead == 5)
                     {
                         StartCoroutine(NameMarkDisappear());
+                        frameFade.frameFadeStart = true;
                     }
                     else if (dialogRead == 7)
                     {
@@ -3706,7 +3819,7 @@ public class Dialogs : MonoBehaviour
 
                     if (dialogRead == 7)
                     {
-                        nameMarkText.text = "Szaman";
+                        nameMarkText.text = "Szaman Aleleke";
                         StartCoroutine(NameMarkAppear());
                     }
                     if (dialogRead == 8)
@@ -3715,7 +3828,7 @@ public class Dialogs : MonoBehaviour
                     }
                     if (dialogRead == 9)
                     {
-                        nameMarkText.text = "Szaman";
+                        nameMarkText.text = "Szaman Aleleke";
                     }
                     if (dialogRead == 10)
                     {
@@ -3723,7 +3836,7 @@ public class Dialogs : MonoBehaviour
                     }
                     if (dialogRead == 11)
                     {
-                        nameMarkText.text = "Szaman";
+                        nameMarkText.text = "Szaman Aleleke";
                     }
                     if (dialogRead == 12)
                     {
@@ -3731,7 +3844,7 @@ public class Dialogs : MonoBehaviour
                     }
                     if (dialogRead == 13)
                     {
-                        nameMarkText.text = "Szaman";
+                        nameMarkText.text = "Szaman Aleleke";
                         StartCoroutine(NameMarkAppear());
                     }
                     if (dialogRead == 15)
@@ -3740,7 +3853,7 @@ public class Dialogs : MonoBehaviour
                     }
                     if (dialogRead == 16)
                     {
-                        nameMarkText.text = "Szaman";
+                        nameMarkText.text = "Szaman Aleleke";
                         StartCoroutine(NameMarkAppear());
                     }
                     else if (dialogRead == 18)
@@ -3758,7 +3871,7 @@ public class Dialogs : MonoBehaviour
 
                     if (dialogRead == 3)
                     {
-                        nameMarkText.text = "Szaman";
+                        nameMarkText.text = "Szaman Aleleke";
                         StartCoroutine(NameMarkAppear());
                     }
                     else if (dialogRead == 4)
@@ -3767,7 +3880,7 @@ public class Dialogs : MonoBehaviour
                     }
                     if (dialogRead == 5)
                     {
-                        nameMarkText.text = "Szaman";
+                        nameMarkText.text = "Szaman Aleleke";
                         StartCoroutine(NameMarkAppear());
                     }
                     else if (dialogRead == 6)

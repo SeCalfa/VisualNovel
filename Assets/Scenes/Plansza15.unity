@@ -936,8 +936,8 @@ MonoBehaviour:
     New Text New Text New Text New Text New Text New Text New Text New Text New Text
     New Text '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5c28f01d24603e4e9ac58a3816f8e8a, type: 2}
+  m_sharedMaterial: {fileID: 3156893464553202503, guid: d5c28f01d24603e4e9ac58a3816f8e8a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1225,14 +1225,17 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 1829328451}
   choise1: {fileID: 149955782}
   choise2: {fileID: 2119179182}
+  choise3: {fileID: 0}
   choise1Text: {fileID: 347434731}
   choise2Text: {fileID: 729899985}
+  choise3Text: {fileID: 0}
   note: {fileID: 0}
   staticAudio: {fileID: 0}
   dynamicAudio: {fileID: 0}
   backgroundElementFade1: {fileID: 0}
   backgroundElementFade2: {fileID: 0}
   backgroundElementFade3: {fileID: 0}
+  isChooseButtonDestroyed: 0
   isDialogPage: 1
   levelPreset: 12
   backgroundTexts: []
@@ -1280,6 +1283,7 @@ MonoBehaviour:
   isBlackFadeAppearOnStart: 0
   dynamicSounds: []
   singleFadeComponent: {fileID: 0}
+  frameFade: {fileID: 0}
 --- !u!114 &1404065446
 MonoBehaviour:
   m_ObjectHideFlags: 0
